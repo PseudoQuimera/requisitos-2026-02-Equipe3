@@ -1,2 +1,2 @@
 # requisitos-2026-02-Equipe3
-Unifor - Projeto de Extensão - Requisitos de Sistema
+Atividade da cadeira "Requisitos e Modelagem de Sistemas".
