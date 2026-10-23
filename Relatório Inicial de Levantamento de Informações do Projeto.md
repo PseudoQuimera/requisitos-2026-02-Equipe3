@@ -61,7 +61,36 @@ Os currículos disponibilizados nessa plataforma poderão ser considerados para 
 
 **Status:** Possibilidade técnica a investigar.
 
-# 3. POSSÍVEIS FONTES DE DADOS
+# 3. REFERENCIAL METODOLÓGICO PARA A ENGENHARIA DE REQUISITOS
+
+## 3.1. Norma de referência
+
+O levantamento, a análise, a documentação e a gestão dos requisitos do projeto terão como referência a norma ISO/IEC/IEEE 29148:2018 — Systems and software engineering — Life cycle processes — Requirements engineering.
+
+A norma estabelece orientações para os processos de engenharia de requisitos ao longo do ciclo de vida de sistemas e software, incluindo a definição das necessidades das partes interessadas, a especificação dos requisitos, a validação e a gestão das alterações.
+
+## 3.2. Aplicação ao projeto
+
+A norma será utilizada como referência para organizar e evoluir a documentação de requisitos, respeitando o estágio atual de descoberta e investigação.
+
+O trabalho será conduzido de forma incremental, permitindo que informações preliminares sejam registradas e posteriormente refinadas, validadas ou descartadas conforme a evolução do projeto.
+
+## 3.3. Princípios de trabalho
+
+- Registrar as necessidades e os objetivos identificados.
+- Diferenciar fatos confirmados, hipóteses e decisões.
+- Documentar os requisitos de maneira clara, consistente e verificável.
+- Identificar dependências, restrições e riscos.
+- Estabelecer critérios de aceitação quando houver informações suficientes.
+- Manter a rastreabilidade entre necessidades, requisitos e entregas.
+- Controlar alterações nos requisitos ao longo do desenvolvimento.
+
+## 3.4. Evolução da documentação
+
+A documentação será atualizada progressivamente, acompanhando a investigação das possíveis fontes de dados, a definição do problema, a identificação dos usuários e a análise de viabilidade.
+
+A adoção da norma como referência não implica, neste estágio, uma declaração de conformidade integral com todos os seus requisitos. O grau de aplicação será adequado às necessidades e à dimensão do projeto.
+# 4. POSSÍVEIS FONTES DE DADOS
 
 Com base nas informações iniciais, foram identificadas duas fontes potenciais:
 
@@ -72,7 +101,7 @@ Com base nas informações iniciais, foram identificadas duas fontes potenciais:
 
 A existência dessas fontes não implica, necessariamente, que os dados possam ser coletados de forma automatizada ou integrados diretamente. Essa viabilidade deverá ser avaliada durante o levantamento técnico.
 
-# 4. HIPÓTESES INICIAIS
+# 5. HIPÓTESES INICIAIS
 
 A partir das informações levantadas, são formuladas as seguintes hipóteses para investigação:
 
@@ -83,7 +112,7 @@ A partir das informações levantadas, são formuladas as seguintes hipóteses p
 
 Essas hipóteses não constituem requisitos aprovados nem decisões de arquitetura. Sua validade dependerá da investigação posterior.
 
-# 5. QUESTÕES EM ABERTO
+# 6. QUESTÕES EM ABERTO
 
 Para avançar na compreensão do projeto, será necessário responder às seguintes questões:
 
@@ -98,37 +127,37 @@ Para avançar na compreensão do projeto, será necessário responder às seguin
 
 As respostas a essas questões orientarão a definição do escopo, dos requisitos funcionais e não funcionais e dos critérios de aceitação.
 
-# 6. ABORDAGEM METODOLÓGICA
+# 7. ABORDAGEM METODOLÓGICA
 
 Recomenda-se conduzir o levantamento de forma incremental, utilizando práticas de análise de requisitos e métodos ágeis.
 
-## 6.1. Descoberta
+## 7.1. Descoberta
 
 Compreender o problema, os usuários e os objetivos do projeto.
 
-## 6.2. Investigação das fontes
+## 7.2. Investigação das fontes
 
 Verificar a estrutura, a disponibilidade e as condições de acesso aos dados.
 
-## 6.3. Análise de requisitos
+## 7.3. Análise de requisitos
 
 Identificar necessidades, restrições e resultados esperados.
 
-## 6.4. Priorização
+## 7.4. Priorização
 
 Organizar as funcionalidades e investigações em um backlog.
 
-## 6.5. Validação
+## 7.5. Validação
 
 Confirmar as hipóteses com as partes interessadas.
 
-## 6.6. Planejamento incremental
+## 7.7. Planejamento incremental
 
 Definir uma primeira entrega de escopo reduzido, caso a viabilidade seja confirmada.
 
-# 7. PRÓXIMAS ATIVIDADES RECOMENDADAS
+# 8. PRÓXIMAS ATIVIDADES RECOMENDADAS
 
-## 7.1. Prioridade alta
+## 8.1. Prioridade alta
 
 - **Atividade:** Confirmar o endereço do ambiente de currículos da Unifor.  
   **Resultado esperado:** Fonte institucional identificada.
@@ -139,7 +168,7 @@ Definir uma primeira entrega de escopo reduzido, caso a viabilidade seja confirm
 - **Atividade:** Investigar os mecanismos de acesso aos dados do Lattes.  
   **Resultado esperado:** Alternativas técnicas documentadas.
 
-## 7.2. Prioridade média
+## 8.2. Prioridade média
 
 - **Atividade:** Identificar os campos curriculares de interesse.  
   **Resultado esperado:** Relação preliminar de dados necessários.
@@ -150,7 +179,7 @@ Definir uma primeira entrega de escopo reduzido, caso a viabilidade seja confirm
 - **Atividade:** Levantar restrições de acesso e tratamento de dados.  
   **Resultado esperado:** Riscos e limitações registrados.
 
-# 8. CONSIDERAÇÕES FINAIS
+# 9. CONSIDERAÇÕES FINAIS
 
 O levantamento inicial identificou duas possíveis fontes de informações curriculares: o ambiente associado ao subdomínio `www2` da Unifor e a Plataforma Lattes, mantida pelo CNPq.
 
@@ -158,17 +187,37 @@ Essas informações constituem um ponto de partida para a investigação, mas ai
 
 O próximo passo consiste em compreender o problema que motivou o projeto, confirmar as características das fontes de dados e identificar as necessidades dos usuários. A partir desses resultados, será possível evoluir este relatório para uma especificação preliminar de requisitos e um backlog priorizado.
 
-# 9. HISTÓRICO DE VERSÕES
+# 10. CONTROLE DE VERSÃO E RASTREABILIDADE
 
-| Versão | Descrição | Status |
-|---|---|---|
-| 0.1 | Criação do documento com informações preliminares e questões de investigação. | Em elaboração |
+## 10.1. Controle de versão
 
----
+O projeto utiliza o GitHub como plataforma de hospedagem do repositório e controle de versão dos artefatos produzidos durante seu desenvolvimento.
 
-# 10. DIRETRIZES PARA A EVOLUÇÃO DO DOCUMENTO
+As alterações realizadas na documentação serão registradas por meio de commits, permitindo acompanhar a evolução do conteúdo, consultar versões anteriores e identificar as modificações realizadas ao longo do projeto.
 
-Este relatório deverá ser atualizado conforme novas informações forem coletadas.
+## 10.2. Histórico de alterações
+
+O histórico detalhado das modificações será mantido pelo Git e disponibilizado no GitHub, evitando a duplicação de informações já registradas no repositório.
+
+Quando necessário, alterações relevantes nos requisitos, no escopo ou nas decisões do projeto poderão ser documentadas neste relatório ou em arquivos específicos.
+
+## 10.3. Identificação das versões do documento
+
+A evolução do documento será acompanhada pelo controle de versão do repositório.
+
+Quando houver necessidade de identificar formalmente uma versão específica do relatório, poderão ser utilizados tags ou releases do Git, conforme a relevância da alteração e a maturidade do projeto.
+
+## 10.4. Rastreabilidade dos requisitos
+
+À medida que os requisitos forem identificados, recomenda-se atribuir identificadores únicos, como `RF-001` para requisitos funcionais e `RNF-001` para requisitos não funcionais.
+
+Esses identificadores deverão ser mantidos ao longo da evolução da documentação, mesmo quando houver alterações no texto dos requisitos.
+
+As mudanças relevantes deverão permitir identificar o requisito afetado, a justificativa da alteração e, quando aplicável, sua relação com as funcionalidades, tarefas e entregas do projeto.
+
+# 11. DIRETRIZES PARA A EVOLUÇÃO DO DOCUMENTO
+
+Este relatório será atualizado progressivamente, acompanhando a evolução do levantamento de informações e da engenharia de requisitos.
 
 Recomenda-se distinguir três categorias de registros:
 
@@ -176,4 +225,6 @@ Recomenda-se distinguir três categorias de registros:
 - **Hipóteses em investigação:** possibilidades que ainda precisam ser verificadas.
 - **Decisões tomadas:** definições acordadas durante o desenvolvimento do projeto, acompanhadas de suas justificativas quando necessário.
 
-Essa separação ajudará a evitar que suposições sejam tratadas como requisitos definitivos e permitirá acompanhar a evolução do projeto de maneira organizada e incremental.
+As alterações serão versionadas no GitHub, permitindo acompanhar a evolução do documento sem a necessidade de manter um histórico manual redundante.
+
+A documentação deverá permanecer consistente com os requisitos identificados, as decisões tomadas e o estado atual do projeto.
