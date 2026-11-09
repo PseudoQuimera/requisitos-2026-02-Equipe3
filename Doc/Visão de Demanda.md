@@ -2,29 +2,39 @@
 
 **Sistema de Gestão da Produção Científica e Internacionalização Docente — Universidade de Fortaleza (Unifor)**
 
-> **Natureza:** proposta inicial de sistema, elaborada para apoiar a elicitação e a especificação de requisitos no processo LAPIS. As funcionalidades, prioridades, integrações, regras de negócio e indicadores apresentados constituem propostas preliminares e dependem de validação com os representantes institucionais.
+> **Natureza:** proposta de desenvolvimento de novo sistema, elaborada para apoiar a elicitação e a especificação de requisitos no processo LAPIS. As funcionalidades, prioridades, integrações, regras de negócio e indicadores apresentados constituem propostas preliminares e dependem de validação com os representantes institucionais.
 
 ## Identificação e Histórico
 
 | Campo | Informação |
 | --- | --- |
-| Nome e identificador da demanda | Sistema de Gestão da Produção Científica e Internacionalização Docente — GPCID |
+| Nome e identificador da demanda | Sistema de Gestão da Produção Científica e Internacionalização Docente (GPCID) |
+| Instituição | Universidade de Fortaleza (Unifor) |
 | Tipo | Novo sistema |
-| Sistema ou produto relacionado | A definir — possíveis integrações com sistemas acadêmicos institucionais, Plataforma Lattes e bases de publicações científicas |
-| Área solicitante | A definir — áreas responsáveis pela pesquisa científica e internacionalização da Unifor |
+| Área solicitante | Diretoria de Relações Internacionais (DRI) da Unifor |
+| Interlocutor de negócio | Marcelo Ponte — Supervisor de Apoio Docente |
+| E-mail de contato | marceloponte@unifor.br |
+| Telefone de contato | +55 85 3477-3405 |
 | Responsável pela elaboração | Grupo 3 |
-| Responsável pela aprovação | Marcelo Ponte — Supervisor de Apoio Docente |
-| Contato do responsável pela aprovação | marceloponte@unifor.br |
-| Responsável pela validação técnica e funcional | Representantes institucionais das áreas responsáveis pela pesquisa e internacionalização — a identificar |
-| Situação | Rascunho consolidado, em fase de elicitação |
-| Versão e data | 1.1 — 08/11/2026 |
+| Responsável pela aprovação formal | Direção da DRI |
+| Nome do responsável pela aprovação | A confirmar |
+| Documento de origem | Visão da Demanda (VD) — GPCID |
+| Referencial de especificação | IEEE 830-1998 e ISO/IEC/IEEE 29148:2011 |
+| Processo de ciclo de vida | ISO/IEC 12207 |
+| Versão da VD | 1.2 |
+| Documento de especificação relacionado | SRS — versão 0.2 |
+| Data | 09/11/2026 |
+| Situação | Rascunho para revisão e validação |
+
+**Distinção de responsabilidades:** Marcelo Ponte atua como interlocutor de negócio, responsável pelo contato e alinhamento das necessidades da área solicitante. A aprovação formal da demanda compete à Direção da DRI, cujo representante nominal ainda deverá ser confirmado.
 
 ### Histórico de alterações
 
 | Data | Versão | Descrição da alteração | Autor |
 | --- | --- | --- | --- |
-| 01/11/2026 | 1.0 | Criação inicial da Visão da Demanda com base na proposta 2 do Eixo I — Internacionalização. | Grupo 3 |
-| 08/11/2026 | 1.1 | Consolidação da visão com ampliação das funcionalidades de gestão curricular, produção científica, indicadores, oportunidades científicas, módulos funcionais e integrações potenciais. | Grupo 3 |
+| 01/11/2026 | 1.0 | Criação inicial da Visão da Demanda com base na proposta 2 do Eixo I — Internacionalização. | Equipe do projeto |
+| 08/11/2026 | 1.1 | Consolidação da visão com ampliação das funcionalidades de gestão curricular, produção científica, indicadores, oportunidades científicas, módulos funcionais e integrações potenciais. | Equipe do projeto |
+| 09/11/2026 | 1.2 | Atualização da identificação institucional, definição da DRI como área solicitante, identificação de Marcelo Ponte como interlocutor de negócio e estabelecimento da Direção da DRI como responsável pela aprovação formal. | Grupo 3 |
 
 ## 1\. Objetivo
 
@@ -33,6 +43,8 @@ Desenvolver uma solução que permita organizar, consultar, acompanhar e analisa
 O sistema pretende proporcionar uma visão integrada das informações acadêmicas e científicas dos docentes, contemplando currículos, titulações, publicações, colaborações científicas, missões internacionais e oportunidades de participação em eventos e atividades acadêmicas.
 
 A solução deverá apoiar tanto os docentes, na consulta de informações relacionadas à própria trajetória acadêmica e científica, quanto os gestores institucionais, na identificação de competências, no acompanhamento da produção científica, na análise de indicadores e no planejamento de ações de internacionalização.
+
+A demanda é solicitada pela Diretoria de Relações Internacionais (DRI), tendo Marcelo Ponte, Supervisor de Apoio Docente, como interlocutor de negócio para o levantamento e alinhamento das necessidades.
 
 A proposta também considera a possibilidade de utilização de fontes externas autorizadas, como a Plataforma Lattes e bases de publicações científicas, reduzindo a necessidade de duplicação de informações já mantidas em sistemas oficiais.
 
@@ -56,7 +68,7 @@ Essas informações podem estar distribuídas entre plataformas externas, regist
 
 Entretanto, ainda é necessário investigar como a Unifor atualmente realiza o registro, a atualização, a consulta e a consolidação dessas informações.
 
-A existência de sistemas institucionais ou mecanismos de acompanhamento deverá ser confirmada por meio de entrevistas e análise documental.
+A existência de sistemas institucionais ou mecanismos de acompanhamento deverá ser confirmada por meio de entrevistas e análise documental, especialmente junto à DRI e às áreas responsáveis pela pesquisa científica e gestão acadêmica.
 
 ### 2.2. Problema ou oportunidade
 
@@ -69,9 +81,12 @@ A demanda representa uma oportunidade de desenvolver uma solução que centraliz
 ### 2.3. Públicos afetados e impactos esperados
 
 -   **Docentes:** poderão consultar informações relacionadas à formação, publicações, colaborações e atividades internacionais.
+-   **Diretoria de Relações Internacionais (DRI):** poderá acompanhar informações relacionadas à internacionalização docente e utilizar indicadores no planejamento de ações institucionais.
+-   **Interlocutor de negócio:** Marcelo Ponte poderá contribuir com o levantamento, esclarecimento e alinhamento das necessidades junto à área solicitante.
 -   **Gestores acadêmicos:** poderão acompanhar informações consolidadas e utilizar indicadores no planejamento institucional.
 -   **Responsáveis pela pesquisa científica:** poderão acompanhar a produção acadêmica, identificar publicações e analisar sua evolução.
 -   **Responsáveis pela internacionalização:** poderão acompanhar atividades internacionais, identificar conexões acadêmicas e consultar oportunidades científicas.
+-   **Direção da DRI:** será responsável pela apreciação e aprovação formal da demanda.
 -   **Equipe de tecnologia da informação:** poderá participar da avaliação das integrações, segurança, infraestrutura e sustentação da solução.
 
 Os impactos específicos deverão ser confirmados durante a elicitação.
@@ -84,6 +99,8 @@ O documento apresenta a oportunidade de organizar e acompanhar informações rel
 
 As funcionalidades complementares de consulta histórica, classificação da internacionalização, indicadores configuráveis e oportunidades científicas são propostas de aprofundamento para investigação.
 
+A identificação da Diretoria de Relações Internacionais como área solicitante e de Marcelo Ponte como interlocutor de negócio constitui a referência institucional para o encaminhamento da demanda.
+
 Não foram apresentadas evidências suficientes para confirmar a situação atual dos processos institucionais, a disponibilidade das fontes de dados ou a viabilidade das integrações.
 
 ### 2.5. Descrição sumária da demanda
@@ -94,6 +111,8 @@ A solução deverá possibilitar consultas aos currículos e publicações, acom
 
 Também deverá considerar mecanismos de controle de acesso, rastreabilidade das informações, atualização dos dados e integração com fontes externas autorizadas, conforme a viabilidade técnica e institucional.
 
+A demanda será conduzida pelo Grupo 3, com alinhamento de negócio junto a Marcelo Ponte e encaminhamento para aprovação formal pela Direção da DRI.
+
 ## 3\. Proposta de Valor e Sucesso da Demanda
 
 A solução busca proporcionar maior organização, transparência, acessibilidade e confiabilidade às informações relacionadas à produção científica e à internacionalização docente.
@@ -103,7 +122,7 @@ A solução busca proporcionar maior organização, transparência, acessibilida
 | Centralização das informações acadêmicas | Disponibilidade de informações curriculares e científicas em ambiente organizado. | Facilitar a localização e consulta das informações dos docentes. | Testes com usuários após a disponibilização da solução. |
 | Melhoria do acompanhamento da produção científica | Disponibilidade de registros de publicações e indicadores por docente e período. | Permitir análises da produção acadêmica institucional. | Validação das consultas e relatórios com gestores. |
 | Identificação de competências acadêmicas internacionais | Possibilidade de pesquisar formação, titulação, instituições e países. | Facilitar a identificação de docentes com experiências acadêmicas internacionais. | Testes de consulta com representantes institucionais. |
-| Fortalecimento da internacionalização docente | Disponibilidade de informações sobre missões, colaborações e atividades internacionais. | Facilitar o acompanhamento das atividades internacionais. | Avaliação com a área responsável pela internacionalização. |
+| Fortalecimento da internacionalização docente | Disponibilidade de informações sobre missões, colaborações e atividades internacionais. | Facilitar o acompanhamento das atividades internacionais. | Avaliação com a DRI e a área responsável pela internacionalização. |
 | Apoio à cooperação científica | Disponibilidade de informações sobre colaborações e oportunidades acadêmicas. | Apoiar a identificação de possibilidades de cooperação. | Avaliação com gestores e pesquisadores. |
 | Apoio à tomada de decisão | Disponibilidade de indicadores e relatórios consolidados. | Oferecer subsídios para o planejamento institucional. | Homologação dos indicadores e relatórios. |
 | Melhoria da qualidade dos dados | Registros com origem, data de atualização e identificação de inconsistências. | Aumentar a confiabilidade das informações utilizadas nas análises. | Auditorias e verificações periódicas. |
@@ -114,14 +133,16 @@ A solução busca proporcionar maior organização, transparência, acessibilida
 
 | Parte interessada | Papel e interesse | Responsabilidade | Representante |
 | --- | --- | --- | --- |
-| Universidade de Fortaleza (Unifor) | Instituição beneficiária da solução. | Definir diretrizes institucionais e autorizar o desenvolvimento e utilização do sistema. | A definir |
-| Área responsável pela internacionalização | Interessada no acompanhamento das atividades internacionais dos docentes. | Validar necessidades, indicadores e informações relacionadas à internacionalização. | A definir |
+| Universidade de Fortaleza (Unifor) | Instituição beneficiária da solução. | Definir diretrizes institucionais e autorizar o desenvolvimento e utilização do sistema. | Instituição |
+| Diretoria de Relações Internacionais (DRI) | Área solicitante e interessada no acompanhamento da internacionalização docente. | Apresentar necessidades, apoiar a validação do escopo e deliberar sobre a aprovação formal da demanda. | Direção da DRI |
+| Interlocutor de negócio | Representante de contato e alinhamento das necessidades. | Esclarecer necessidades, fornecer informações e apoiar a comunicação entre a área solicitante e a equipe do projeto. | Marcelo Ponte — Supervisor de Apoio Docente |
 | Área responsável pela pesquisa científica | Interessada na organização e análise da produção científica. | Validar informações, critérios de classificação e indicadores acadêmicos. | A definir |
 | Docentes | Beneficiários e possíveis usuários do sistema. | Consultar e, caso aprovado, complementar ou validar informações relacionadas à própria atuação acadêmica. | Comunidade docente |
 | Gestores acadêmicos | Interessados nas informações consolidadas. | Identificar necessidades gerenciais e validar relatórios e indicadores. | A definir |
-| Equipe de desenvolvimento | Responsável pela construção da solução. | Elicitar, especificar, implementar e testar os requisitos aprovados. | Grupo 3 |
+| Grupo 3 | Responsável pela elaboração da documentação e desenvolvimento da proposta acadêmica do projeto. | Elicitar, especificar, modelar, implementar e testar os requisitos conforme o escopo aprovado. | Grupo 3 |
 | Equipe de tecnologia da informação | Responsável pelo suporte técnico e avaliação das integrações. | Avaliar infraestrutura, segurança, autenticação, integrações e manutenção. | A definir |
 | Responsáveis pela proteção de dados | Interessados na conformidade do tratamento das informações. | Avaliar questões relacionadas à privacidade, permissões e proteção de dados. | A definir |
+| Direção da DRI | Instância responsável pela aprovação formal da demanda. | Analisar e deliberar sobre a aprovação institucional da demanda. | Nome do responsável a confirmar |
 
 ## 5\. Usuários e Atores Externos
 
@@ -139,8 +160,10 @@ Os perfis apresentados são propostas iniciais e deverão ser confirmados durant
 | AT-08 | Bases de publicações científicas | Possíveis fontes de informações sobre artigos, livros e demais produções. | Fontes e mecanismos de acesso a definir. |
 | AT-09 | Sistemas acadêmicos institucionais | Possíveis fontes de informações sobre docentes, cursos e vínculos. | Integração condicionada à autorização e viabilidade técnica. |
 | AT-10 | Fontes externas de oportunidades científicas | Possíveis fontes de congressos, eventos e oportunidades de publicação. | Disponibilidade e integração a investigar. |
+| AT-11 | Direção da DRI | Instância de apreciação e aprovação formal da demanda. | Atua na decisão institucional sobre a aprovação da proposta. |
+| AT-12 | Interlocutor de negócio | Apoiar o esclarecimento e alinhamento das necessidades da DRI. | Marcelo Ponte — Supervisor de Apoio Docente. |
 
-**Observação:** Os atores externos representam fontes potenciais. Sua participação definitiva dependerá da confirmação de mecanismos autorizados de acesso e integração.
+**Observação:** Os atores externos representam fontes potenciais. Sua participação definitiva dependerá da confirmação de mecanismos autorizados de acesso e integração. O interlocutor de negócio e a instância de aprovação são papéis institucionais, não necessariamente perfis de usuário do sistema.
 
 ## 6\. Escopo e Entregas Previstas
 
@@ -163,7 +186,7 @@ Considerando a proposta institucional e os aprofundamentos apresentados, estão 
 -   Definição de mecanismos de atualização, origem e rastreabilidade dos dados.
 -   Controle de acesso conforme os perfis e responsabilidades institucionais.
 
-A confirmação dessas capacidades e a definição do produto mínimo viável dependerão da elicitação e priorização com os interessados.
+A confirmação dessas capacidades e a definição do produto mínimo viável dependerão da elicitação e priorização com os interessados, especialmente a DRI e as áreas responsáveis pelos dados.
 
 ### 6.2. Fora do escopo
 
@@ -197,10 +220,11 @@ Essas possibilidades não representam compromisso de implementação na primeira
 
 | Entrega ou marco | Resultado previsto | Condição |
 | --- | --- | --- |
-| Elicitação dos requisitos | Identificação e validação das necessidades, atores e funcionalidades. | Durante o levantamento com os interessados. |
+| Elicitação dos requisitos | Identificação e validação das necessidades, atores e funcionalidades. | Durante o levantamento com os interessados e interlocução com Marcelo Ponte. |
 | Visão da Demanda | Consolidação do problema, objetivos, escopo e catálogo inicial. | Após revisão e validação institucional. |
+| Aprovação formal da demanda | Registro da decisão da Direção da DRI. | Após apreciação da versão encaminhada para aprovação. |
 | Regras de negócio | Documentação dos critérios de classificação e políticas institucionais. | Após levantamento com as áreas responsáveis. |
-| Especificação dos requisitos | Documentação dos casos de uso e requisitos de qualidade. | Após validação da visão. |
+| Especificação dos requisitos (SRS) | Documentação dos requisitos funcionais, não funcionais e demais especificações. | Após validação da visão. |
 | Modelagem e prototipação | Representação das interações e telas principais. | Após definição inicial dos requisitos. |
 | Desenvolvimento e testes | Construção e verificação das funcionalidades priorizadas. | Conforme planejamento aprovado. |
 | Validação da solução | Avaliação com usuários e representantes institucionais. | Após disponibilização de versão para avaliação. |
@@ -209,7 +233,7 @@ Essas possibilidades não representam compromisso de implementação na primeira
 
 ### 7.1. Catálogo de necessidades
 
-As necessidades abaixo consolidam as propostas dos dois documentos. Ainda precisam ser investigadas e validadas com os usuários.
+As necessidades abaixo consolidam as propostas dos documentos de referência. Ainda precisam ser investigadas e validadas com os usuários.
 
 | ID | Necessidade | Fonte ou evidência | Atores relacionados |
 | --- | --- | --- | --- |
@@ -331,13 +355,15 @@ O fluxo proposto seria:
 8.  Ativar a versão aprovada.
 9.  Consultar os resultados e preservar o histórico metodológico.
 
-A responsabilidade pela criação, aprovação e publicação dos indicadores deverá ser definida com os gestores institucionais.
+A responsabilidade pela criação, aprovação e publicação dos indicadores deverá ser definida com os gestores institucionais. A aprovação metodológica dos indicadores deverá ser distinguida da aprovação formal da demanda.
 
 ## 8\. Visão Geral da Solução e Impactos
 
 A solução proposta consiste em um sistema de apoio à gestão da produção científica e internacionalização docente, destinado a organizar informações acadêmicas e científicas e disponibilizar recursos de consulta, acompanhamento e análise.
 
 O sistema deverá permitir uma visão consolidada da trajetória acadêmica dos docentes, contemplando formação, publicações, colaborações, missões internacionais e indicadores relacionados às atividades científicas.
+
+A solução será destinada principalmente ao atendimento das necessidades institucionais relacionadas à internacionalização docente, conforme demanda apresentada pela DRI.
 
 ### 8.1. Responsabilidades da solução
 
@@ -396,16 +422,17 @@ flowchart LR
     G[Gestores acadêmicos] --> S
     P[Responsáveis pela pesquisa] --> S
     I[Responsáveis pela internacionalização] --> S
+    R[Direção da DRI] -->|Aprovação institucional| S
 
     L[Plataforma Lattes/CNPq] -->|Dados curriculares| S
     B[Bases de publicações] -->|Dados científicos| S
     U[Sistemas acadêmicos] -->|Dados institucionais| S
     E[Fontes de oportunidades] -->|Eventos e oportunidades| S
 
-    S --> R[Consultas, indicadores e relatórios]
+    S --> O[Consultas, indicadores e relatórios]
 ```
 
-O diagrama representa relações conceituais possíveis. Não estabelece integrações aprovadas ou decisões de arquitetura.
+O diagrama representa relações conceituais possíveis. Não estabelece integrações aprovadas ou decisões de arquitetura. A Direção da DRI aparece como instância de aprovação institucional da demanda, não necessariamente como usuária operacional do sistema.
 
 ### 8.5. Decomposição funcional em módulos
 
@@ -462,15 +489,19 @@ O mapa demonstra dependências conceituais. Os relacionamentos funcionais dever�
 
 | Tipo | Condição e impacto na demanda | Responsável ou fonte | Situação |
 | --- | --- | --- | --- |
-| Premissa | A solução deverá apoiar os processos institucionais de acompanhamento da produção científica e internacionalização docente. | Proposta institucional. | A confirmar |
+| Premissa | A solução deverá apoiar os processos institucionais de acompanhamento da produção científica e internacionalização docente. | Proposta institucional e DRI. | A confirmar |
 | Premissa | Os dados utilizados deverão possuir origem identificável. | Áreas responsáveis pelos dados. | A validar |
 | Premissa | As informações deverão ser atualizadas conforme periodicidade definida pelos interessados. | Gestores institucionais. | A definir |
+| Premissa | A DRI será a área solicitante e participará do alinhamento institucional da demanda. | Diretoria de Relações Internacionais. | Identificada |
+| Premissa | Marcelo Ponte atuará como interlocutor de negócio. | DRI — Supervisor de Apoio Docente. | Identificado |
+| Restrição | A aprovação formal da demanda compete à Direção da DRI. | Diretoria de Relações Internacionais. | Definida; representante nominal a confirmar |
 | Restrição | O acesso às fontes externas dependerá das condições de utilização, disponibilidade e autorização dos responsáveis. | Fontes externas e instituição. | Aplicável |
 | Restrição | O sistema não deverá substituir plataformas oficiais de currículos e publicações. | Diretriz proposta para a solução. | A validar |
 | Restrição | O tratamento de dados pessoais deverá observar a legislação aplicável, especialmente a LGPD. | Instituição e responsáveis pela proteção de dados. | Aplicável |
 | Dependência | A obtenção de informações curriculares dependerá da disponibilidade de mecanismos autorizados. | Responsáveis pelas fontes e equipe técnica. | A investigar |
-| Dependência | A definição dos indicadores dependerá da validação dos critérios institucionais. | Gestores acadêmicos. | A definir |
+| Dependência | A definição dos indicadores dependerá da validação dos critérios institucionais. | Gestores acadêmicos e áreas responsáveis. | A definir |
 | Dependência | A disponibilização de informações institucionais dependerá de autorização das áreas responsáveis. | Universidade de Fortaleza. | A confirmar |
+| Dependência | A aprovação formal dependerá da apreciação da Direção da DRI. | Direção da DRI. | Pendente |
 | Qualidade | As informações deverão apresentar consistência, rastreabilidade e atualização adequada. | Equipe de desenvolvimento e áreas responsáveis. | A especificar |
 | Qualidade | A solução deverá oferecer mecanismos adequados de controle de acesso e proteção das informações. | Instituição e equipe de TI. | A especificar |
 | Qualidade | Consultas e relatórios deverão apresentar informações compreensíveis e organizadas. | Usuários e equipe de desenvolvimento. | A especificar |
@@ -479,13 +510,13 @@ O mapa demonstra dependências conceituais. Os relacionamentos funcionais dever�
 
 | ID | Tipo | Risco ou questão | Impacto | Próxima ação | Situação |
 | --- | --- | --- | --- | --- | --- |
-| PQ-01 | Dúvida | Quais áreas serão responsáveis pela utilização, validação e aprovação da solução? | Pode comprometer a definição dos responsáveis e do escopo. | Identificar representantes institucionais. | Aberto |
+| PQ-01 | Dúvida | Quem será o representante nominal da Direção da DRI responsável pela aprovação formal? | Pode comprometer o encaminhamento e registro da aprovação. | Solicitar identificação do responsável à DRI. | Aberto |
 | PQ-02 | Risco | Não existir mecanismo autorizado ou tecnicamente viável para obtenção automática dos dados do Lattes. | Pode exigir atualização manual ou outra estratégia de obtenção dos dados. | Investigar condições de acesso ao Lattes Extrator. | Aberto |
 | PQ-03 | Dúvida | Quais bases de publicações científicas deverão ser utilizadas? | Pode afetar a abrangência das informações. | Consultar pesquisadores e gestores. | Aberto |
 | PQ-04 | Dúvida | Qual será a periodicidade de atualização dos currículos e publicações? | Pode comprometer a atualidade dos indicadores. | Validar periodicidade e responsabilidades. | Aberto |
 | PQ-05 | Risco | Existência de dados incompletos, duplicados ou inconsistentes. | Pode comprometer a confiabilidade dos relatórios. | Definir critérios de validação e deduplicação. | Aberto |
 | PQ-06 | Dúvida | Quais critérios definirão a classificação de uma produção como internacional? | Pode gerar indicadores inconsistentes. | Elaborar e validar regras de negócio. | Aberto |
-| PQ-07 | Dúvida | Quais indicadores serão considerados relevantes e oficiais? | Pode comprometer a utilidade das análises. | Realizar levantamento com gestores. | Aberto |
+| PQ-07 | Dúvida | Quais indicadores serão considerados relevantes e oficiais? | Pode comprometer a utilidade das análises. | Realizar levantamento com gestores e DRI. | Aberto |
 | PQ-08 | Dúvida | Quais perfis poderão consultar, cadastrar, alterar e administrar informações? | Pode afetar a segurança e a privacidade. | Levantar responsabilidades e permissões. | Aberto |
 | PQ-09 | Risco | O tratamento das informações poderá envolver restrições legais e institucionais. | Pode limitar o acesso e a divulgação de determinados dados. | Consultar responsáveis por proteção de dados e jurídico. | Aberto |
 | PQ-10 | Dúvida | Os docentes poderão atualizar diretamente informações no sistema ou apenas consultar dados externos? | Pode alterar o escopo e a responsabilidade pela manutenção. | Validar com docentes e gestores. | Aberto |
@@ -494,6 +525,8 @@ O mapa demonstra dependências conceituais. Os relacionamentos funcionais dever�
 | PQ-13 | Dúvida | A solução deverá permitir configuração de indicadores ou apenas disponibilizar indicadores predefinidos? | Pode afetar a complexidade da solução. | Validar com os gestores. | Aberto |
 | PQ-14 | Risco | Não haver integração disponível com os sistemas acadêmicos institucionais. | Pode exigir cadastro ou atualização alternativa dos dados. | Avaliar possibilidades técnicas com TI. | Aberto |
 | PQ-15 | Dúvida | Como deverão ser tratados docentes inativos e produções anteriores ao vínculo institucional? | Pode comprometer a interpretação dos indicadores. | Definir critérios temporais e institucionais. | Aberto |
+| PQ-16 | Dúvida | Quais representantes das áreas de pesquisa científica e internacionalização participarão da validação funcional? | Pode comprometer a abrangência da elicitação. | Identificar os representantes institucionais junto à DRI. | Aberto |
+| PQ-17 | Dúvida | Quais serão os critérios e procedimentos formais para aprovação da VD? | Pode comprometer o registro da decisão e o avanço para a especificação. | Confirmar o fluxo de aprovação com a Direção da DRI. | Aberto |
 
 As questões deverão ser acompanhadas durante a elicitação. Suas respostas deverão ser incorporadas às respectivas seções da VD e registradas no histórico de alterações.
 
@@ -502,6 +535,8 @@ As questões deverão ser acompanhadas durante a elicitação. Suas respostas de
 | Documento | Conteúdo sob sua responsabilidade | Referência e situação |
 | --- | --- | --- |
 | Documento de propostas de projetos — Internacionalização e ENADE | Contexto inicial e descrição da oportunidade de projeto. | Eixo I, proposta 2 — disponível. |
+| Visão da Demanda (VD) — GPCID | Contexto, objetivos, escopo, partes interessadas, necessidades e funcionalidades preliminares. | Versão 1.2 — rascunho para revisão e validação. |
+| Documento de Requisitos de Software (SRS) | Especificação dos requisitos funcionais, não funcionais, interfaces e restrições. | Versão 0.2 — rascunho para revisão e validação. |
 | Regras de negócio compartilhadas | Políticas de classificação, acompanhamento e gestão das informações. | A elaborar. |
 | Requisitos não funcionais ou de qualidade | Segurança, privacidade, desempenho, disponibilidade, usabilidade e integridade. | A elaborar. |
 | Arquitetura e contratos de integração | Definições técnicas e contratos de comunicação com fontes externas. | A elaborar após análise de viabilidade. |
@@ -510,6 +545,16 @@ As questões deverão ser acompanhadas durante a elicitação. Suas respostas de
 | Catálogo de indicadores | Definições, medidas, regras de cálculo, fontes e periodicidade. | A elaborar após validação institucional. |
 | Legislação de proteção de dados | Referência legal para tratamento de dados pessoais. | Lei nº 13.709/2018 — LGPD. |
 
+### 11.1. Referenciais metodológicos e normativos
+
+A documentação da demanda e a especificação subsequente deverão considerar os seguintes referenciais:
+
+-   **IEEE 830-1998:** referência histórica para organização e estruturação de especificações de requisitos de software.
+-   **ISO/IEC/IEEE 29148:2011:** referência para processos e documentação de requisitos de sistemas e software.
+-   **ISO/IEC 12207:** referência para processos de ciclo de vida de sistemas e software.
+
+A aplicação desses referenciais deverá ser compatibilizada com o processo LAPIS e com as orientações acadêmicas e institucionais pertinentes.
+
 ## 12\. Validação da Visão
 
 ### 12.1. Checklist
@@ -517,7 +562,13 @@ As questões deverão ser acompanhadas durante a elicitação. Suas respostas de
 -   [x] Objetivo, contexto e oportunidade estão apresentados.
 -   [x] Benefícios e condições de sucesso estão descritos.
 -   [x] Ausência de metas quantitativas e linha de base está identificada.
--   [ ] Responsáveis institucionais por decisões e validação estão identificados nominalmente.
+-   [x] Área solicitante identificada como Diretoria de Relações Internacionais (DRI).
+-   [x] Interlocutor de negócio identificado nominalmente.
+-   [x] E-mail e telefone de contato do interlocutor registrados.
+-   [x] Grupo 3 identificado como responsável pela elaboração.
+-   [x] Direção da DRI identificada como responsável pela aprovação formal.
+-   [ ] Nome do representante responsável pela aprovação formal confirmado.
+-   [ ] Representantes das áreas de pesquisa científica e internacionalização identificados nominalmente.
 -   [x] Usuários e atores externos potenciais estão representados.
 -   [x] Escopo, exclusões e evoluções futuras estão diferenciados.
 -   [x] Necessidades possuem identificadores e fontes ou justificativas.
@@ -529,18 +580,22 @@ As questões deverão ser acompanhadas durante a elicitação. Suas respostas de
 -   [x] Premissas, restrições, dependências e riscos foram registrados.
 -   [x] Documentos relacionados e artefatos pendentes foram identificados.
 -   [ ] Prioridades e funcionalidades foram validadas pelos interessados.
--   [ ] Responsáveis institucionais revisaram e confirmaram o conteúdo.
+-   [ ] Visão da Demanda foi apreciada e aprovada formalmente pela Direção da DRI.
 
 ### 12.2. Critérios de conclusão e encaminhamento
 
-**Condição atual: rascunho consolidado, com pendências de validação institucional.**
+**Condição atual: rascunho para revisão e validação institucional, com interlocutor de negócio identificado e aprovação formal pendente.**
 
-A versão 1.1 consolida a proposta inicial de gestão da produção científica e internacionalização docente com possibilidades adicionais de acompanhamento curricular, classificação da internacionalização, indicadores configuráveis e oportunidades científicas.
+A versão 1.2 consolida a proposta inicial de gestão da produção científica e internacionalização docente, incorporando a Diretoria de Relações Internacionais (DRI) como área solicitante, Marcelo Ponte como interlocutor de negócio e a Direção da DRI como instância responsável pela aprovação formal.
 
-O documento apresenta uma visão mais abrangente da solução, mas ainda não representa aprovação institucional das funcionalidades, prioridades ou integrações.
+O documento apresenta uma visão abrangente da solução, mas ainda não representa aprovação institucional das funcionalidades, prioridades ou integrações.
 
 Para avançar à especificação dos requisitos, será necessário:
 
+-   Identificar nominalmente o representante da Direção da DRI responsável pela aprovação formal.
+-   Encaminhar a VD para apreciação da Direção da DRI.
+-   Registrar a decisão formal, incluindo data, responsável e eventuais ressalvas.
+-   Realizar o alinhamento das necessidades com Marcelo Ponte, Supervisor de Apoio Docente.
 -   Identificar e consultar representantes das áreas responsáveis pela pesquisa científica e internacionalização.
 -   Investigar os processos atualmente utilizados pela Universidade.
 -   Confirmar os perfis de usuários e suas responsabilidades.
@@ -552,13 +607,25 @@ Para avançar à especificação dos requisitos, será necessário:
 -   Esclarecer as responsabilidades de atualização e manutenção das informações.
 -   Validar as condições de acesso, segurança e privacidade.
 
-A condição de visão validada dependerá da confirmação formal do entendimento geral, dos limites da demanda e das prioridades pelos representantes institucionais responsáveis.
+A condição de visão aprovada dependerá da apreciação e confirmação formal pela Direção da DRI, sem prejuízo da validação técnica e funcional pelos representantes das áreas envolvidas.
 
 ### 12.3. Registro da validação
 
 | Versão | Responsável e papel | Data | Condição da VD | Resultado e ressalvas |
 | --- | --- | --- | --- | --- |
-| 1.0 | Grupo 3 — elaboração inicial | 01/11/2026 | Rascunho | Elaborada com base na proposta institucional. |
-| 1.1 | Grupo 3 — consolidação da visão | 08/11/2026 | Rascunho consolidado | Ampliação do escopo conceitual e do catálogo de funcionalidades. Necessita de elicitação e validação institucional. |
+| 1.0 | Equipe do projeto — elaboração inicial | 01/11/2026 | Rascunho | Elaborada com base na proposta institucional. |
+| 1.1 | Equipe do projeto — consolidação da visão | 08/11/2026 | Rascunho consolidado | Ampliação do escopo conceitual e do catálogo de funcionalidades. Necessita de elicitação e validação institucional. |
+| 1.2 | Grupo 3 — atualização da identificação institucional | 09/11/2026 | Rascunho para revisão e validação | Inclusão da DRI como área solicitante, Marcelo Ponte como interlocutor de negócio e Direção da DRI como responsável pela aprovação formal. |
+| 1.2 | Direção da DRI — responsável pela aprovação formal | A preencher | Pendente de aprovação | Aguardando identificação nominal do representante e registro da decisão formal. |
 
-**Nota:** A elaboração deste documento não representa aprovação institucional da demanda nem confirmação de que as funcionalidades, regras de negócio ou integrações propostas serão implementadas. A validação deverá ocorrer com os representantes responsáveis, conforme o processo LAPIS.
+**Dados para encaminhamento da aprovação:**
+
+-   **Instituição:** Universidade de Fortaleza (Unifor).
+-   **Área solicitante:** Diretoria de Relações Internacionais (DRI).
+-   **Interlocutor de negócio:** Marcelo Ponte — Supervisor de Apoio Docente.
+-   **E-mail:** marceloponte@unifor.br.
+-   **Telefone:** +55 85 3477-3405.
+-   **Responsável pela aprovação formal:** Direção da DRI.
+-   **Representante nominal:** A confirmar.
+
+**Nota:** A elaboração deste documento não representa aprovação institucional da demanda nem confirmação de que as funcionalidades, regras de negócio ou integrações propostas serão implementadas. A aprovação formal deverá ser registrada pela Direção da DRI, enquanto a validação dos requisitos deverá ocorrer com os representantes responsáveis, conforme o processo LAPIS.
