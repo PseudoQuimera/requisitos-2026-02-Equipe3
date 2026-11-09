@@ -1,1265 +1,631 @@
-# ESPECIFICAÇÃO DE REQUISITOS DE SOFTWARE (SRS)
+# Visão da Demanda (VD) — Gestão da Produção Científica e Internacionalização Docente (GPCID)
 
-# Sistema de Gestão da Produção Científica e Internacionalização Docente (GPCID)
+**Sistema de Gestão da Produção Científica e Internacionalização Docente — Universidade de Fortaleza (Unifor)**
 
-**Universidade de Fortaleza (Unifor)**
+> **Natureza:** proposta de desenvolvimento de novo sistema, elaborada para apoiar a elicitação e a especificação de requisitos no processo LAPIS. As funcionalidades, prioridades, integrações, regras de negócio e indicadores apresentados constituem propostas preliminares e dependem de validação com os representantes institucionais.
+
+## Identificação e Histórico
 
 | Campo | Informação |
 | --- | --- |
-| Identificador | SRS-GPCID |
-| Nome | Especificação de Requisitos de Software do GPCID |
-| Versão | 0.1 |
-| Data | 08/11/2026 |
-| Documento de origem | Visão da Demanda (VD-GPCID), versão 1.1 |
-| Situação | Rascunho para elicitação e validação |
-| Responsável pela elaboração | Equipe do projeto — a identificar |
-| Responsável pela aprovação | Representantes institucionais — a identificar |
+| Nome e identificador da demanda | Sistema de Gestão da Produção Científica e Internacionalização Docente (GPCID) |
+| Instituição | Universidade de Fortaleza (Unifor) |
+| Tipo | Novo sistema |
+| Área solicitante | Diretoria de Relações Internacionais (DRI) da Unifor |
+| Interlocutor de negócio | Marcelo Ponte — Supervisor de Apoio Docente |
+| E-mail de contato | marceloponte@unifor.br |
+| Telefone de contato | +55 85 3477-3405 |
+| Responsável pela elaboração | Grupo 3 |
+| Responsável pela aprovação formal | Direção da DRI |
+| Nome do responsável pela aprovação | A confirmar |
+| Documento de origem | Visão da Demanda (VD) — GPCID |
+| Referencial de especificação | IEEE 830-1998 e ISO/IEC/IEEE 29148:2011 |
+| Processo de ciclo de vida | ISO/IEC 12207 |
+| Versão da VD | 1.2 |
+| Documento de especificação relacionado | SRS — versão 0.2 |
+| Data | 09/11/2026 |
+| Situação | Rascunho para revisão e validação |
 
-* * *
+**Distinção de responsabilidades:** Marcelo Ponte atua como interlocutor de negócio, responsável pelo contato e alinhamento das necessidades da área solicitante. A aprovação formal da demanda compete à Direção da DRI, cujo representante nominal ainda deverá ser confirmado.
 
-# IDENTIFICAÇÃO E HISTÓRICO DE ALTERAÇÕES
+### Histórico de alterações
 
-## Histórico de versões
-
-| Data | Versão | Descrição | Autor |
+| Data | Versão | Descrição da alteração | Autor |
 | --- | --- | --- | --- |
-| 08/11/2026 | 0.1 | Elaboração inicial da especificação de requisitos com base na VD-GPCID 1.1. Estruturação dos requisitos funcionais, não funcionais, interfaces, restrições, rastreabilidade e verificação. | Equipe do projeto |
+| 01/11/2026 | 1.0 | Criação inicial da Visão da Demanda com base na proposta 2 do Eixo I — Internacionalização. | Equipe do projeto |
+| 08/11/2026 | 1.1 | Consolidação da visão com ampliação das funcionalidades de gestão curricular, produção científica, indicadores, oportunidades científicas, módulos funcionais e integrações potenciais. | Equipe do projeto |
+| 09/11/2026 | 1.2 | Atualização da identificação institucional, definição da DRI como área solicitante, identificação de Marcelo Ponte como interlocutor de negócio e estabelecimento da Direção da DRI como responsável pela aprovação formal. | Grupo 3 |
 
-## Convenção de versionamento
+## 1\. Objetivo
 
-O documento utilizará versionamento semântico adaptado à gestão dos requisitos:
+Desenvolver uma solução que permita organizar, consultar, acompanhar e analisar informações relacionadas à formação acadêmica, à produção científica e à atuação internacional dos docentes da Universidade de Fortaleza (Unifor).
 
--   **0.x:** versões preliminares em elaboração e elicitação.
--   **1.0:** primeira versão validada e aprovada institucionalmente.
--   **1.x:** revisões posteriores que não alterem substancialmente o escopo aprovado.
--   **2.0 ou superior:** revisões que introduzam alterações significativas no escopo ou nas capacidades aprovadas.
+O sistema pretende proporcionar uma visão integrada das informações acadêmicas e científicas dos docentes, contemplando currículos, titulações, publicações, colaborações científicas, missões internacionais e oportunidades de participação em eventos e atividades acadêmicas.
 
-Toda alteração deverá ser registrada no histórico, identificando requisito afetado, justificativa, origem da solicitação, impacto e responsável pela aprovação.
+A solução deverá apoiar tanto os docentes, na consulta de informações relacionadas à própria trajetória acadêmica e científica, quanto os gestores institucionais, na identificação de competências, no acompanhamento da produção científica, na análise de indicadores e no planejamento de ações de internacionalização.
 
-* * *
+A demanda é solicitada pela Diretoria de Relações Internacionais (DRI), tendo Marcelo Ponte, Supervisor de Apoio Docente, como interlocutor de negócio para o levantamento e alinhamento das necessidades.
 
-# SUMÁRIO
+A proposta também considera a possibilidade de utilização de fontes externas autorizadas, como a Plataforma Lattes e bases de publicações científicas, reduzindo a necessidade de duplicação de informações já mantidas em sistemas oficiais.
 
-1.  Introdução 1.1 Propósito 1.2 Escopo 1.3 Definições, acrônimos e abreviações 1.4 Referências 1.5 Organização do documento
-2.  Descrição geral 2.1 Perspectiva do produto 2.2 Funções do produto 2.3 Classes e características dos usuários 2.4 Ambiente operacional 2.5 Restrições de projeto 2.6 Premissas e dependências 2.7 Distribuição e priorização dos requisitos
-3.  Requisitos específicos 3.1 Interfaces externas 3.2 Requisitos funcionais 3.3 Requisitos de dados 3.4 Requisitos de desempenho 3.5 Restrições de projeto 3.6 Atributos de qualidade 3.7 Requisitos de segurança e privacidade 3.8 Requisitos de integração 3.9 Regras de negócio
-4.  Requisitos de verificação e validação
-5.  Rastreabilidade dos requisitos
-6.  Apêndices
-7.  Índice
+## 2\. Contexto, Problema e Descrição Sumária da Demanda
 
-* * *
+### 2.1. Contexto e situação atual
 
-# 1\. INTRODUÇÃO
+A produção científica e a internacionalização docente representam dimensões importantes para o desenvolvimento acadêmico e institucional de uma universidade.
 
-## 1.1 Propósito
+O acompanhamento dessas atividades envolve informações de diferentes naturezas e possíveis fontes, como:
 
-Este documento especifica os requisitos de software do Sistema de Gestão da Produção Científica e Internacionalização Docente (GPCID), proposto para a Universidade de Fortaleza (Unifor).
+-   Currículos acadêmicos dos docentes, incluindo formação, titulação e trajetória profissional.
+-   Publicações científicas, artigos, livros, capítulos e trabalhos apresentados em eventos.
+-   Informações sobre periódicos, editoras, instituições e países relacionados às produções.
+-   Colaborações científicas e acadêmicas nacionais e internacionais.
+-   Missões, visitas técnicas, intercâmbios acadêmicos e outras atividades internacionais.
+-   Participação em congressos, seminários e oportunidades de publicação científica.
+-   Indicadores relacionados à produção acadêmica e à internacionalização institucional.
 
-Seu propósito é estabelecer uma descrição organizada das capacidades, funcionalidades, interfaces, restrições e atributos de qualidade esperados para a solução.
+Essas informações podem estar distribuídas entre plataformas externas, registros institucionais e documentos mantidos pelas próprias áreas responsáveis.
 
-A especificação deverá servir como referência para:
+Entretanto, ainda é necessário investigar como a Unifor atualmente realiza o registro, a atualização, a consulta e a consolidação dessas informações.
 
--   Identificação e validação das necessidades dos usuários e interessados.
--   Definição do escopo funcional e não funcional do sistema.
--   Modelagem dos casos de uso e processos.
--   Elaboração dos modelos de dados e interfaces.
--   Planejamento e execução do desenvolvimento.
--   Elaboração dos casos de teste e critérios de aceitação.
--   Acompanhamento da evolução dos requisitos.
--   Verificação da conformidade do software com as necessidades aprovadas.
+A existência de sistemas institucionais ou mecanismos de acompanhamento deverá ser confirmada por meio de entrevistas e análise documental, especialmente junto à DRI e às áreas responsáveis pela pesquisa científica e gestão acadêmica.
 
-Os requisitos apresentados são preliminares e deverão ser confirmados durante a elicitação com os representantes institucionais.
+### 2.2. Problema ou oportunidade
 
-## 1.2 Escopo
+A possível dispersão das informações acadêmicas e científicas pode dificultar a identificação de docentes com determinadas competências, a análise da produção científica, o acompanhamento das atividades internacionais e a consolidação de indicadores institucionais.
 
-O GPCID será uma solução destinada a organizar, consultar, acompanhar e analisar informações relacionadas à formação acadêmica, produção científica e internacionalização dos docentes da Universidade de Fortaleza.
+Além disso, a ausência de critérios padronizados de classificação e acompanhamento pode dificultar a comparação de resultados entre períodos, cursos e áreas de conhecimento.
 
-O sistema deverá contemplar, conforme validação institucional:
+A demanda representa uma oportunidade de desenvolver uma solução que centralize a consulta às informações, mantenha a rastreabilidade das fontes e permita análises mais consistentes sobre a atuação científica e internacional dos docentes.
 
-1.  Consulta de informações curriculares e formação acadêmica.
-2.  Consulta e acompanhamento da produção científica.
-3.  Classificação de características de internacionalização das publicações.
-4.  Consulta ao histórico da produção científica.
-5.  Acompanhamento de colaborações acadêmicas e científicas.
-6.  Registro e consulta de missões internacionais.
-7.  Consulta e eventual cadastro de oportunidades científicas.
-8.  Disponibilização de indicadores e relatórios.
-9.  Configuração e versionamento de indicadores.
-10.  Identificação de inconsistências e rastreabilidade das informações.
-11.  Administração de usuários e permissões.
-12.  Monitoramento das possíveis integrações externas.
+### 2.3. Públicos afetados e impactos esperados
 
-O sistema não terá como objetivo substituir a Plataforma Lattes, as bases oficiais de publicações científicas ou os sistemas acadêmicos institucionais.
+-   **Docentes:** poderão consultar informações relacionadas à formação, publicações, colaborações e atividades internacionais.
+-   **Diretoria de Relações Internacionais (DRI):** poderá acompanhar informações relacionadas à internacionalização docente e utilizar indicadores no planejamento de ações institucionais.
+-   **Interlocutor de negócio:** Marcelo Ponte poderá contribuir com o levantamento, esclarecimento e alinhamento das necessidades junto à área solicitante.
+-   **Gestores acadêmicos:** poderão acompanhar informações consolidadas e utilizar indicadores no planejamento institucional.
+-   **Responsáveis pela pesquisa científica:** poderão acompanhar a produção acadêmica, identificar publicações e analisar sua evolução.
+-   **Responsáveis pela internacionalização:** poderão acompanhar atividades internacionais, identificar conexões acadêmicas e consultar oportunidades científicas.
+-   **Direção da DRI:** será responsável pela apreciação e aprovação formal da demanda.
+-   **Equipe de tecnologia da informação:** poderá participar da avaliação das integrações, segurança, infraestrutura e sustentação da solução.
 
-A obtenção automática de informações dependerá da disponibilidade de mecanismos autorizados de integração.
+Os impactos específicos deverão ser confirmados durante a elicitação.
 
-### 1.2.1 Objetivos do sistema
+### 2.4. Evidências disponíveis
 
--   Centralizar a consulta de informações acadêmicas e científicas dos docentes.
--   Apoiar a análise da produção científica institucional.
--   Facilitar a identificação de competências e experiências acadêmicas internacionais.
--   Apoiar o acompanhamento de missões e colaborações internacionais.
--   Disponibilizar informações consolidadas para gestores.
--   Melhorar a rastreabilidade e a qualidade dos dados.
--   Apoiar o planejamento institucional da pesquisa e internacionalização.
+A proposta inicial tem como principal referência o documento institucional *Propostas de Projetos de Sistemas — Internacionalização e ENADE, semestre 2026.2*, especificamente a proposta 2 do Eixo I — Gestão da Produção Científica e Internacionalização Docente.
 
-### 1.2.2 Limites do sistema
+O documento apresenta a oportunidade de organizar e acompanhar informações relacionadas aos currículos, publicações, colaborações científicas e missões internacionais dos docentes.
 
-Não fazem parte do escopo inicial:
+As funcionalidades complementares de consulta histórica, classificação da internacionalização, indicadores configuráveis e oportunidades científicas são propostas de aprofundamento para investigação.
 
--   Substituição das plataformas oficiais de currículos.
--   Alteração direta de currículos nas fontes externas.
--   Gestão de contratação e progressão funcional docente.
--   Gestão financeira de projetos e bolsas.
--   Gestão de mobilidade estudantil.
--   Submissão automática de artigos científicos.
--   Gestão integral de convênios e contratos internacionais.
+A identificação da Diretoria de Relações Internacionais como área solicitante e de Marcelo Ponte como interlocutor de negócio constitui a referência institucional para o encaminhamento da demanda.
 
-## 1.3 Definições, acrônimos e abreviações
+Não foram apresentadas evidências suficientes para confirmar a situação atual dos processos institucionais, a disponibilidade das fontes de dados ou a viabilidade das integrações.
 
-| Termo | Definição |
-| --- | --- |
-| GPCID | Sistema de Gestão da Produção Científica e Internacionalização Docente. |
-| SRS | Software Requirements Specification — Especificação de Requisitos de Software. |
-| VD | Visão da Demanda. |
-| LAPIS | Processo de levantamento e especificação de requisitos utilizado no projeto. |
-| Unifor | Universidade de Fortaleza. |
-| Docente | Professor vinculado à instituição. |
-| Produção científica | Artigos, livros, capítulos, trabalhos e outras produções acadêmicas. |
-| Internacionalização | Características relacionadas à atuação acadêmica e científica internacional. |
-| Missão internacional | Atividade acadêmica realizada em instituição ou ambiente internacional. |
-| Colaboração científica | Atuação conjunta entre pesquisadores ou instituições. |
-| Indicador | Medida utilizada para representar determinada característica ou resultado. |
-| Rastreabilidade | Capacidade de identificar a origem e o histórico de uma informação ou requisito. |
-| Fonte externa | Sistema ou serviço externo que disponibiliza informações ao GPCID. |
-| Deduplicação | Identificação e tratamento de registros que representam a mesma informação. |
-| LGPD | Lei Geral de Proteção de Dados Pessoais. |
-| CDU | Caso de Uso. |
-| RF | Requisito Funcional. |
-| RNF | Requisito Não Funcional. |
-| RN | Regra de Negócio. |
-| RI | Requisito de Interface. |
-| RD | Requisito de Dados. |
-| IND | Indicador. |
-| TBD | To Be Determined — informação ainda a determinar. |
+### 2.5. Descrição sumária da demanda
 
-## 1.4 Referências
+Propor o desenvolvimento de um sistema para organizar informações sobre a formação acadêmica, a produção científica e a internacionalização dos docentes da Unifor.
 
-| Referência | Documento |
-| --- | --- |
-| REF-01 | IEEE Std 830-1998 — IEEE Recommended Practice for Software Requirements Specifications. |
-| REF-02 | ISO/IEC 12207 — Software Life Cycle Processes. |
-| REF-03 | ISO/IEC/IEEE 29148:2011 — Systems and Software Engineering: Life Cycle Processes — Requirements Engineering. |
-| REF-04 | Visão da Demanda — Gestão da Produção Científica e Internacionalização Docente (GPCID), versão 1.1, 08/11/2026. |
-| REF-05 | Documento de propostas de projetos de sistemas — Internacionalização e ENADE, semestre 2026.2, Eixo I, proposta 2. |
-| REF-06 | Lei nº 13.709/2018 — Lei Geral de Proteção de Dados Pessoais (LGPD). |
+A solução deverá possibilitar consultas aos currículos e publicações, acompanhamento de colaborações e missões internacionais, identificação de oportunidades científicas e disponibilização de indicadores e relatórios gerenciais.
 
-## 1.5 Organização do documento
+Também deverá considerar mecanismos de controle de acesso, rastreabilidade das informações, atualização dos dados e integração com fontes externas autorizadas, conforme a viabilidade técnica e institucional.
 
-A seção 1 apresenta o propósito, escopo e referências.
+A demanda será conduzida pelo Grupo 3, com alinhamento de negócio junto a Marcelo Ponte e encaminhamento para aprovação formal pela Direção da DRI.
 
-A seção 2 descreve a perspectiva geral do produto, usuários, funções, ambiente operacional, restrições e dependências.
+## 3\. Proposta de Valor e Sucesso da Demanda
 
-A seção 3 apresenta os requisitos específicos, incluindo funcionalidades, interfaces, dados, desempenho, segurança e atributos de qualidade.
+A solução busca proporcionar maior organização, transparência, acessibilidade e confiabilidade às informações relacionadas à produção científica e à internacionalização docente.
 
-A seção 4 define os métodos previstos para verificação e validação.
+| Benefício esperado | Indicador ou evidência | Resultado desejado | Como e quando avaliar |
+| --- | --- | --- | --- |
+| Centralização das informações acadêmicas | Disponibilidade de informações curriculares e científicas em ambiente organizado. | Facilitar a localização e consulta das informações dos docentes. | Testes com usuários após a disponibilização da solução. |
+| Melhoria do acompanhamento da produção científica | Disponibilidade de registros de publicações e indicadores por docente e período. | Permitir análises da produção acadêmica institucional. | Validação das consultas e relatórios com gestores. |
+| Identificação de competências acadêmicas internacionais | Possibilidade de pesquisar formação, titulação, instituições e países. | Facilitar a identificação de docentes com experiências acadêmicas internacionais. | Testes de consulta com representantes institucionais. |
+| Fortalecimento da internacionalização docente | Disponibilidade de informações sobre missões, colaborações e atividades internacionais. | Facilitar o acompanhamento das atividades internacionais. | Avaliação com a DRI e a área responsável pela internacionalização. |
+| Apoio à cooperação científica | Disponibilidade de informações sobre colaborações e oportunidades acadêmicas. | Apoiar a identificação de possibilidades de cooperação. | Avaliação com gestores e pesquisadores. |
+| Apoio à tomada de decisão | Disponibilidade de indicadores e relatórios consolidados. | Oferecer subsídios para o planejamento institucional. | Homologação dos indicadores e relatórios. |
+| Melhoria da qualidade dos dados | Registros com origem, data de atualização e identificação de inconsistências. | Aumentar a confiabilidade das informações utilizadas nas análises. | Auditorias e verificações periódicas. |
 
-A seção 5 apresenta a rastreabilidade entre necessidades, funcionalidades e requisitos.
+**Observação:** Não foram estabelecidas metas quantitativas porque não existem dados de linha de base disponíveis. Os indicadores e resultados desejados deverão ser refinados com os interessados.
 
-A seção 6 contém informações complementares.
+## 4\. Partes Interessadas
 
-* * *
+| Parte interessada | Papel e interesse | Responsabilidade | Representante |
+| --- | --- | --- | --- |
+| Universidade de Fortaleza (Unifor) | Instituição beneficiária da solução. | Definir diretrizes institucionais e autorizar o desenvolvimento e utilização do sistema. | Instituição |
+| Diretoria de Relações Internacionais (DRI) | Área solicitante e interessada no acompanhamento da internacionalização docente. | Apresentar necessidades, apoiar a validação do escopo e deliberar sobre a aprovação formal da demanda. | Direção da DRI |
+| Interlocutor de negócio | Representante de contato e alinhamento das necessidades. | Esclarecer necessidades, fornecer informações e apoiar a comunicação entre a área solicitante e a equipe do projeto. | Marcelo Ponte — Supervisor de Apoio Docente |
+| Área responsável pela pesquisa científica | Interessada na organização e análise da produção científica. | Validar informações, critérios de classificação e indicadores acadêmicos. | A definir |
+| Docentes | Beneficiários e possíveis usuários do sistema. | Consultar e, caso aprovado, complementar ou validar informações relacionadas à própria atuação acadêmica. | Comunidade docente |
+| Gestores acadêmicos | Interessados nas informações consolidadas. | Identificar necessidades gerenciais e validar relatórios e indicadores. | A definir |
+| Grupo 3 | Responsável pela elaboração da documentação e desenvolvimento da proposta acadêmica do projeto. | Elicitar, especificar, modelar, implementar e testar os requisitos conforme o escopo aprovado. | Grupo 3 |
+| Equipe de tecnologia da informação | Responsável pelo suporte técnico e avaliação das integrações. | Avaliar infraestrutura, segurança, autenticação, integrações e manutenção. | A definir |
+| Responsáveis pela proteção de dados | Interessados na conformidade do tratamento das informações. | Avaliar questões relacionadas à privacidade, permissões e proteção de dados. | A definir |
+| Direção da DRI | Instância responsável pela aprovação formal da demanda. | Analisar e deliberar sobre a aprovação institucional da demanda. | Nome do responsável a confirmar |
 
-# 2\. DESCRIÇÃO GERAL
+## 5\. Usuários e Atores Externos
 
-## 2.1 Perspectiva do produto
+Os perfis apresentados são propostas iniciais e deverão ser confirmados durante a elicitação.
 
-O GPCID é proposto como um novo sistema de apoio à gestão da produção científica e internacionalização docente.
+| ID | Usuário, sistema ou dispositivo | Objetivo ou papel na interação | Contexto de uso relevante |
+| --- | --- | --- | --- |
+| AT-01 | Docente | Consultar informações sobre sua formação, currículo, publicações e atividades internacionais. | Necessita de acesso organizado às informações acadêmicas. |
+| AT-02 | Gestor de internacionalização | Acompanhar indicadores, missões, colaborações e atividades internacionais. | Utiliza informações para planejamento e acompanhamento institucional. |
+| AT-03 | Analista de internacionalização | Consultar, organizar e eventualmente validar registros relacionados às atividades internacionais. | Atua no acompanhamento e na organização das informações. |
+| AT-04 | Gestor ou responsável pela pesquisa científica | Acompanhar publicações, currículos e indicadores de produção científica. | Necessita de informações confiáveis e atualizadas. |
+| AT-05 | Administrador do sistema | Administrar usuários, permissões, parâmetros e configurações. | Atua na manutenção funcional e administrativa. |
+| AT-06 | Gestor acadêmico | Consultar informações consolidadas por curso, unidade ou período. | Utiliza informações para análises e decisões acadêmicas. |
+| AT-07 | Plataforma Lattes / CNPq | Possível fonte externa de informações curriculares e acadêmicas. | Acesso e mecanismos de integração deverão ser investigados. |
+| AT-08 | Bases de publicações científicas | Possíveis fontes de informações sobre artigos, livros e demais produções. | Fontes e mecanismos de acesso a definir. |
+| AT-09 | Sistemas acadêmicos institucionais | Possíveis fontes de informações sobre docentes, cursos e vínculos. | Integração condicionada à autorização e viabilidade técnica. |
+| AT-10 | Fontes externas de oportunidades científicas | Possíveis fontes de congressos, eventos e oportunidades de publicação. | Disponibilidade e integração a investigar. |
+| AT-11 | Direção da DRI | Instância de apreciação e aprovação formal da demanda. | Atua na decisão institucional sobre a aprovação da proposta. |
+| AT-12 | Interlocutor de negócio | Apoiar o esclarecimento e alinhamento das necessidades da DRI. | Marcelo Ponte — Supervisor de Apoio Docente. |
 
-A solução deverá operar como um ambiente integrado de consulta e acompanhamento de informações acadêmicas e científicas.
+**Observação:** Os atores externos representam fontes potenciais. Sua participação definitiva dependerá da confirmação de mecanismos autorizados de acesso e integração. O interlocutor de negócio e a instância de aprovação são papéis institucionais, não necessariamente perfis de usuário do sistema.
 
-O sistema poderá utilizar dados provenientes de:
+## 6\. Escopo e Entregas Previstas
 
--   Plataforma Lattes/CNPq.
--   Bases de publicações científicas.
--   Sistemas acadêmicos institucionais.
--   Fontes de oportunidades científicas.
--   Registros inseridos ou validados por usuários autorizados.
+### 6.1. Incluído na demanda
 
-A disponibilidade e a forma de integração com essas fontes ainda deverão ser investigadas.
+Considerando a proposta institucional e os aprofundamentos apresentados, estão previstas para investigação e possível inclusão no produto:
 
-### 2.1.1 Diagrama de contexto
+-   Organização e consulta das informações curriculares dos docentes.
+-   Consulta à formação acadêmica, titulação, instituições e países relacionados à trajetória acadêmica.
+-   Organização e acompanhamento de artigos, livros, capítulos e demais produções científicas.
+-   Pesquisa de publicações por docente, tipo, ano, periódico, editora e outros critérios.
+-   Identificação e classificação de características relacionadas à internacionalização da produção científica.
+-   Consulta ao histórico da produção acadêmica e sua evolução por período.
+-   Organização e acompanhamento de colaborações científicas e acadêmicas.
+-   Registro e acompanhamento de missões e atividades internacionais.
+-   Consulta a oportunidades científicas, congressos e eventos acadêmicos, caso essa necessidade seja validada.
+-   Disponibilização de indicadores relacionados à produção científica e internacionalização.
+-   Geração de relatórios e exportação de informações autorizadas.
+-   Identificação e acompanhamento de inconsistências nas informações.
+-   Definição de mecanismos de atualização, origem e rastreabilidade dos dados.
+-   Controle de acesso conforme os perfis e responsabilidades institucionais.
+
+A confirmação dessas capacidades e a definição do produto mínimo viável dependerão da elicitação e priorização com os interessados, especialmente a DRI e as áreas responsáveis pelos dados.
+
+### 6.2. Fora do escopo
+
+Inicialmente, não estão previstas:
+
+-   Substituição da Plataforma Lattes ou de outras fontes oficiais de currículos.
+-   Alteração direta de informações curriculares nas plataformas externas.
+-   Gestão completa de contratação, avaliação funcional ou progressão na carreira docente.
+-   Gestão financeira de projetos, bolsas e recursos de internacionalização.
+-   Gerenciamento de inscrições e processos seletivos de mobilidade estudantil.
+-   Produção ou submissão automática de artigos científicos em periódicos.
+-   Gestão de processos acadêmicos de estudantes.
+-   Gestão completa de convênios e contratos internacionais.
+-   Garantia de integração com plataformas externas sem autorização e viabilidade técnica comprovadas.
+
+### 6.3. Evoluções futuras
+
+-   Identificação de oportunidades de colaboração entre docentes e pesquisadores estrangeiros.
+-   Análise de redes de coautoria e colaboração científica.
+-   Identificação de potenciais parceiros internacionais.
+-   Comparação da produção científica entre cursos, centros e áreas.
+-   Acompanhamento de metas institucionais de internacionalização.
+-   Ampliação das fontes de dados científicos e acadêmicos.
+-   Notificações automáticas sobre necessidade de atualização de currículos.
+-   Painéis analíticos avançados para planejamento institucional.
+-   Acompanhamento de convênios e parcerias internacionais.
+
+Essas possibilidades não representam compromisso de implementação na primeira versão.
+
+### 6.4. Entregas e marcos
+
+| Entrega ou marco | Resultado previsto | Condição |
+| --- | --- | --- |
+| Elicitação dos requisitos | Identificação e validação das necessidades, atores e funcionalidades. | Durante o levantamento com os interessados e interlocução com Marcelo Ponte. |
+| Visão da Demanda | Consolidação do problema, objetivos, escopo e catálogo inicial. | Após revisão e validação institucional. |
+| Aprovação formal da demanda | Registro da decisão da Direção da DRI. | Após apreciação da versão encaminhada para aprovação. |
+| Regras de negócio | Documentação dos critérios de classificação e políticas institucionais. | Após levantamento com as áreas responsáveis. |
+| Especificação dos requisitos (SRS) | Documentação dos requisitos funcionais, não funcionais e demais especificações. | Após validação da visão. |
+| Modelagem e prototipação | Representação das interações e telas principais. | Após definição inicial dos requisitos. |
+| Desenvolvimento e testes | Construção e verificação das funcionalidades priorizadas. | Conforme planejamento aprovado. |
+| Validação da solução | Avaliação com usuários e representantes institucionais. | Após disponibilização de versão para avaliação. |
+
+## 7\. Necessidades e Catálogo de Funcionalidades
+
+### 7.1. Catálogo de necessidades
+
+As necessidades abaixo consolidam as propostas dos documentos de referência. Ainda precisam ser investigadas e validadas com os usuários.
+
+| ID | Necessidade | Fonte ou evidência | Atores relacionados |
+| --- | --- | --- | --- |
+| NEC-01 | Organizar e consultar informações curriculares e vínculos institucionais dos docentes. | Proposta institucional — Eixo I, proposta 2. | AT-01, AT-02, AT-04, AT-06, AT-07, AT-09 |
+| NEC-02 | Consultar formação acadêmica, titulação e trajetória dos docentes. | Aprofundamento da proposta de gestão da produção científica. | AT-01, AT-02, AT-04, AT-06 |
+| NEC-03 | Acompanhar publicações e demais produções científicas dos docentes. | Proposta institucional — Eixo I, proposta 2. | AT-01, AT-02, AT-04, AT-08 |
+| NEC-04 | Identificar e acompanhar características de internacionalização das produções científicas. | Aprofundamento da proposta de internacionalização docente. | AT-02, AT-03, AT-04, AT-06 |
+| NEC-05 | Acompanhar colaborações científicas e acadêmicas. | Proposta institucional — Eixo I, proposta 2. | AT-01, AT-02, AT-03, AT-04 |
+| NEC-06 | Organizar e acompanhar missões e atividades internacionais dos docentes. | Proposta institucional — Eixo I, proposta 2. | AT-01, AT-02, AT-03 |
+| NEC-07 | Consultar oportunidades científicas, congressos e eventos acadêmicos. | Proposta complementar a validar. | AT-01, AT-02, AT-03, AT-10 |
+| NEC-08 | Disponibilizar indicadores, consultas e relatórios sobre produção científica e internacionalização. | Proposta institucional e aprofundamento analítico. | AT-02, AT-03, AT-04, AT-06 |
+| NEC-09 | Identificar inconsistências e garantir a rastreabilidade e qualidade das informações. | Necessidade transversal identificada na análise inicial. | AT-02, AT-03, AT-04, AT-05, AT-07, AT-08 |
+| NEC-10 | Controlar usuários e permissões de acesso às informações. | Necessidade transversal relacionada à segurança e privacidade. | AT-01, AT-02, AT-03, AT-04, AT-05, AT-06 |
+
+### 7.2. Catálogo de funcionalidades
+
+| ID | Funcionalidade e resultado esperado | Necessidade | Atores (IDs) | Prioridade proposta | Especificação |
+| --- | --- | --- | --- | --- | --- |
+| F-01 | Consultar informações curriculares dos docentes, permitindo visualizar dados acadêmicos organizados. | NEC-01 | AT-01, AT-02, AT-04, AT-06 | Essencial | CDU-01 |
+| F-02 | Identificar e consultar formação acadêmica, titulação, instituições e países relacionados à trajetória dos docentes. | NEC-02 | AT-01, AT-02, AT-04, AT-06 | Essencial | CDU-02 |
+| F-03 | Organizar e consultar publicações científicas por docente, tipo, ano, periódico e editora. | NEC-03 | AT-01, AT-02, AT-04 | Essencial | CDU-03 |
+| F-04 | Classificar características de internacionalização das produções científicas conforme critérios institucionais definidos. | NEC-04 | AT-02, AT-03, AT-04 | Essencial | CDU-04 |
+| F-05 | Consultar o histórico e a evolução da produção científica por período e critérios institucionais. | NEC-03, NEC-08 | AT-02, AT-04, AT-06 | Essencial | CDU-05 |
+| F-06 | Consultar informações sobre colaborações científicas e acadêmicas. | NEC-05 | AT-01, AT-02, AT-03, AT-04 | Importante | CDU-06 |
+| F-07 | Registrar e consultar missões e atividades internacionais dos docentes. | NEC-06 | AT-01, AT-02, AT-03 | Essencial | CDU-07 |
+| F-08 | Consultar oportunidades científicas, congressos e eventos acadêmicos. | NEC-07 | AT-01, AT-02, AT-03 | Desejável | CDU-08 |
+| F-09 | Cadastrar e atualizar manualmente oportunidades científicas, caso essa necessidade seja confirmada. | NEC-07 | AT-02, AT-03 | Desejável | CDU-09 |
+| F-10 | Consultar indicadores da produção científica e internacionalização. | NEC-08 | AT-02, AT-03, AT-04, AT-06 | Essencial | CDU-10 |
+| F-11 | Gerar relatórios consolidados e exportar informações autorizadas. | NEC-08 | AT-02, AT-03, AT-04, AT-06 | Essencial | CDU-11 |
+| F-12 | Configurar indicadores por meio de medidas, filtros, agrupamentos e critérios previamente disponibilizados. | NEC-08 | AT-02 | Importante | CDU-12 |
+| F-13 | Manter definições e versões dos indicadores, preservando critérios e histórico de alterações. | NEC-08, NEC-09 | AT-02 | Importante | CDU-13 |
+| F-14 | Identificar informações incompletas, duplicadas ou inconsistentes. | NEC-09 | AT-02, AT-03, AT-04, AT-05 | Importante | CDU-14 |
+| F-15 | Registrar a origem, a data de atualização e o histórico de obtenção das informações. | NEC-09 | AT-02, AT-03, AT-05 | Essencial | CDU-15 |
+| F-16 | Administrar usuários e permissões de acesso conforme os perfis institucionais. | NEC-10 | AT-05 | Essencial | CDU-16 |
+| F-17 | Consultar informações de atualização e falhas relacionadas às possíveis integrações externas. | NEC-09, NEC-10 | AT-05 | Importante | CDU-17 |
+
+**Observações sobre o catálogo:**
+
+-   As prioridades são classificações preliminares e deverão ser confirmadas pelos interessados.
+-   As funcionalidades F-08 e F-09 representam uma ampliação da proposta original e dependem de confirmação da necessidade de gestão de oportunidades científicas.
+-   A configuração e o versionamento de indicadores são propostas de aprofundamento e não representam uma decisão institucional aprovada.
+-   A integração automática com o Currículo Lattes e bases de publicações não está confirmada.
+-   A correção de informações curriculares deverá ocorrer prioritariamente na fonte oficial, caso seja adotada uma estratégia de importação somente para leitura.
+-   Os casos de uso CDU-01 a CDU-17 deverão ser elaborados e detalhados durante a especificação.
+
+### 7.3. Rastreabilidade inicial
+
+| Fonte/evidência | Necessidade | Funcionalidade | Especificação |
+| --- | --- | --- | --- |
+| Proposta institucional — Eixo I, proposta 2 | NEC-01 | F-01 | CDU-01 |
+| Aprofundamento da proposta de gestão curricular | NEC-02 | F-02 | CDU-02 |
+| Proposta institucional — Eixo I, proposta 2 | NEC-03 | F-03 e F-05 | CDU-03 e CDU-05 |
+| Aprofundamento da internacionalização científica | NEC-04 | F-04 | CDU-04 |
+| Proposta institucional — Eixo I, proposta 2 | NEC-05 | F-06 | CDU-06 |
+| Proposta institucional — Eixo I, proposta 2 | NEC-06 | F-07 | CDU-07 |
+| Proposta complementar a validar | NEC-07 | F-08 e F-09 | CDU-08 e CDU-09 |
+| Proposta institucional e aprofundamento analítico | NEC-08 | F-10, F-11, F-12 e F-13 | CDU-10 a CDU-13 |
+| Necessidade transversal | NEC-09 | F-14 e F-15 | CDU-14 e CDU-15 |
+| Necessidade transversal | NEC-10 | F-16 e F-17 | CDU-16 e CDU-17 |
+
+A rastreabilidade deverá ser complementada com entrevistas, observações, documentos institucionais, regras de negócio e critérios de aceitação.
+
+### 7.4. Proposta inicial de indicadores
+
+A solução poderá disponibilizar indicadores predefinidos para acompanhamento da produção científica e internacionalização.
+
+Os indicadores abaixo representam exemplos para discussão e não critérios institucionais já homologados.
+
+| ID | Indicador proposto | Medida | Recortes sugeridos |
+| --- | --- | --- | --- |
+| IND-01 | Docentes com formação acadêmica no exterior | Quantidade de docentes distintos | Curso, nível de titulação, país e período |
+| IND-02 | Publicações em periódicos estrangeiros | Quantidade de artigos distintos | Ano, curso, docente e país do periódico |
+| IND-03 | Livros e capítulos publicados por editoras estrangeiras | Quantidade de obras distintas | Ano, curso, tipo e país da editora |
+| IND-04 | Participação em eventos científicos internacionais | Quantidade de participações registradas | Ano, curso, modalidade e país |
+| IND-05 | Evolução anual da produção científica | Quantidade de produções distintas | Curso, tipo de produção e período |
+| IND-06 | Missões internacionais realizadas | Quantidade de registros de missões | Docente, país, instituição e período |
+| IND-07 | Colaborações científicas internacionais | Quantidade de colaborações identificadas | Docente, país, instituição e período |
+| IND-08 | Oportunidades científicas disponíveis | Quantidade de oportunidades vigentes | Área, país, modalidade e prazo |
+| IND-09 | Cobertura e qualidade dos dados curriculares | Percentual de registros com informações completas e atualizadas | Curso e ciclo de atualização |
+
+**Cuidados metodológicos:**
+
+-   Diferenciar o país de publicação, o idioma do trabalho e a afiliação dos autores.
+-   Não considerar automaticamente uma publicação internacional apenas por estar escrita em idioma estrangeiro.
+-   Definir critérios para distinguir publicações nacionais e internacionais.
+-   Evitar contagem duplicada de publicações compartilhadas por diferentes docentes.
+-   Identificar registros sem informações suficientes para classificação.
+-   Definir se os indicadores considerarão toda a trajetória acadêmica ou somente produções realizadas durante o vínculo com a Unifor.
+-   Informar a fonte e a data de atualização dos dados utilizados.
+
+### 7.5. Proposta de gestão dos indicadores
+
+Caso seja validada a necessidade de indicadores configuráveis, recomenda-se que cada indicador possua:
+
+-   Identificador e nome.
+-   Objetivo e descrição.
+-   Medida e unidade de cálculo.
+-   População ou conjunto de dados considerado.
+-   Regras de inclusão e exclusão.
+-   Fontes utilizadas.
+-   Periodicidade e data de referência.
+-   Filtros e agrupamentos permitidos.
+-   Critérios de deduplicação.
+-   Tratamento de dados incompletos.
+-   Responsável pela definição e validação.
+-   Situação e versão do indicador.
+
+A configuração poderá ocorrer por uma interface guiada, sem necessidade de permitir fórmulas ou consultas SQL livres.
+
+O fluxo proposto seria:
+
+1.  Selecionar ou criar um indicador.
+2.  Informar sua finalidade e medida.
+3.  Selecionar o conjunto de dados e período.
+4.  Definir filtros e agrupamentos.
+5.  Configurar critérios de cálculo disponíveis.
+6.  Visualizar uma prévia do resultado.
+7.  Salvar a definição e submetê-la à validação.
+8.  Ativar a versão aprovada.
+9.  Consultar os resultados e preservar o histórico metodológico.
+
+A responsabilidade pela criação, aprovação e publicação dos indicadores deverá ser definida com os gestores institucionais. A aprovação metodológica dos indicadores deverá ser distinguida da aprovação formal da demanda.
+
+## 8\. Visão Geral da Solução e Impactos
+
+A solução proposta consiste em um sistema de apoio à gestão da produção científica e internacionalização docente, destinado a organizar informações acadêmicas e científicas e disponibilizar recursos de consulta, acompanhamento e análise.
+
+O sistema deverá permitir uma visão consolidada da trajetória acadêmica dos docentes, contemplando formação, publicações, colaborações, missões internacionais e indicadores relacionados às atividades científicas.
+
+A solução será destinada principalmente ao atendimento das necessidades institucionais relacionadas à internacionalização docente, conforme demanda apresentada pela DRI.
+
+### 8.1. Responsabilidades da solução
+
+-   Organizar informações sobre currículos e trajetórias acadêmicas.
+-   Disponibilizar consultas às publicações científicas dos docentes.
+-   Permitir a análise de características de internacionalização da produção.
+-   Apoiar o acompanhamento de colaborações científicas.
+-   Permitir o registro e acompanhamento de missões internacionais.
+-   Disponibilizar indicadores e relatórios gerenciais.
+-   Identificar possíveis inconsistências nas informações.
+-   Registrar a origem e a atualização dos dados.
+-   Controlar o acesso conforme os perfis autorizados.
+
+### 8.2. Sistemas e dispositivos externos
+
+**Plataforma Lattes/CNPq**
+
+Possível fonte de informações curriculares e acadêmicas dos docentes. A disponibilidade de mecanismos autorizados de consulta ou extração deverá ser investigada.
+
+**Bases de publicações científicas**
+
+Possíveis fontes de informações sobre artigos, periódicos, livros, capítulos e outras produções. As fontes específicas ainda deverão ser identificadas.
+
+**Sistemas acadêmicos institucionais**
+
+Possíveis fontes de informações cadastrais dos docentes, vínculos, cursos e unidades acadêmicas.
+
+**Fontes de oportunidades científicas**
+
+Possíveis fontes de informações sobre congressos, eventos, chamadas para publicação e oportunidades acadêmicas.
+
+**Usuários da solução**
+
+Docentes, gestores e responsáveis institucionais que utilizarão o sistema para consultar e acompanhar informações conforme suas permissões.
+
+### 8.3. Integrações principais
+
+As integrações representam possibilidades a investigar:
+
+-   Obtenção ou atualização de informações curriculares a partir de fontes autorizadas.
+-   Consulta ou importação de publicações científicas.
+-   Obtenção de informações cadastrais e vínculos dos docentes.
+-   Consulta a informações sobre eventos e oportunidades científicas.
+-   Disponibilização de informações consolidadas para consultas e relatórios.
+-   Possível utilização de autenticação institucional.
+
+A arquitetura, os protocolos e os contratos de integração deverão ser definidos após avaliação de viabilidade.
+
+### 8.4. Diagrama de contexto — representação conceitual
 
 mermaid
 
 ```mermaid
 flowchart LR
-    D[Docentes] --> G[GPCID]
-    GA[Gestores acadêmicos] --> G
-    P[Responsáveis pela pesquisa] --> G
-    I[Responsáveis pela internacionalização] --> G
-    ADM[Administrador] --> G
+    D[Docentes] --> S[GPCID]
+    G[Gestores acadêmicos] --> S
+    P[Responsáveis pela pesquisa] --> S
+    I[Responsáveis pela internacionalização] --> S
+    R[Direção da DRI] -->|Aprovação institucional| S
 
-    L[Plataforma Lattes/CNPq] --> G
-    B[Bases científicas] --> G
-    S[Sistemas acadêmicos] --> G
-    O[Fontes de oportunidades] --> G
+    L[Plataforma Lattes/CNPq] -->|Dados curriculares| S
+    B[Bases de publicações] -->|Dados científicos| S
+    U[Sistemas acadêmicos] -->|Dados institucionais| S
+    E[Fontes de oportunidades] -->|Eventos e oportunidades| S
 
-    G --> R[Consultas e relatórios]
-    G --> IND[Indicadores]
+    S --> O[Consultas, indicadores e relatórios]
 ```
 
-O diagrama representa relações conceituais e não confirma a disponibilidade das integrações.
+O diagrama representa relações conceituais possíveis. Não estabelece integrações aprovadas ou decisões de arquitetura. A Direção da DRI aparece como instância de aprovação institucional da demanda, não necessariamente como usuária operacional do sistema.
 
-## 2.2 Funções do produto
+### 8.5. Decomposição funcional em módulos
 
-As funções principais serão organizadas nos seguintes módulos:
+Para facilitar a organização da solução e a distribuição dos casos de uso durante a especificação, propõe-se a seguinte divisão lógica:
 
-| Módulo | Nome | Responsabilidade |
-| --- | --- | --- |
-| M01 | Docentes e Currículos | Consulta da formação e trajetória acadêmica. |
-| M02 | Produção Científica | Consulta, organização e classificação de publicações. |
-| M03 | Colaboração e Internacionalização | Acompanhamento de colaborações e missões internacionais. |
-| M04 | Oportunidades Científicas | Consulta e eventual cadastro de oportunidades. |
-| M05 | Indicadores e Relatórios | Consulta, configuração e versionamento de indicadores. |
-| M06 | Qualidade e Integrações | Rastreabilidade, atualização e identificação de inconsistências. |
-| M07 | Identidade e Controle de Acesso | Administração de usuários e permissões. |
-
-### 2.2.1 Dependências funcionais
-
-O módulo de indicadores dependerá da disponibilidade dos dados dos módulos de currículos, produção científica, colaboração, internacionalização e oportunidades.
-
-O controle de acesso deverá proteger os recursos dos demais módulos.
-
-O módulo de qualidade deverá registrar informações relacionadas à origem e atualização dos dados utilizados pelo sistema.
-
-## 2.3 Classes e características dos usuários
-
-| ID | Perfil | Responsabilidades | Nível de acesso proposto |
+| Módulo | Responsabilidade | Funcionalidades | Atores principais |
 | --- | --- | --- | --- |
-| AT-01 | Docente | Consultar informações curriculares, publicações e atividades internacionais próprias. | Consulta dos dados autorizados. |
-| AT-02 | Gestor de internacionalização | Acompanhar indicadores e atividades internacionais. | Consulta gerencial e funcionalidades administrativas autorizadas. |
-| AT-03 | Analista de internacionalização | Consultar, organizar e validar informações internacionais. | Consulta e operações autorizadas. |
-| AT-04 | Responsável pela pesquisa científica | Acompanhar publicações e produção acadêmica. | Consulta gerencial e validação autorizada. |
-| AT-05 | Administrador | Administrar usuários, permissões e configurações. | Administração do sistema. |
-| AT-06 | Gestor acadêmico | Consultar informações consolidadas por curso e unidade. | Consulta gerencial conforme autorização. |
-
-Os níveis de acesso representam uma proposta inicial. A matriz definitiva de permissões deverá ser validada institucionalmente.
-
-### 2.3.1 Sistemas externos
-
-| ID | Sistema ou fonte | Finalidade |
-| --- | --- | --- |
-| EXT-01 | Plataforma Lattes/CNPq | Possível fonte de dados curriculares. |
-| EXT-02 | Bases de publicações científicas | Possíveis fontes de publicações. |
-| EXT-03 | Sistemas acadêmicos institucionais | Possíveis fontes de dados cadastrais e vínculos. |
-| EXT-04 | Fontes de oportunidades científicas | Possíveis fontes de congressos e eventos. |
-
-## 2.4 Ambiente operacional
-
-O ambiente operacional definitivo deverá ser definido pela equipe de tecnologia da informação.
-
-Como proposta inicial, considera-se:
-
--   Aplicação acessível por navegador web.
--   Acesso por rede institucional ou internet, conforme política da universidade.
--   Persistência dos dados em sistema gerenciador de banco de dados.
--   Comunicação com fontes externas por mecanismos autorizados.
--   Utilização de autenticação institucional, caso disponível.
--   Infraestrutura compatível com os requisitos de segurança e disponibilidade definidos pela Unifor.
-
-Tecnologias, sistemas operacionais, navegadores homologados e infraestrutura permanecem TBD.
-
-## 2.5 Restrições de projeto
-
-| ID | Restrição |
-| --- | --- |
-| RP-01 | O sistema não deverá substituir a Plataforma Lattes ou outras fontes oficiais de currículos. |
-| RP-02 | A integração com fontes externas dependerá de autorização e viabilidade técnica. |
-| RP-03 | O tratamento de dados pessoais deverá observar a legislação aplicável, especialmente a LGPD. |
-| RP-04 | O acesso às informações deverá respeitar os perfis e permissões definidos pela instituição. |
-| RP-05 | A classificação da internacionalização deverá utilizar critérios institucionais aprovados. |
-| RP-06 | As definições dos indicadores deverão possuir histórico e identificação de versão, caso aprovada essa funcionalidade. |
-| RP-07 | A solução deverá identificar a origem dos dados utilizados nas consultas e análises. |
-
-## 2.6 Premissas e dependências
-
-### 2.6.1 Premissas
-
--   A universidade disponibilizará representantes para validação dos requisitos.
--   As informações utilizadas deverão possuir origem identificável.
--   Os dados deverão ser atualizados conforme periodicidade institucionalmente definida.
--   Os usuários deverão possuir permissões compatíveis com suas responsabilidades.
--   Os critérios de internacionalização e indicadores serão definidos com as áreas responsáveis.
-
-### 2.6.2 Dependências
-
--   Disponibilidade de informações curriculares.
--   Disponibilidade de bases de publicações.
--   Autorização de acesso aos sistemas acadêmicos.
--   Definição das regras de classificação da internacionalização.
--   Definição das regras de cálculo dos indicadores.
--   Definição das políticas de segurança e privacidade.
--   Disponibilidade de infraestrutura institucional.
-
-## 2.7 Priorização dos requisitos
-
-Será utilizada a seguinte classificação:
-
-| Prioridade | Significado |
-| --- | --- |
-| Essencial | Necessário para atender a uma capacidade central da solução. |
-| Importante | Agrega capacidade relevante, mas poderá ser priorizado conforme o planejamento. |
-| Desejável | Funcionalidade complementar, sujeita à disponibilidade de recursos e validação. |
-
-As prioridades ainda não representam compromisso institucional de implementação.
-
-* * *
-
-# 3\. REQUISITOS ESPECÍFICOS
-
-Os requisitos desta seção deverão ser descritos de maneira individual, identificável e verificável.
-
-Cada requisito possui:
-
--   Identificador único.
--   Descrição.
--   Prioridade.
--   Origem ou necessidade relacionada.
--   Critério de aceitação ou verificação.
--   Situação de validação.
-
-A expressão "O sistema deverá" representa uma capacidade esperada, sujeita à aprovação dos interessados.
-
-# 3.1 INTERFACES EXTERNAS
-
-## 3.1.1 Interface com usuários
-
-**RI-01 — Interface de acesso**
-
-O sistema deverá disponibilizar uma interface que permita aos usuários acessar as funcionalidades autorizadas conforme seu perfil.
-
-Verificação: demonstração das funcionalidades disponíveis para cada perfil.
-
-**RI-02 — Consulta de informações**
-
-O sistema deverá apresentar as informações curriculares e científicas em estruturas organizadas e compreensíveis.
-
-Verificação: inspeção das telas e demonstração das consultas.
-
-**RI-03 — Filtros de consulta**
-
-O sistema deverá permitir a aplicação de filtros compatíveis com a consulta selecionada, conforme os campos disponíveis.
-
-Verificação: teste funcional dos filtros.
-
-**RI-04 — Mensagens de retorno**
-
-O sistema deverá apresentar mensagens que informem o resultado das operações realizadas e eventuais problemas encontrados.
-
-Verificação: execução de operações bem-sucedidas e situações de erro.
-
-**RI-05 — Visualização de indicadores**
-
-O sistema deverá disponibilizar uma interface para visualização dos indicadores autorizados.
-
-Verificação: demonstração da consulta de indicadores.
-
-## 3.1.2 Interface com sistemas externos
-
-**RI-06 — Fontes curriculares**
-
-O sistema deverá permitir a obtenção de informações curriculares por mecanismos autorizados, caso seja confirmada a viabilidade de integração com a Plataforma Lattes ou outra fonte definida.
-
-Verificação: teste de integração com fonte homologada.
-
-**RI-07 — Bases científicas**
-
-O sistema deverá permitir a obtenção ou importação de informações de publicações provenientes de fontes científicas autorizadas.
-
-Verificação: teste de integração ou importação.
-
-**RI-08 — Sistemas institucionais**
-
-O sistema deverá permitir a utilização de informações cadastrais e de vínculo provenientes de sistemas institucionais autorizados, caso a integração seja aprovada.
-
-Verificação: teste de integração.
-
-**RI-09 — Fontes de oportunidades**
-
-O sistema deverá permitir a consulta ou obtenção de informações sobre oportunidades científicas, caso seja confirmada a necessidade e a disponibilidade das fontes.
-
-Verificação: demonstração de consulta ou importação.
-
-## 3.1.3 Interface de hardware
-
-**RI-10 — Dispositivos de acesso**
-
-O sistema deverá operar em dispositivos compatíveis com os navegadores e ambientes homologados pela instituição.
-
-Verificação: teste nos ambientes definidos na homologação.
-
-## 3.1.4 Interface de comunicação
-
-**RI-11 — Comunicação externa**
-
-As integrações deverão utilizar mecanismos de comunicação autorizados e documentados, conforme os contratos técnicos definidos para cada fonte.
-
-Verificação: inspeção dos contratos e testes de integração.
-
-Os protocolos, formatos e mecanismos de autenticação ainda deverão ser definidos.
-
-* * *
-
-# 3.2 REQUISITOS FUNCIONAIS
-
-## 3.2.1 Módulo M01 — Docentes e Currículos
-
-### RF-01 — Consultar informações curriculares
-
-**Descrição:** O sistema deverá permitir que usuários autorizados consultem informações curriculares dos docentes.
-
-**Dados esperados:**
-
--   Identificação do docente.
--   Formação acadêmica.
--   Titulação.
--   Instituições de formação.
--   Trajetória acadêmica.
--   Informações curriculares disponíveis na fonte.
-
-**Atores:** AT-01, AT-02, AT-04 e AT-06.
-
-**Prioridade:** Essencial.
-
-**Origem:** NEC-01 / F-01.
-
-**Critério de aceitação:** Dado um docente com informações disponíveis, quando um usuário autorizado solicitar sua consulta, o sistema deverá apresentar os dados curriculares permitidos.
-
-**Verificação:** Teste funcional.
-
-### RF-02 — Consultar formação e titulação
-
-O sistema deverá permitir a consulta das informações de formação acadêmica e titulação dos docentes, incluindo instituições e países relacionados à trajetória acadêmica.
-
-**Atores:** AT-01, AT-02, AT-04 e AT-06.
-
-**Prioridade:** Essencial.
-
-**Origem:** NEC-02 / F-02.
-
-**Critério de aceitação:** O usuário deverá conseguir identificar a formação e titulação registradas para o docente selecionado.
-
-**Verificação:** Teste funcional e inspeção.
-
-## 3.2.2 Módulo M02 — Produção Científica
-
-### RF-03 — Consultar publicações científicas
-
-O sistema deverá permitir a consulta das produções científicas associadas aos docentes.
-
-As publicações poderão incluir:
-
--   Artigos científicos.
--   Livros.
--   Capítulos de livros.
--   Trabalhos apresentados em eventos.
--   Outras categorias institucionais aprovadas.
-
-A consulta deverá permitir filtros por docente, tipo de produção, ano, periódico e editora, conforme a disponibilidade dos dados.
-
-**Atores:** AT-01, AT-02 e AT-04.
-
-**Prioridade:** Essencial.
-
-**Origem:** NEC-03 / F-03.
-
-**Critério de aceitação:** Dada uma base de publicações cadastradas ou importadas, o usuário deverá conseguir consultar as produções e aplicar os filtros disponíveis.
-
-**Verificação:** Teste funcional.
-
-### RF-04 — Classificar internacionalização das produções
-
-O sistema deverá permitir a classificação das características de internacionalização das produções científicas conforme critérios institucionais aprovados.
-
-A classificação deverá considerar os atributos definidos nas regras de negócio, não podendo utilizar exclusivamente o idioma da publicação como critério automático de internacionalização.
-
-**Atores:** AT-02, AT-03 e AT-04.
-
-**Prioridade:** Essencial.
-
-**Origem:** NEC-04 / F-04.
-
-**Critério de aceitação:** Dada uma produção com os atributos necessários, o sistema deverá apresentar a classificação correspondente às regras aprovadas.
-
-**Verificação:** Testes com casos previamente classificados e homologados pelos responsáveis institucionais.
-
-### RF-05 — Consultar histórico da produção científica
-
-O sistema deverá permitir a consulta histórica da produção científica por período e critérios institucionais.
-
-A consulta deverá possibilitar a identificação da evolução da produção científica.
-
-**Atores:** AT-02, AT-04 e AT-06.
-
-**Prioridade:** Essencial.
-
-**Origem:** NEC-03 e NEC-08 / F-05.
-
-**Critério de aceitação:** O usuário deverá conseguir selecionar um período e consultar as produções correspondentes.
-
-**Verificação:** Teste funcional.
-
-## 3.2.3 Módulo M03 — Colaboração e Internacionalização
-
-### RF-06 — Consultar colaborações científicas
-
-O sistema deverá permitir a consulta de informações sobre colaborações científicas e acadêmicas associadas aos docentes.
-
-As informações poderão contemplar:
-
--   Pesquisadores envolvidos.
--   Instituições participantes.
--   Países relacionados.
--   Produções vinculadas.
--   Períodos de colaboração.
-
-**Atores:** AT-01, AT-02, AT-03 e AT-04.
-
-**Prioridade:** Importante.
-
-**Origem:** NEC-05 / F-06.
-
-**Critério de aceitação:** O usuário autorizado deverá conseguir consultar as colaborações registradas e suas informações associadas.
-
-**Verificação:** Teste funcional.
-
-### RF-07 — Registrar e consultar missões internacionais
-
-O sistema deverá permitir o registro e a consulta de missões e atividades internacionais dos docentes por usuários autorizados.
-
-Os campos obrigatórios, informações complementares e responsáveis pelo registro deverão ser definidos institucionalmente.
-
-**Atores:** AT-01, AT-02 e AT-03.
-
-**Prioridade:** Essencial.
-
-**Origem:** NEC-06 / F-07.
-
-**Critério de aceitação:** O usuário autorizado deverá conseguir registrar uma missão com os campos obrigatórios definidos e posteriormente consultar o registro.
-
-**Verificação:** Teste funcional.
-
-## 3.2.4 Módulo M04 — Oportunidades Científicas
-
-### RF-08 — Consultar oportunidades científicas
-
-O sistema deverá permitir a consulta de oportunidades científicas, congressos e eventos acadêmicos registrados ou obtidos de fontes autorizadas.
-
-As consultas poderão utilizar filtros por área, país, modalidade e prazo.
-
-**Atores:** AT-01, AT-02 e AT-03.
-
-**Prioridade:** Desejável.
-
-**Origem:** NEC-07 / F-08.
-
-**Critério de aceitação:** O usuário deverá conseguir consultar as oportunidades disponíveis e visualizar seus dados cadastrados.
-
-**Verificação:** Teste funcional.
-
-### RF-09 — Cadastrar oportunidades científicas
-
-O sistema deverá permitir que usuários autorizados cadastrem e atualizem oportunidades científicas.
-
-O registro deverá contemplar, conforme definição institucional:
-
--   Nome da oportunidade.
--   Descrição.
--   Instituição organizadora.
--   Área de conhecimento.
--   País ou localização.
--   Modalidade.
--   Prazo.
--   Fonte da informação.
--   Situação.
-
-**Atores:** AT-02 e AT-03.
-
-**Prioridade:** Desejável.
-
-**Origem:** NEC-07 / F-09.
-
-**Critério de aceitação:** Um usuário autorizado deverá conseguir cadastrar, consultar e atualizar uma oportunidade conforme suas permissões.
-
-**Verificação:** Teste funcional.
-
-## 3.2.5 Módulo M05 — Indicadores e Relatórios
-
-### RF-10 — Consultar indicadores
-
-O sistema deverá disponibilizar indicadores relacionados à produção científica e à internacionalização docente.
-
-Os indicadores deverão utilizar critérios de cálculo institucionalmente aprovados.
-
-**Atores:** AT-02, AT-03, AT-04 e AT-06.
-
-**Prioridade:** Essencial.
-
-**Origem:** NEC-08 / F-10.
-
-**Critério de aceitação:** O usuário autorizado deverá conseguir consultar os indicadores disponibilizados, identificando a medida, o período e os critérios utilizados.
-
-**Verificação:** Teste funcional e análise dos resultados.
-
-### RF-11 — Gerar relatórios
-
-O sistema deverá permitir a geração de relatórios consolidados sobre produção científica e internacionalização, conforme as permissões do usuário.
-
-O sistema deverá permitir a exportação das informações em formatos previamente definidos.
-
-**Atores:** AT-02, AT-03, AT-04 e AT-06.
-
-**Prioridade:** Essencial.
-
-**Origem:** NEC-08 / F-11.
-
-**Critério de aceitação:** O usuário deverá conseguir gerar um relatório utilizando os filtros disponíveis e exportar as informações autorizadas.
-
-**Verificação:** Teste funcional e inspeção dos arquivos gerados.
-
-### RF-12 — Configurar indicadores
-
-O sistema deverá permitir que usuários autorizados configurem indicadores a partir de medidas, filtros, agrupamentos e critérios previamente disponibilizados.
-
-A configuração deverá ocorrer por interface guiada, não sendo necessário disponibilizar edição livre de comandos SQL.
-
-**Atores:** AT-02.
-
-**Prioridade:** Importante.
-
-**Origem:** NEC-08 / F-12.
-
-**Critério de aceitação:** O usuário autorizado deverá conseguir configurar um indicador utilizando os elementos disponibilizados pelo sistema.
-
-**Verificação:** Teste funcional.
-
-### RF-13 — Versionar indicadores
-
-O sistema deverá manter versões das definições dos indicadores, preservando o histórico de alterações metodológicas.
-
-Cada versão deverá possuir, no mínimo:
-
--   Identificador.
--   Nome do indicador.
--   Descrição.
--   Definição de cálculo.
--   Critérios de inclusão e exclusão.
--   Fontes de dados.
--   Responsável pela definição.
--   Data da alteração.
--   Situação da versão.
-
-**Atores:** AT-02.
-
-**Prioridade:** Importante.
-
-**Origem:** NEC-08 e NEC-09 / F-13.
-
-**Critério de aceitação:** Ao alterar uma definição, o sistema deverá preservar a versão anterior e permitir identificar as diferenças entre as versões.
-
-**Verificação:** Teste funcional e inspeção dos registros históricos.
-
-## 3.2.6 Módulo M06 — Qualidade e Integrações
-
-### RF-14 — Identificar inconsistências
-
-O sistema deverá identificar registros que apresentem informações incompletas, duplicadas ou inconsistentes, conforme critérios de validação definidos.
-
-**Atores:** AT-02, AT-03, AT-04 e AT-05.
-
-**Prioridade:** Importante.
-
-**Origem:** NEC-09 / F-14.
-
-**Critério de aceitação:** Diante de registros que atendam aos critérios de inconsistência configurados, o sistema deverá identificá-los e disponibilizar sua consulta aos usuários autorizados.
-
-**Verificação:** Testes com conjuntos de dados previamente preparados.
-
-### RF-15 — Registrar origem e atualização dos dados
-
-O sistema deverá registrar informações que permitam identificar a origem e o histórico de obtenção ou atualização dos dados.
-
-Sempre que aplicável, deverão ser registrados:
-
--   Fonte de origem.
--   Data e hora de obtenção.
--   Data da última atualização.
--   Identificação do processo de importação.
--   Situação da obtenção.
--   Resultado do processamento.
-
-**Atores:** AT-02, AT-03 e AT-05.
-
-**Prioridade:** Essencial.
-
-**Origem:** NEC-09 / F-15.
-
-**Critério de aceitação:** Para registros obtidos de fontes externas ou processos de atualização, deverá ser possível identificar a origem e a data correspondente.
-
-**Verificação:** Inspeção dos registros e testes funcionais.
-
-### RF-17 — Consultar situação das integrações
-
-O sistema deverá permitir que usuários autorizados consultem informações sobre a situação das integrações externas, incluindo atualizações realizadas e falhas identificadas.
-
-**Atores:** AT-05.
-
-**Prioridade:** Importante.
-
-**Origem:** NEC-09 e NEC-10 / F-17.
-
-**Critério de aceitação:** O administrador deverá conseguir consultar o histórico de processamento e identificar operações concluídas ou com falha.
-
-**Verificação:** Testes de integração e inspeção dos registros.
-
-## 3.2.7 Módulo M07 — Identidade e Controle de Acesso
-
-### RF-16 — Administrar usuários e permissões
-
-O sistema deverá permitir que usuários autorizados administrem os acessos e permissões dos usuários conforme os perfis institucionais definidos.
-
-As operações deverão contemplar:
-
--   Cadastro ou habilitação de usuários.
--   Consulta de usuários.
--   Alteração de permissões.
--   Ativação e desativação de acessos.
--   Associação a perfis.
--   Consulta da situação dos usuários.
-
-**Atores:** AT-05.
-
-**Prioridade:** Essencial.
-
-**Origem:** NEC-10 / F-16.
-
-**Critério de aceitação:** O administrador deverá conseguir administrar os usuários e suas permissões, respeitando as regras de autorização.
-
-**Verificação:** Testes funcionais e testes de controle de acesso.
-
-* * *
-
-# 3.3 REQUISITOS DE DADOS
-
-## 3.3.1 Dados curriculares
-
-**RD-01:** O sistema deverá manter ou consultar informações curriculares dos docentes conforme os dados disponibilizados pelas fontes autorizadas.
-
-**RD-02:** O sistema deverá permitir a identificação das informações de formação, titulação e instituições relacionadas aos docentes.
-
-**RD-03:** O sistema deverá permitir a identificação da origem dos dados curriculares.
-
-## 3.3.2 Dados de produção científica
-
-**RD-04:** O sistema deverá manter ou consultar os atributos necessários para identificar uma produção científica.
-
-Os atributos candidatos incluem:
-
--   Título.
--   Tipo de produção.
--   Ano.
--   Autores.
--   Periódico ou editora.
--   Identificador da publicação, quando disponível.
--   País ou instituição relacionada.
--   Fonte de obtenção.
--   Docentes associados.
-
-**RD-05:** O sistema deverá permitir a associação de uma publicação a mais de um docente, quando aplicável.
-
-**RD-06:** O sistema deverá permitir identificar registros potencialmente duplicados.
-
-## 3.3.3 Dados de internacionalização
-
-**RD-07:** O sistema deverá disponibilizar os atributos necessários para classificar as características de internacionalização das produções.
-
-**RD-08:** O sistema deverá permitir o registro de informações sobre missões internacionais, conforme os campos aprovados.
-
-**RD-09:** O sistema deverá permitir a associação de colaborações científicas a pesquisadores e instituições participantes.
-
-## 3.3.4 Dados de indicadores
-
-**RD-10:** O sistema deverá manter a definição dos indicadores disponibilizados.
-
-**RD-11:** O sistema deverá preservar as versões das definições dos indicadores, caso aprovada a funcionalidade de versionamento.
-
-**RD-12:** Os resultados dos indicadores deverão possuir informações sobre período de referência, critérios de cálculo e fontes utilizadas.
-
-## 3.3.5 Dados de auditoria e rastreabilidade
-
-**RD-13:** O sistema deverá manter registros de origem e atualização das informações.
-
-**RD-14:** O sistema deverá preservar o histórico das alterações relevantes realizadas por usuários autorizados.
-
-**RD-15:** Os registros históricos deverão permitir identificar a operação, a data e o usuário responsável, quando aplicável.
-
-* * *
-
-# 3.4 REQUISITOS DE DESEMPENHO
-
-Os valores quantitativos deverão ser definidos após levantamento da quantidade de usuários, volume de dados, infraestrutura e carga esperada.
-
-**RNP-01 — Tempo de resposta:** O sistema deverá responder às consultas de informações e indicadores dentro dos limites de tempo definidos e aprovados na homologação.
-
-Meta quantitativa: TBD.
-
-Verificação: teste de desempenho.
-
-**RNP-02 — Processamento de relatórios:** O sistema deverá processar relatórios dentro dos limites de tempo estabelecidos para os volumes de dados homologados.
-
-Meta quantitativa: TBD.
-
-Verificação: teste de carga.
-
-**RNP-03 — Importação de dados:** O sistema deverá processar as operações de importação de acordo com os limites de volume e periodicidade definidos para cada fonte.
-
-Meta quantitativa: TBD.
-
-Verificação: teste de desempenho e integração.
-
-**RNP-04 — Concorrência:** O sistema deverá suportar a quantidade de usuários simultâneos definida pela instituição.
-
-Meta quantitativa: TBD.
-
-Verificação: teste de carga.
-
-**RNP-05 — Escalabilidade:** A solução deverá permitir a ampliação dos recursos de processamento e armazenamento conforme a evolução do volume de dados e usuários.
-
-Verificação: análise técnica e teste de capacidade.
-
-* * *
-
-# 3.5 RESTRIÇÕES DE PROJETO
-
-**RPD-01:** O sistema não deverá substituir plataformas oficiais responsáveis pela manutenção dos currículos e publicações.
-
-**RPD-02:** O sistema deverá utilizar somente mecanismos de acesso autorizados às fontes externas.
-
-**RPD-03:** As integrações deverão respeitar as condições de utilização e os limites técnicos estabelecidos pelas fontes.
-
-**RPD-04:** Os critérios de classificação da internacionalização deverão ser definidos e aprovados pelos responsáveis institucionais.
-
-**RPD-05:** A definição de indicadores deverá utilizar medidas e critérios previamente disponibilizados pelo sistema.
-
-**RPD-06:** O sistema deverá observar as diretrizes institucionais de proteção de dados pessoais.
-
-**RPD-07:** As tecnologias e os padrões de infraestrutura deverão ser compatíveis com as diretrizes da equipe de TI da Unifor.
-
-* * *
-
-# 3.6 ATRIBUTOS DE QUALIDADE
-
-Os requisitos de qualidade abaixo são propostas iniciais. As metas quantitativas e condições de homologação deverão ser definidas com os interessados.
-
-## 3.6.1 Usabilidade
-
-**RNF-01:** O sistema deverá apresentar informações acadêmicas e científicas em estruturas organizadas e compreensíveis.
-
-Verificação: avaliação de usabilidade com usuários representativos.
-
-**RNF-02:** O sistema deverá permitir que os usuários realizem as consultas principais utilizando filtros e mecanismos de navegação disponíveis.
-
-Verificação: testes de usabilidade.
-
-**RNF-03:** O sistema deverá apresentar mensagens claras para operações concluídas e situações de erro.
-
-Verificação: inspeção e testes funcionais.
-
-## 3.6.2 Segurança
-
-**RNF-04:** O sistema deverá restringir o acesso às funcionalidades e informações conforme as permissões atribuídas ao usuário.
-
-Verificação: testes de autorização.
-
-**RNF-05:** O sistema deverá proteger as informações durante a transmissão por mecanismos de comunicação aprovados pela instituição.
-
-Verificação: inspeção técnica e testes de segurança.
-
-**RNF-06:** O sistema deverá registrar operações relevantes realizadas por usuários autorizados.
-
-Verificação: inspeção dos registros de auditoria.
-
-**RNF-07:** O sistema deverá proteger credenciais e mecanismos de autenticação conforme as políticas institucionais de segurança.
-
-Verificação: análise técnica.
-
-## 3.6.3 Privacidade
-
-**RNF-08:** O sistema deverá tratar dados pessoais conforme as finalidades e bases legais definidas pela instituição.
-
-Verificação: análise de conformidade e documentação.
-
-**RNF-09:** O sistema deverá disponibilizar informações pessoais somente a usuários autorizados, respeitando as políticas de acesso.
-
-Verificação: testes de autorização.
-
-**RNF-10:** O sistema deverá permitir a identificação das informações pessoais tratadas e de suas respectivas origens.
-
-Verificação: inspeção dos dados e registros.
-
-## 3.6.4 Integridade e confiabilidade
-
-**RNF-11:** O sistema deverá preservar a integridade dos registros armazenados durante operações de inclusão, atualização e consulta.
-
-Verificação: testes de integridade.
-
-**RNF-12:** O sistema deverá identificar possíveis inconsistências e duplicidades conforme critérios estabelecidos.
-
-Verificação: testes com dados controlados.
-
-**RNF-13:** O sistema deverá manter informações de origem e atualização para permitir a rastreabilidade dos dados.
-
-Verificação: inspeção dos registros.
-
-**RNF-14:** O sistema deverá apresentar indicadores calculados conforme as definições e versões metodológicas aprovadas.
-
-Verificação: comparação dos resultados com conjuntos de dados de referência.
-
-## 3.6.5 Disponibilidade
-
-**RNF-15:** O sistema deverá apresentar disponibilidade compatível com a necessidade operacional definida pela instituição.
-
-Meta de disponibilidade: TBD.
-
-Verificação: monitoramento e análise dos registros de disponibilidade.
-
-## 3.6.6 Manutenibilidade
-
-**RNF-16:** O sistema deverá permitir a manutenção de suas funcionalidades sem comprometer a integridade dos dados existentes.
-
-Verificação: testes de regressão e análise técnica.
-
-**RNF-17:** As integrações deverão possuir documentação suficiente para permitir sua manutenção e acompanhamento.
-
-Verificação: inspeção da documentação técnica.
-
-## 3.6.7 Portabilidade e compatibilidade
-
-**RNF-18:** O sistema deverá operar nos navegadores e ambientes homologados pela instituição.
-
-Verificação: testes de compatibilidade.
-
-## 3.6.8 Acessibilidade
-
-**RNF-19:** A interface deverá observar as diretrizes de acessibilidade digital definidas pela instituição.
-
-O padrão e o nível de conformidade deverão ser definidos durante a especificação técnica.
-
-Verificação: inspeção e testes de acessibilidade.
-
-* * *
-
-# 3.7 REQUISITOS DE SEGURANÇA E PRIVACIDADE
-
-Esta seção complementa os requisitos de qualidade relacionados à proteção das informações.
-
-**RSP-01:** O sistema deverá identificar o usuário responsável pelas operações autenticadas.
-
-**RSP-02:** O sistema deverá impedir que usuários executem operações para as quais não possuam autorização.
-
-**RSP-03:** O sistema deverá permitir a administração das permissões por usuários autorizados.
-
-**RSP-04:** O sistema deverá manter registros de auditoria das operações relevantes.
-
-**RSP-05:** O sistema deverá impedir a divulgação de informações restritas em consultas e relatórios não autorizados.
-
-**RSP-06:** O sistema deverá permitir a identificação da origem dos dados pessoais tratados.
-
-**RSP-07:** O sistema deverá respeitar os prazos de retenção e descarte definidos pelas políticas institucionais e legislação aplicável.
-
-**RSP-08:** A exportação de informações deverá respeitar as permissões atribuídas ao usuário.
-
-* * *
-
-# 3.8 REQUISITOS DE INTEGRAÇÃO
-
-As integrações são condicionais e deverão ser detalhadas após análise técnica e institucional.
-
-| ID | Integração | Requisito | Situação |
+| M01 — Docentes e Currículos | Organização e consulta de informações curriculares, formação e trajetória acadêmica. | F-01 e F-02 | Docentes, gestores e responsáveis pela pesquisa |
+| M02 — Produção Científica | Consulta de publicações, classificação de internacionalização e histórico da produção. | F-03, F-04 e F-05 | Docentes, gestores e responsáveis pela pesquisa |
+| M03 — Colaboração e Internacionalização | Acompanhamento de colaborações e missões internacionais. | F-06 e F-07 | Docentes, gestores e responsáveis pela internacionalização |
+| M04 — Oportunidades Científicas | Consulta e eventual cadastro de congressos e oportunidades. | F-08 e F-09 | Gestores, analistas e docentes |
+| M05 — Indicadores e Relatórios | Consultas gerenciais, indicadores, configuração e versionamento. | F-10, F-11, F-12 e F-13 | Gestores e responsáveis institucionais |
+| M06 — Qualidade e Integrações | Identificação de inconsistências, rastreabilidade, atualização e monitoramento. | F-14, F-15 e F-17 | Administradores e responsáveis institucionais |
+| M07 — Identidade e Controle de Acesso | Administração de usuários e permissões. | F-16 | Administrador do sistema |
+
+A divisão é lógica e não implica aplicações independentes ou microsserviços.
+
+### 8.6. Mapa de dependências entre módulos
+
+mermaid
+
+```mermaid
+flowchart LR
+    M07["M07 — Identidade e acesso"] --> M01["M01 — Docentes e currículos"]
+    M07 --> M02["M02 — Produção científica"]
+    M07 --> M03["M03 — Internacionalização"]
+    M07 --> M04["M04 — Oportunidades"]
+    M07 --> M05["M05 — Indicadores"]
+
+    M01 --> M02
+    M01 --> M03
+    M02 --> M05
+    M03 --> M05
+    M04 --> M05
+
+    M06["M06 — Qualidade e integrações"] -.-> M01
+    M06 -.-> M02
+    M06 -.-> M03
+    M06 -.-> M04
+    M06 -.-> M05
+```
+
+O mapa demonstra dependências conceituais. Os relacionamentos funcionais deverão ser refinados durante a especificação.
+
+### 8.7. Representações visuais futuras
+
+-   Diagrama geral de casos de uso.
+-   Diagramas de casos de uso por módulo.
+-   Protótipos de baixa fidelidade das telas de consulta e acompanhamento.
+-   Modelo conceitual dos dados acadêmicos e científicos.
+-   Diagramas de componentes e integração, em documentação técnica específica.
+
+## 9\. Condições Gerais da Demanda
+
+| Tipo | Condição e impacto na demanda | Responsável ou fonte | Situação |
 | --- | --- | --- | --- |
-| INT-01 | Plataforma Lattes/CNPq | Obter informações curriculares por mecanismo autorizado. | A investigar |
-| INT-02 | Bases científicas | Obter informações de publicações científicas. | A investigar |
-| INT-03 | Sistemas acadêmicos | Obter dados de docentes, cursos e vínculos. | A investigar |
-| INT-04 | Fontes de oportunidades | Consultar informações de eventos e oportunidades. | A investigar |
-| INT-05 | Autenticação institucional | Possibilitar autenticação integrada, caso disponibilizada. | A investigar |
+| Premissa | A solução deverá apoiar os processos institucionais de acompanhamento da produção científica e internacionalização docente. | Proposta institucional e DRI. | A confirmar |
+| Premissa | Os dados utilizados deverão possuir origem identificável. | Áreas responsáveis pelos dados. | A validar |
+| Premissa | As informações deverão ser atualizadas conforme periodicidade definida pelos interessados. | Gestores institucionais. | A definir |
+| Premissa | A DRI será a área solicitante e participará do alinhamento institucional da demanda. | Diretoria de Relações Internacionais. | Identificada |
+| Premissa | Marcelo Ponte atuará como interlocutor de negócio. | DRI — Supervisor de Apoio Docente. | Identificado |
+| Restrição | A aprovação formal da demanda compete à Direção da DRI. | Diretoria de Relações Internacionais. | Definida; representante nominal a confirmar |
+| Restrição | O acesso às fontes externas dependerá das condições de utilização, disponibilidade e autorização dos responsáveis. | Fontes externas e instituição. | Aplicável |
+| Restrição | O sistema não deverá substituir plataformas oficiais de currículos e publicações. | Diretriz proposta para a solução. | A validar |
+| Restrição | O tratamento de dados pessoais deverá observar a legislação aplicável, especialmente a LGPD. | Instituição e responsáveis pela proteção de dados. | Aplicável |
+| Dependência | A obtenção de informações curriculares dependerá da disponibilidade de mecanismos autorizados. | Responsáveis pelas fontes e equipe técnica. | A investigar |
+| Dependência | A definição dos indicadores dependerá da validação dos critérios institucionais. | Gestores acadêmicos e áreas responsáveis. | A definir |
+| Dependência | A disponibilização de informações institucionais dependerá de autorização das áreas responsáveis. | Universidade de Fortaleza. | A confirmar |
+| Dependência | A aprovação formal dependerá da apreciação da Direção da DRI. | Direção da DRI. | Pendente |
+| Qualidade | As informações deverão apresentar consistência, rastreabilidade e atualização adequada. | Equipe de desenvolvimento e áreas responsáveis. | A especificar |
+| Qualidade | A solução deverá oferecer mecanismos adequados de controle de acesso e proteção das informações. | Instituição e equipe de TI. | A especificar |
+| Qualidade | Consultas e relatórios deverão apresentar informações compreensíveis e organizadas. | Usuários e equipe de desenvolvimento. | A especificar |
 
-**INT-06:** O sistema deverá registrar o resultado das operações de integração realizadas.
+## 10\. Riscos e Questões em Aberto
 
-**INT-07:** O sistema deverá identificar falhas de integração e disponibilizar informações para consulta administrativa.
+| ID | Tipo | Risco ou questão | Impacto | Próxima ação | Situação |
+| --- | --- | --- | --- | --- | --- |
+| PQ-01 | Dúvida | Quem será o representante nominal da Direção da DRI responsável pela aprovação formal? | Pode comprometer o encaminhamento e registro da aprovação. | Solicitar identificação do responsável à DRI. | Aberto |
+| PQ-02 | Risco | Não existir mecanismo autorizado ou tecnicamente viável para obtenção automática dos dados do Lattes. | Pode exigir atualização manual ou outra estratégia de obtenção dos dados. | Investigar condições de acesso ao Lattes Extrator. | Aberto |
+| PQ-03 | Dúvida | Quais bases de publicações científicas deverão ser utilizadas? | Pode afetar a abrangência das informações. | Consultar pesquisadores e gestores. | Aberto |
+| PQ-04 | Dúvida | Qual será a periodicidade de atualização dos currículos e publicações? | Pode comprometer a atualidade dos indicadores. | Validar periodicidade e responsabilidades. | Aberto |
+| PQ-05 | Risco | Existência de dados incompletos, duplicados ou inconsistentes. | Pode comprometer a confiabilidade dos relatórios. | Definir critérios de validação e deduplicação. | Aberto |
+| PQ-06 | Dúvida | Quais critérios definirão a classificação de uma produção como internacional? | Pode gerar indicadores inconsistentes. | Elaborar e validar regras de negócio. | Aberto |
+| PQ-07 | Dúvida | Quais indicadores serão considerados relevantes e oficiais? | Pode comprometer a utilidade das análises. | Realizar levantamento com gestores e DRI. | Aberto |
+| PQ-08 | Dúvida | Quais perfis poderão consultar, cadastrar, alterar e administrar informações? | Pode afetar a segurança e a privacidade. | Levantar responsabilidades e permissões. | Aberto |
+| PQ-09 | Risco | O tratamento das informações poderá envolver restrições legais e institucionais. | Pode limitar o acesso e a divulgação de determinados dados. | Consultar responsáveis por proteção de dados e jurídico. | Aberto |
+| PQ-10 | Dúvida | Os docentes poderão atualizar diretamente informações no sistema ou apenas consultar dados externos? | Pode alterar o escopo e a responsabilidade pela manutenção. | Validar com docentes e gestores. | Aberto |
+| PQ-11 | Dúvida | Quais informações deverão ser registradas sobre missões internacionais? | Pode comprometer a definição dos dados e relatórios. | Entrevistar responsáveis pela internacionalização. | Aberto |
+| PQ-12 | Dúvida | Será necessário manter um catálogo de congressos e oportunidades científicas? | Pode ampliar significativamente o escopo funcional. | Validar a necessidade com os interessados. | Aberto |
+| PQ-13 | Dúvida | A solução deverá permitir configuração de indicadores ou apenas disponibilizar indicadores predefinidos? | Pode afetar a complexidade da solução. | Validar com os gestores. | Aberto |
+| PQ-14 | Risco | Não haver integração disponível com os sistemas acadêmicos institucionais. | Pode exigir cadastro ou atualização alternativa dos dados. | Avaliar possibilidades técnicas com TI. | Aberto |
+| PQ-15 | Dúvida | Como deverão ser tratados docentes inativos e produções anteriores ao vínculo institucional? | Pode comprometer a interpretação dos indicadores. | Definir critérios temporais e institucionais. | Aberto |
+| PQ-16 | Dúvida | Quais representantes das áreas de pesquisa científica e internacionalização participarão da validação funcional? | Pode comprometer a abrangência da elicitação. | Identificar os representantes institucionais junto à DRI. | Aberto |
+| PQ-17 | Dúvida | Quais serão os critérios e procedimentos formais para aprovação da VD? | Pode comprometer o registro da decisão e o avanço para a especificação. | Confirmar o fluxo de aprovação com a Direção da DRI. | Aberto |
 
-**INT-08:** O sistema deverá permitir a identificação da data da última atualização dos dados obtidos externamente.
+As questões deverão ser acompanhadas durante a elicitação. Suas respostas deverão ser incorporadas às respectivas seções da VD e registradas no histórico de alterações.
 
-* * *
+## 11\. Documentos Relacionados
 
-# 3.9 REGRAS DE NEGÓCIO
-
-As regras a seguir representam definições necessárias para o funcionamento da solução, mas ainda precisam de aprovação institucional.
-
-| ID | Regra de negócio | Situação |
+| Documento | Conteúdo sob sua responsabilidade | Referência e situação |
 | --- | --- | --- |
-| RN-01 | A classificação de uma publicação como internacional deverá obedecer a critérios institucionais definidos. | A definir |
-| RN-02 | O idioma da publicação, isoladamente, não deverá determinar sua classificação como internacional. | Proposta |
-| RN-03 | Publicações compartilhadas por vários docentes deverão possuir critérios de identificação e deduplicação. | A definir |
-| RN-04 | Os indicadores deverão possuir definição metodológica identificável. | Proposta |
-| RN-05 | Os indicadores deverão identificar o período de referência utilizado. | Proposta |
-| RN-06 | Os dados utilizados nos indicadores deverão possuir origem identificável. | Proposta |
-| RN-07 | A inclusão de produções anteriores ao vínculo institucional deverá seguir critérios temporais aprovados. | A definir |
-| RN-08 | A consulta de dados deverá respeitar as permissões atribuídas aos usuários. | Proposta |
-| RN-09 | A atualização de dados curriculares deverá respeitar a responsabilidade da fonte oficial. | A definir |
-| RN-10 | As missões internacionais deverão possuir campos e critérios de registro definidos pelas áreas responsáveis. | A definir |
+| Documento de propostas de projetos — Internacionalização e ENADE | Contexto inicial e descrição da oportunidade de projeto. | Eixo I, proposta 2 — disponível. |
+| Visão da Demanda (VD) — GPCID | Contexto, objetivos, escopo, partes interessadas, necessidades e funcionalidades preliminares. | Versão 1.2 — rascunho para revisão e validação. |
+| Documento de Requisitos de Software (SRS) | Especificação dos requisitos funcionais, não funcionais, interfaces e restrições. | Versão 0.2 — rascunho para revisão e validação. |
+| Regras de negócio compartilhadas | Políticas de classificação, acompanhamento e gestão das informações. | A elaborar. |
+| Requisitos não funcionais ou de qualidade | Segurança, privacidade, desempenho, disponibilidade, usabilidade e integridade. | A elaborar. |
+| Arquitetura e contratos de integração | Definições técnicas e contratos de comunicação com fontes externas. | A elaborar após análise de viabilidade. |
+| Glossário | Definições dos principais termos acadêmicos, científicos e de internacionalização. | A elaborar. |
+| Casos de uso | Fluxos, atores, precondições, exceções e critérios de aceitação. | CDU-01 a CDU-17 — a elaborar. |
+| Catálogo de indicadores | Definições, medidas, regras de cálculo, fontes e periodicidade. | A elaborar após validação institucional. |
+| Legislação de proteção de dados | Referência legal para tratamento de dados pessoais. | Lei nº 13.709/2018 — LGPD. |
 
-* * *
+### 11.1. Referenciais metodológicos e normativos
 
-# 4\. REQUISITOS DE VERIFICAÇÃO E VALIDAÇÃO
+A documentação da demanda e a especificação subsequente deverão considerar os seguintes referenciais:
 
-## 4.1 Objetivo
+-   **IEEE 830-1998:** referência histórica para organização e estruturação de especificações de requisitos de software.
+-   **ISO/IEC/IEEE 29148:2011:** referência para processos e documentação de requisitos de sistemas e software.
+-   **ISO/IEC 12207:** referência para processos de ciclo de vida de sistemas e software.
 
-Esta seção estabelece os métodos previstos para verificar se o software atende aos requisitos especificados e validar se a solução atende às necessidades dos interessados.
+A aplicação desses referenciais deverá ser compatibilizada com o processo LAPIS e com as orientações acadêmicas e institucionais pertinentes.
 
-A verificação deverá ocorrer ao longo do desenvolvimento, enquanto a validação deverá envolver representantes dos usuários e áreas institucionais responsáveis.
+## 12\. Validação da Visão
 
-## 4.2 Métodos de verificação
+### 12.1. Checklist
 
-| Método | Descrição | Aplicação |
-| --- | --- | --- |
-| Inspeção | Análise de documentos, telas, registros e artefatos. | Interfaces, dados, documentação e rastreabilidade. |
-| Demonstração | Apresentação da funcionalidade em execução. | Consultas, indicadores e relatórios. |
-| Análise | Avaliação de resultados, cálculos e propriedades do sistema. | Indicadores, integridade e desempenho. |
-| Teste | Execução de procedimentos com entradas e resultados esperados. | Requisitos funcionais e não funcionais. |
+-   [x] Objetivo, contexto e oportunidade estão apresentados.
+-   [x] Benefícios e condições de sucesso estão descritos.
+-   [x] Ausência de metas quantitativas e linha de base está identificada.
+-   [x] Área solicitante identificada como Diretoria de Relações Internacionais (DRI).
+-   [x] Interlocutor de negócio identificado nominalmente.
+-   [x] E-mail e telefone de contato do interlocutor registrados.
+-   [x] Grupo 3 identificado como responsável pela elaboração.
+-   [x] Direção da DRI identificada como responsável pela aprovação formal.
+-   [ ] Nome do representante responsável pela aprovação formal confirmado.
+-   [ ] Representantes das áreas de pesquisa científica e internacionalização identificados nominalmente.
+-   [x] Usuários e atores externos potenciais estão representados.
+-   [x] Escopo, exclusões e evoluções futuras estão diferenciados.
+-   [x] Necessidades possuem identificadores e fontes ou justificativas.
+-   [x] Funcionalidades possuem identificadores, atores, prioridades preliminares e referências à especificação futura.
+-   [x] Indicadores preliminares foram apresentados com ressalvas metodológicas.
+-   [x] Integrações e dependências externas foram identificadas sem serem tratadas como confirmadas.
+-   [x] Visão geral da solução e decomposição modular foram apresentadas.
+-   [x] Representação conceitual de contexto e dependências incluída.
+-   [x] Premissas, restrições, dependências e riscos foram registrados.
+-   [x] Documentos relacionados e artefatos pendentes foram identificados.
+-   [ ] Prioridades e funcionalidades foram validadas pelos interessados.
+-   [ ] Visão da Demanda foi apreciada e aprovada formalmente pela Direção da DRI.
 
-## 4.3 Matriz de verificação
+### 12.2. Critérios de conclusão e encaminhamento
 
-| Requisito | Método principal | Evidência esperada |
-| --- | --- | --- |
-| RF-01 | Teste | Consulta curricular executada corretamente. |
-| RF-02 | Teste | Formação e titulação apresentadas corretamente. |
-| RF-03 | Teste | Publicações consultadas com filtros. |
-| RF-04 | Teste e análise | Classificação conforme regras aprovadas. |
-| RF-05 | Teste | Consulta histórica por período. |
-| RF-06 | Teste | Colaborações consultadas corretamente. |
-| RF-07 | Teste | Missões registradas e consultadas. |
-| RF-08 | Teste | Oportunidades consultadas. |
-| RF-09 | Teste | Oportunidades cadastradas e atualizadas. |
-| RF-10 | Teste e análise | Indicadores apresentados conforme metodologia. |
-| RF-11 | Teste | Relatórios gerados e exportados. |
-| RF-12 | Teste | Indicadores configurados conforme parâmetros disponíveis. |
-| RF-13 | Teste e inspeção | Histórico de versões preservado. |
-| RF-14 | Teste | Inconsistências identificadas. |
-| RF-15 | Inspeção | Origem e atualização dos dados identificáveis. |
-| RF-16 | Teste | Permissões administradas corretamente. |
-| RF-17 | Teste e inspeção | Situação das integrações consultável. |
+**Condição atual: rascunho para revisão e validação institucional, com interlocutor de negócio identificado e aprovação formal pendente.**
 
-## 4.4 Validação com os interessados
+A versão 1.2 consolida a proposta inicial de gestão da produção científica e internacionalização docente, incorporando a Diretoria de Relações Internacionais (DRI) como área solicitante, Marcelo Ponte como interlocutor de negócio e a Direção da DRI como instância responsável pela aprovação formal.
 
-A validação deverá verificar:
+O documento apresenta uma visão abrangente da solução, mas ainda não representa aprovação institucional das funcionalidades, prioridades ou integrações.
 
--   Se os requisitos representam as necessidades dos docentes.
--   Se as consultas atendem às necessidades dos gestores.
--   Se os critérios de internacionalização estão corretos.
--   Se os indicadores representam adequadamente as necessidades institucionais.
--   Se os relatórios fornecem informações suficientes para a tomada de decisão.
--   Se as permissões de acesso são compatíveis com as responsabilidades.
--   Se as integrações propostas são viáveis e autorizadas.
+Para avançar à especificação dos requisitos, será necessário:
 
-## 4.5 Critérios de aprovação
+-   Identificar nominalmente o representante da Direção da DRI responsável pela aprovação formal.
+-   Encaminhar a VD para apreciação da Direção da DRI.
+-   Registrar a decisão formal, incluindo data, responsável e eventuais ressalvas.
+-   Realizar o alinhamento das necessidades com Marcelo Ponte, Supervisor de Apoio Docente.
+-   Identificar e consultar representantes das áreas responsáveis pela pesquisa científica e internacionalização.
+-   Investigar os processos atualmente utilizados pela Universidade.
+-   Confirmar os perfis de usuários e suas responsabilidades.
+-   Validar as necessidades e funcionalidades propostas.
+-   Definir o produto mínimo viável e as prioridades.
+-   Estabelecer critérios de classificação da internacionalização científica.
+-   Validar os indicadores e suas regras de cálculo.
+-   Investigar a disponibilidade das fontes de dados e mecanismos de integração.
+-   Esclarecer as responsabilidades de atualização e manutenção das informações.
+-   Validar as condições de acesso, segurança e privacidade.
 
-Um requisito poderá ser considerado aprovado quando:
+A condição de visão aprovada dependerá da apreciação e confirmação formal pela Direção da DRI, sem prejuízo da validação técnica e funcional pelos representantes das áreas envolvidas.
 
-1.  Possuir descrição clara e individualizada.
-2.  Possuir origem ou justificativa identificada.
-3.  Possuir critérios de aceitação verificáveis.
-4.  Possuir prioridade definida.
-5.  Possuir responsável pela validação identificado.
-6.  Não apresentar dúvidas impeditivas de implementação.
-7.  Tiver sido validado pelos interessados responsáveis.
+### 12.3. Registro da validação
 
-A aprovação do documento deverá ser registrada formalmente.
+| Versão | Responsável e papel | Data | Condição da VD | Resultado e ressalvas |
+| --- | --- | --- | --- | --- |
+| 1.0 | Equipe do projeto — elaboração inicial | 01/11/2026 | Rascunho | Elaborada com base na proposta institucional. |
+| 1.1 | Equipe do projeto — consolidação da visão | 08/11/2026 | Rascunho consolidado | Ampliação do escopo conceitual e do catálogo de funcionalidades. Necessita de elicitação e validação institucional. |
+| 1.2 | Grupo 3 — atualização da identificação institucional | 09/11/2026 | Rascunho para revisão e validação | Inclusão da DRI como área solicitante, Marcelo Ponte como interlocutor de negócio e Direção da DRI como responsável pela aprovação formal. |
+| 1.2 | Direção da DRI — responsável pela aprovação formal | A preencher | Pendente de aprovação | Aguardando identificação nominal do representante e registro da decisão formal. |
 
-* * *
+**Dados para encaminhamento da aprovação:**
 
-# 5\. RASTREABILIDADE DOS REQUISITOS
+-   **Instituição:** Universidade de Fortaleza (Unifor).
+-   **Área solicitante:** Diretoria de Relações Internacionais (DRI).
+-   **Interlocutor de negócio:** Marcelo Ponte — Supervisor de Apoio Docente.
+-   **E-mail:** marceloponte@unifor.br.
+-   **Telefone:** +55 85 3477-3405.
+-   **Responsável pela aprovação formal:** Direção da DRI.
+-   **Representante nominal:** A confirmar.
 
-## 5.1 Rastreabilidade entre necessidades e requisitos
-
-| Necessidade | Funcionalidade | Requisito de software | Caso de uso |
-| --- | --- | --- | --- |
-| NEC-01 | F-01 | RF-01 | CDU-01 |
-| NEC-02 | F-02 | RF-02 | CDU-02 |
-| NEC-03 | F-03 e F-05 | RF-03 e RF-05 | CDU-03 e CDU-05 |
-| NEC-04 | F-04 | RF-04 | CDU-04 |
-| NEC-05 | F-06 | RF-06 | CDU-06 |
-| NEC-06 | F-07 | RF-07 | CDU-07 |
-| NEC-07 | F-08 e F-09 | RF-08 e RF-09 | CDU-08 e CDU-09 |
-| NEC-08 | F-10, F-11, F-12 e F-13 | RF-10, RF-11, RF-12 e RF-13 | CDU-10 a CDU-13 |
-| NEC-09 | F-14 e F-15 | RF-14 e RF-15 | CDU-14 e CDU-15 |
-| NEC-10 | F-16 e F-17 | RF-16 e RF-17 | CDU-16 e CDU-17 |
-
-## 5.2 Rastreabilidade dos requisitos não funcionais
-
-| Categoria | Requisitos | Necessidade relacionada |
-| --- | --- | --- |
-| Usabilidade | RNF-01 a RNF-03 | NEC-01 a NEC-08 |
-| Segurança | RNF-04 a RNF-07 | NEC-10 |
-| Privacidade | RNF-08 a RNF-10 | NEC-09 e NEC-10 |
-| Integridade | RNF-11 a RNF-14 | NEC-09 |
-| Disponibilidade | RNF-15 | NEC-01 a NEC-08 |
-| Manutenibilidade | RNF-16 e RNF-17 | NEC-09 |
-| Compatibilidade | RNF-18 | NEC-01 a NEC-08 |
-| Acessibilidade | RNF-19 | NEC-01 a NEC-08 |
-
-## 5.3 Rastreabilidade reversa
-
-A rastreabilidade reversa deverá permitir identificar a necessidade, funcionalidade ou justificativa associada a cada requisito.
-
-Nenhum requisito deverá ser incorporado definitivamente à linha de base sem justificativa ou origem documentada.
-
-## 5.4 Rastreabilidade futura
-
-A matriz deverá ser ampliada durante o projeto para contemplar:
-
--   Necessidades.
--   Requisitos funcionais.
--   Requisitos não funcionais.
--   Regras de negócio.
--   Casos de uso.
--   Modelos de dados.
--   Interfaces.
--   Casos de teste.
--   Evidências de verificação.
--   Registros de aprovação.
-
-* * *
-
-# 6\. APÊNDICES
-
-## APÊNDICE A — Indicadores preliminares
-
-Os indicadores abaixo são propostas para discussão e não representam indicadores institucionais homologados.
-
-| ID | Indicador | Medida |
-| --- | --- | --- |
-| IND-01 | Docentes com formação acadêmica no exterior | Quantidade de docentes distintos. |
-| IND-02 | Publicações em periódicos estrangeiros | Quantidade de artigos distintos. |
-| IND-03 | Livros e capítulos publicados por editoras estrangeiras | Quantidade de obras distintas. |
-| IND-04 | Participação em eventos científicos internacionais | Quantidade de participações registradas. |
-| IND-05 | Evolução anual da produção científica | Quantidade de produções distintas. |
-| IND-06 | Missões internacionais realizadas | Quantidade de registros de missões. |
-| IND-07 | Colaborações científicas internacionais | Quantidade de colaborações identificadas. |
-| IND-08 | Oportunidades científicas disponíveis | Quantidade de oportunidades vigentes. |
-| IND-09 | Cobertura e qualidade dos dados curriculares | Percentual de registros completos e atualizados. |
-
-## APÊNDICE B — Questões em aberto
-
-| ID | Questão | Impacto |
-| --- | --- | --- |
-| PQ-01 | Quais serão os responsáveis institucionais pela aprovação? | Governança. |
-| PQ-02 | Existe mecanismo autorizado de acesso ao Lattes? | Integração. |
-| PQ-03 | Quais bases científicas serão utilizadas? | Abrangência dos dados. |
-| PQ-04 | Qual será a periodicidade de atualização? | Atualidade dos dados. |
-| PQ-05 | Quais critérios de deduplicação serão adotados? | Qualidade dos dados. |
-| PQ-06 | Como será definida a internacionalização de uma publicação? | Indicadores. |
-| PQ-07 | Quais indicadores serão oficiais? | Gestão. |
-| PQ-08 | Quais serão as permissões de cada perfil? | Segurança. |
-| PQ-09 | Quais restrições de privacidade deverão ser aplicadas? | Conformidade. |
-| PQ-10 | Os docentes poderão atualizar informações no sistema? | Escopo funcional. |
-| PQ-11 | Quais informações serão exigidas para missões internacionais? | Dados. |
-| PQ-12 | O catálogo de oportunidades será implementado? | Escopo funcional. |
-| PQ-13 | Os indicadores serão configuráveis ou apenas predefinidos? | Complexidade. |
-| PQ-14 | Quais sistemas institucionais estarão disponíveis para integração? | Arquitetura. |
-| PQ-15 | Como serão tratadas produções anteriores ao vínculo institucional? | Regras de negócio. |
-
-## APÊNDICE C — Artefatos complementares previstos
-
-| Artefato | Identificador proposto | Situação |
-| --- | --- | --- |
-| Diagrama geral de casos de uso | DCU-GPCID | A elaborar |
-| Casos de uso detalhados | CDU-01 a CDU-17 | A elaborar |
-| Modelo conceitual de dados | MCD-GPCID | A elaborar |
-| Modelo de processos | MP-GPCID | A elaborar |
-| Protótipos de interface | PT-GPCID | A elaborar |
-| Catálogo de regras de negócio | RN-GPCID | Preliminar |
-| Catálogo de indicadores | IND-GPCID | A validar |
-| Especificação das integrações | INT-GPCID | A elaborar |
-| Plano de testes | PTST-GPCID | A elaborar |
-
-* * *
-
-# 7\. ÍNDICE DE IDENTIFICADORES
-
-| Prefixo | Significado |
-| --- | --- |
-| RF | Requisito funcional. |
-| RNF | Requisito não funcional. |
-| RI | Requisito de interface. |
-| RD | Requisito de dados. |
-| RNP | Requisito de desempenho. |
-| RPD | Restrição de projeto. |
-| RSP | Requisito de segurança e privacidade. |
-| INT | Requisito de integração. |
-| RN | Regra de negócio. |
-| NEC | Necessidade. |
-| F | Funcionalidade. |
-| CDU | Caso de uso. |
-| IND | Indicador. |
-| PQ | Ponto em aberto. |
-| EXT | Sistema externo. |
-| RNF-01 a RNF-19 | Atributos de qualidade. |
-
-* * *
-
-# 8\. CONTROLE E APROVAÇÃO DO DOCUMENTO
-
-## 8.1 Situação da especificação
-
-**Versão 0.1 — Rascunho para elicitação e validação.**
-
-Esta versão apresenta a estrutura inicial da especificação de requisitos de software do GPCID, derivada da Visão da Demanda versão 1.1.
-
-Os requisitos funcionais foram organizados a partir das funcionalidades F-01 a F-17. Os requisitos não funcionais, de interface, dados, integração e segurança foram propostos como complementos necessários à especificação.
-
-As definições ainda não confirmadas foram mantidas como propostas, dependências ou informações a determinar.
-
-Este documento não representa aprovação institucional das funcionalidades, prioridades, integrações, regras de negócio ou metas de qualidade.
-
-## 8.2 Pendências para a versão 1.0
-
-Antes da aprovação da linha de base, deverão ser realizadas as seguintes atividades:
-
--   [ ] Validar os requisitos funcionais com as áreas responsáveis.
--   [ ] Confirmar os atores e seus níveis de acesso.
--   [ ] Detalhar os casos de uso CDU-01 a CDU-17.
--   [ ] Definir os critérios de classificação da internacionalização.
--   [ ] Homologar os indicadores e suas fórmulas.
--   [ ] Definir as regras de negócio.
--   [ ] Validar as necessidades de integração.
--   [ ] Definir os requisitos de desempenho quantitativos.
--   [ ] Definir as metas de disponibilidade.
--   [ ] Validar os requisitos de segurança e privacidade.
--   [ ] Definir os requisitos de acessibilidade.
--   [ ] Elaborar os critérios de aceitação detalhados.
--   [ ] Validar a rastreabilidade dos requisitos.
--   [ ] Realizar revisão formal do documento.
-
-## 8.3 Registro de aprovação
-
-| Responsável | Papel | Data | Resultado |
-| --- | --- | --- | --- |
-| A identificar | Representante da pesquisa científica | A definir | Pendente |
-| A identificar | Representante da internacionalização | A definir | Pendente |
-| A identificar | Representante de tecnologia da informação | A definir | Pendente |
-| A identificar | Responsável pela proteção de dados | A definir | Pendente |
-| A identificar | Representante institucional aprovador | A definir | Pendente |
-
-**Fim do documento — SRS-GPCID versão 0.1.**
+**Nota:** A elaboração deste documento não representa aprovação institucional da demanda nem confirmação de que as funcionalidades, regras de negócio ou integrações propostas serão implementadas. A aprovação formal deverá ser registrada pela Direção da DRI, enquanto a validação dos requisitos deverá ocorrer com os representantes responsáveis, conforme o processo LAPIS.
