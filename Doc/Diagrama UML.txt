@@ -1,0 +1,65 @@
+
+@startuml
+left to right direction
+
+actor Docente
+actor "Gestor de Internacionalização" as GestorInt
+actor "Analista de Internacionalização" as Analista
+actor "Responsável pela Pesquisa Científica" as Pesquisa
+actor "Gestor Acadêmico" as GestorAcad
+actor "Administrador do Sistema" as Admin
+
+rectangle "GPCID - Gestão da Produção Científica e Internacionalização Docente" {
+
+  usecase "Consultar Currículo" as UC01
+  usecase "Consultar Formação Acadêmica" as UC02
+  usecase "Consultar Publicações" as UC03
+  usecase "Classificar Internacionalização" as UC04
+  usecase "Consultar Histórico Científico" as UC05
+  usecase "Consultar Colaborações" as UC06
+  usecase "Registrar Missões Internacionais" as UC07
+  usecase "Consultar Oportunidades" as UC08
+  usecase "Cadastrar Oportunidades" as UC09
+  usecase "Consultar Indicadores" as UC10
+  usecase "Gerar Relatórios" as UC11
+  usecase "Configurar Indicadores" as UC12
+  usecase "Identificar Inconsistências" as UC13
+  usecase "Consultar Rastreabilidade" as UC14
+  usecase "Monitorar Integrações" as UC15
+  usecase "Administrar Usuários e Permissões" as UC16
+}
+
+Docente --> UC01
+Docente --> UC02
+Docente --> UC03
+Docente --> UC06
+Docente --> UC08
+
+GestorInt --> UC06
+GestorInt --> UC07
+GestorInt --> UC08
+GestorInt --> UC10
+GestorInt --> UC11
+GestorInt --> UC12
+
+Analista --> UC07
+Analista --> UC08
+Analista --> UC13
+Analista --> UC14
+
+Pesquisa --> UC03
+Pesquisa --> UC04
+Pesquisa --> UC05
+Pesquisa --> UC10
+Pesquisa --> UC11
+
+GestorAcad --> UC01
+GestorAcad --> UC10
+GestorAcad --> UC11
+
+Admin --> UC13
+Admin --> UC14
+Admin --> UC15
+Admin --> UC16
+
+@enduml

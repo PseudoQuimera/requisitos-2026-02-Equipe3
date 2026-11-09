@@ -350,15 +350,11 @@ Tecnologias, sistemas operacionais, navegadores homologados e infraestrutura per
 
 ## 2.5 Restrições de projeto
 
-| ID | Restrição |
-| --- | --- |
-| RP-01 | O sistema não deverá substituir a Plataforma Lattes ou outras fontes oficiais de currículos. |
-| RP-02 | A integração com fontes externas dependerá de autorização e viabilidade técnica. |
-| RP-03 | O tratamento de dados pessoais deverá observar a legislação aplicável, especialmente a LGPD. |
-| RP-04 | O acesso às informações deverá respeitar os perfis e permissões definidos pela instituição. |
-| RP-05 | A classificação da internacionalização deverá utilizar critérios institucionais aprovados. |
-| RP-06 | As definições dos indicadores deverão possuir histórico e identificação de versão, caso essa funcionalidade seja aprovada. |
-| RP-07 | A solução deverá identificar a origem dos dados utilizados nas consultas e análises. |
+As restrições de projeto estabelecem condições que deverão ser observadas durante a concepção, o desenvolvimento e a implantação do GPCID.
+
+As restrições detalhadas e seus respectivos identificadores estão especificados na seção 3.5 deste documento.
+
+As restrições deverão ser consideradas na definição da arquitetura, das integrações, dos mecanismos de segurança, do tratamento de dados e das funcionalidades do sistema.
 
 ## 2.6 Premissas e dependências
 
@@ -794,7 +790,7 @@ Sempre que aplicável, deverão ser registrados:
 
 **Verificação:** Inspeção dos registros e testes funcionais.
 
-#### RF-17 — Consultar situação das integrações
+#### RF-16 — Consultar situação das integrações
 
 O sistema deverá permitir que usuários autorizados consultem informações sobre a situação das integrações externas, incluindo atualizações realizadas e falhas identificadas.
 
@@ -810,7 +806,7 @@ O sistema deverá permitir que usuários autorizados consultem informações sob
 
 ### 3.2.7 Módulo M07 — Identidade e Controle de Acesso
 
-#### RF-16 — Administrar usuários e permissões
+#### RF-17 — Administrar usuários e permissões
 
 O sistema deverá permitir que usuários autorizados administrem os acessos e permissões dos usuários conforme os perfis institucionais definidos.
 
@@ -927,19 +923,21 @@ Verificação: análise técnica e teste de capacidade.
 
 ## 3.5 RESTRIÇÕES DE PROJETO
 
-**RPD-01:** O sistema não deverá substituir plataformas oficiais responsáveis pela manutenção dos currículos e publicações.
+**RPD-01 — Não substituição de fontes oficiais:** O sistema não deverá substituir plataformas oficiais responsáveis pela manutenção de currículos e publicações científicas.
 
-**RPD-02:** O sistema deverá utilizar somente mecanismos de acesso autorizados às fontes externas.
+**RPD-02 — Acesso autorizado às fontes externas:** O sistema deverá utilizar somente mecanismos de acesso autorizados às fontes externas de informações.
 
-**RPD-03:** As integrações deverão respeitar as condições de utilização e os limites técnicos estabelecidos pelas fontes.
+**RPD-03 — Condições de integração:** As integrações deverão respeitar as condições de utilização, os contratos técnicos e os limites estabelecidos pelas fontes externas.
 
-**RPD-04:** Os critérios de classificação da internacionalização deverão ser definidos e aprovados pelos responsáveis institucionais.
+**RPD-04 — Critérios institucionais de internacionalização:** A classificação da internacionalização das produções científicas deverá utilizar critérios definidos e aprovados pelos responsáveis institucionais.
 
-**RPD-05:** A definição de indicadores deverá utilizar medidas e critérios previamente disponibilizados pelo sistema.
+**RPD-05 — Configuração de indicadores:** A definição dos indicadores deverá utilizar medidas, filtros, agrupamentos e critérios previamente disponibilizados pelo sistema.
 
-**RPD-06:** O sistema deverá observar as diretrizes institucionais de proteção de dados pessoais.
+**RPD-06 — Proteção de dados pessoais:** O sistema deverá observar a legislação aplicável e as diretrizes institucionais de proteção de dados pessoais.
 
-**RPD-07:** As tecnologias e os padrões de infraestrutura deverão ser compatíveis com as diretrizes da equipe de TI da Unifor.
+**RPD-07 — Compatibilidade tecnológica:** As tecnologias, os padrões de infraestrutura e os mecanismos de comunicação deverão ser compatíveis com as diretrizes estabelecidas pela equipe de Tecnologia da Informação da Unifor.
+
+**Verificação:** Inspeção documental, análise técnica e testes de conformidade, conforme a natureza de cada restrição.
 
 * * *
 
@@ -1148,8 +1146,8 @@ A aprovação formal da especificação deverá ser realizada pela Direção da 
 | RF-13 | Teste e inspeção | Histórico de versões preservado. |
 | RF-14 | Teste | Inconsistências identificadas. |
 | RF-15 | Inspeção | Origem e atualização dos dados identificáveis. |
-| RF-16 | Teste | Permissões administradas corretamente. |
-| RF-17 | Teste e inspeção | Situação das integrações consultável. |
+| RF-16 | Teste e inspeção | Situação das integrações consultável. |
+| RF-17 | Teste | Permissões administradas corretamente. |
 
 ## 4.4 Validação com os interessados
 
@@ -1199,8 +1197,8 @@ A aprovação da especificação como um todo deverá ser registrada formalmente
 | NEC-06 | F-07 | RF-07 | CDU-07 |
 | NEC-07 | F-08 e F-09 | RF-08 e RF-09 | CDU-08 e CDU-09 |
 | NEC-08 | F-10, F-11, F-12 e F-13 | RF-10, RF-11, RF-12 e RF-13 | CDU-10 a CDU-13 |
-| NEC-09 | F-14 e F-15 | RF-14 e RF-15 | CDU-14 e CDU-15 |
-| NEC-10 | F-16 e F-17 | RF-16 e RF-17 | CDU-16 e CDU-17 |
+| NEC-09 | F-14, F-15 e F-17 | RF-14, RF-15 e RF-16 | CDU-14 a CDU-16 |
+| NEC-10 | F-16 | RF-17 | CDU-17 |
 
 ## 5.2 Rastreabilidade dos requisitos não funcionais
 
