@@ -1,0 +1,72 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "Docente" as AT01
+actor "Gestor de internacionalização" as AT02
+actor "Analista de internacionalização" as AT03
+actor "Responsável pela pesquisa científica" as AT04
+actor "Administrador do sistema" as AT05
+actor "Gestor acadêmico" as AT06
+
+rectangle "GPCID — Sistema de Gestão da Produção Científica e Internacionalização Docente" {
+  usecase "CDU-01\nConsultar informações\ncurriculares, formação e titulação" as CDU01
+  usecase "CDU-03\nConsultar publicações científicas" as CDU03
+  usecase "CDU-04\nClassificar internacionalização\ndas produções" as CDU04
+  usecase "CDU-06\nConsultar colaborações científicas" as CDU06
+  usecase "CDU-07\nRegistrar e consultar missões\ninternacionais" as CDU07
+  usecase "CDU-10\nConsultar indicadores" as CDU10
+  usecase "CDU-11\nGerar relatórios" as CDU11
+  usecase "CDU-12\nConfigurar indicadores" as CDU12
+  usecase "CDU-13\nVersionar indicadores" as CDU13
+  usecase "CDU-14\nIdentificar e analisar\ndivergências" as CDU14
+  usecase "CDU-15\nConsultar origem e histórico\nde atualização dos dados" as CDU15
+  usecase "CDU-16\nConsultar situação das integrações" as CDU16
+  usecase "CDU-17\nAdministrar usuários e permissões" as CDU17
+}
+AT01 -- CDU01
+AT02 -- CDU01
+AT04 -- CDU01
+AT06 -- CDU01
+AT01 -- CDU03
+AT02 -- CDU03
+AT04 -- CDU03
+AT02 -- CDU04
+AT03 -- CDU04
+AT04 -- CDU04
+AT01 -- CDU06
+AT02 -- CDU06
+AT03 -- CDU06
+AT04 -- CDU06
+AT01 -- CDU07
+AT02 -- CDU07
+AT03 -- CDU07
+AT02 -- CDU10
+AT03 -- CDU10
+AT04 -- CDU10
+AT06 -- CDU10
+AT02 -- CDU11
+AT03 -- CDU11
+AT04 -- CDU11
+AT06 -- CDU11
+AT02 -- CDU12
+AT02 -- CDU13
+AT02 -- CDU14
+AT03 -- CDU14
+AT04 -- CDU14
+AT05 -- CDU14
+AT02 -- CDU15
+AT03 -- CDU15
+AT05 -- CDU15
+AT05 -- CDU16
+AT05 -- CDU17
+note bottom of CDU16
+  Caso condicional: depende de autorização
+  e implementação de integração externa.
+end note
+note bottom of CDU17
+  Níveis e matriz de permissões são proposta
+  para discussão futura com a DRI e a TI.
+end note
+@enduml
