@@ -16,12 +16,12 @@
 | Responsável pela elaboração | Grupo 3 |
 | Responsável pela aprovação formal | Direção da DRI |
 | Nome do responsável pela aprovação | A confirmar |
-| Documento de origem | Visão da Demanda (VD) — GPCID, versão 1.1 |
+| Documento de origem | Visão da Demanda (VD) — GPCID, versão 1.4 — proposta de consolidação |
 | Referencial de especificação | IEEE 830-1998 e ISO/IEC/IEEE 29148:2011 |
 | Processo de ciclo de vida | ISO/IEC 12207 |
-| Versão do SRS | 0.2 |
-| Data | 08/11/2026 |
-| Situação | Rascunho para revisão e validação |
+| Versão do SRS | 0.3 |
+| Data | 25/11/2026 |
+| Situação | Rascunho consolidado para revisão e validação; não aprovado institucionalmente |
 
 * * *
 
@@ -33,6 +33,7 @@
 | --- | --- | --- | --- |
 | 08/11/2026 | 0.1 | Elaboração inicial da especificação de requisitos com base na VD-GPCID 1.1. Estruturação dos requisitos funcionais, não funcionais, interfaces, restrições, rastreabilidade e verificação. | Grupo 3 |
 | 08/11/2026 | 0.2 | Atualização da identificação institucional, definição da DRI como área solicitante, inclusão do interlocutor de negócio, atualização dos contatos e correção da responsabilidade pela aprovação formal. Revisão da governança, do gerenciamento de mudanças e da consistência geral do documento. | Grupo 3 |
+| 25/11/2026 | 0.3 | Consolidação das decisões M01–M07; atualização da rastreabilidade RF/CDU; proposta preliminar de atores, níveis de acesso e critérios de aceitação; registro explícito das pendências institucionais. | Grupo 3 |
 
 ## Convenção de versionamento
 
@@ -1356,21 +1357,21 @@ As alterações que impliquem ampliação significativa do escopo deverão ser a
 
 ## 8.1 Situação da especificação
 
-**Versão 0.2 — Rascunho para revisão e validação.**
+**Versão 0.3 — Rascunho consolidado para revisão e validação.**
 
 Esta versão apresenta a especificação de requisitos de software do Sistema de Gestão da Produção Científica e Internacionalização Docente (GPCID), proposto para a Universidade de Fortaleza (Unifor), tendo como área solicitante a Diretoria de Relações Internacionais (DRI).
 
-O documento foi elaborado pelo Grupo 3, com base na Visão da Demanda (VD) — GPCID, versão 1.1, e nas informações institucionais registradas na identificação deste documento.
+O documento foi elaborado pelo Grupo 3, com base na Visão da Demanda (VD) — GPCID, versão 1.4, e nas informações institucionais registradas na identificação deste documento.
 
 A interlocução de negócio está atribuída ao Prof. Marcelo Ponte, Supervisor de Apoio Docente, por meio dos contatos institucionais informados.
 
-Os requisitos funcionais foram organizados a partir das funcionalidades F-01 a F-17. Os requisitos não funcionais, de interface, dados, integração, segurança e desempenho foram propostos como complementos necessários à especificação.
+Os requisitos funcionais foram organizados a partir das funcionalidades F-01 a F-17 e consolidados transversalmente no adendo desta versão. Os requisitos não funcionais, de interface, dados, integração, segurança e desempenho foram propostos como complementos necessários à especificação.
 
 As definições ainda não confirmadas foram mantidas como propostas, dependências ou informações a determinar.
 
 A aprovação formal do documento compete à Direção da DRI, permanecendo pendente a identificação nominal do representante responsável.
 
-Esta versão não representa aprovação institucional das funcionalidades, prioridades, integrações, regras de negócio ou metas de qualidade.
+Esta versão não representa aprovação institucional das funcionalidades, prioridades, integrações, regras de negócio, matriz de permissões ou metas de qualidade.
 
 ## 8.2 Pendências para a versão 1.0
 
@@ -1424,3 +1425,138 @@ O Prof. Marcelo Ponte atua como interlocutor de negócio e contato indicado para
 **Área solicitante: Diretoria de Relações Internacionais (DRI)**
 
 **Situação: Rascunho para revisão e validação**
+
+---
+
+# ADENDO DE CONSOLIDAÇÃO TRANSVERSAL — SRS 0.3
+
+> Este adendo complementa o SRS 0.2 e prevalece sobre trechos anteriores quando houver conflito com as decisões de consolidação aqui registradas. Os requisitos e identificadores originais são preservados; este documento continua sendo uma proposta não aprovada institucionalmente.
+
+## 1. Decisões de escopo e tratamento dos RF
+
+| RF | Decisão | Tratamento para a versão inicial |
+|---|---|---|
+| RF-01 + RF-02 | Unificar | Uma funcionalidade consolidada; manter os dois identificadores na rastreabilidade. |
+| RF-03 | Complementar | Consulta de produções científicas, incluindo produções recentes. |
+| RF-04 | Complementar | Classificação condicionada à validação dos critérios institucionais. |
+| RF-05 | Evolução futura | Fora do escopo inicial; não excluir do histórico. |
+| RF-06 + RF-07 | Complementar | Colaborações e missões; campos e responsáveis pelas missões pendentes. |
+| RF-08 + RF-09 | Evolução futura | Fora do escopo inicial; manter rastreabilidade. |
+| RF-10 + RF-11 | Complementar | Indicadores e relatórios, incluindo painel específico da DRI. |
+| RF-12 | Ajustar | Configuração de indicadores conforme elementos e regras autorizados. |
+| RF-13 | Complementar | Versionamento, preservação e consulta de versões anteriores. |
+| RF-14, RF-15 e RF-16 | Complementar | Divergências, origem/histórico e integrações condicionais. |
+| RF-17 | Reformular | Administração de usuários, perfis e permissões; matriz ainda preliminar. |
+
+## 2. Atores e associações propostas
+
+Os atores abaixo mantêm os identificadores originais. As associações refletem a atribuição de atores indicada nos RF originais, com as consolidações acordadas. Elas não equivalem à aprovação de permissões finais.
+
+| ID | Ator | Responsabilidade preliminar |
+|---|---|---|
+| AT-01 | Docente | Consultar informações próprias; eventual edição/compartilhamento depende de validação. |
+| AT-02 | Gestor de internacionalização | Acompanhar informações e indicadores de internacionalização. |
+| AT-03 | Analista de internacionalização | Consultar, organizar e analisar informações conforme autorização. |
+| AT-04 | Responsável pela pesquisa científica | Acompanhar informações e produção científica. |
+| AT-05 | Administrador do sistema | Administração técnica e operações administrativas previstas no RF-17. |
+| AT-06 | Gestor acadêmico | Consultar informações consolidadas conforme autorização. |
+
+### 2.1 Matriz ator × CDU proposta
+
+| CDU | Caso de uso | RF | Atores associados |
+|---|---|---|---|
+| CDU-01 | Consultar informações curriculares, formação e titulação | RF-01, RF-02 | AT-01, AT-02, AT-04, AT-06 |
+| CDU-03 | Consultar publicações científicas | RF-03 | AT-01, AT-02, AT-04 |
+| CDU-04 | Classificar internacionalização das produções | RF-04 | AT-02, AT-03, AT-04 |
+| CDU-06 | Consultar colaborações científicas | RF-06 | AT-01, AT-02, AT-03, AT-04 |
+| CDU-07 | Registrar e consultar missões internacionais | RF-07 | AT-01, AT-02, AT-03 |
+| CDU-10 | Consultar indicadores | RF-10 | AT-02, AT-03, AT-04, AT-06 |
+| CDU-11 | Gerar relatórios | RF-11 | AT-02, AT-03, AT-04, AT-06 |
+| CDU-12 | Configurar indicadores | RF-12 | AT-02 |
+| CDU-13 | Versionar indicadores | RF-13 | AT-02 |
+| CDU-14 | Identificar e analisar divergências | RF-14 | AT-02, AT-03, AT-04, AT-05 |
+| CDU-15 | Consultar origem e histórico de atualização dos dados | RF-15 | AT-02, AT-03, AT-05 |
+| CDU-16 | Consultar situação das integrações | RF-16 | AT-05 |
+| CDU-17 | Administrar usuários e permissões | RF-17 | AT-05 |
+
+CDU-02 deixa de ser caso de uso independente e tem sua cobertura incorporada ao CDU-01. CDU-05, CDU-08 e CDU-09 não integram o diagrama principal enquanto RF-05, RF-08 e RF-09 permanecerem classificados como evolução futura. Os identificadores não devem ser reutilizados para outras funcionalidades.
+
+### 2.2 Ressalvas sobre associações
+
+- AT-05 permanece associado ao CDU-14 porque consta entre os atores do RF-14 original; sua participação deve ser detalhada para distinguir suporte técnico de análise de conteúdo.
+- AT-01 permanece associado ao CDU-07 por constar no RF-07 original; isso não define que o docente será necessariamente responsável pelo cadastro.
+- As associações são candidatas para modelagem e deverão ser confrontadas com a matriz de permissões a validar.
+
+## 3. Proposta preliminar de níveis de acesso — RF-17
+
+Propõe-se estudar controle de acesso baseado em perfis (RBAC). Os níveis abaixo são rótulos de trabalho para discussão e não representam decisão institucional aprovada.
+
+| Nível | Nome de trabalho | Escopo indicativo |
+|---|---|---|
+| N1 | Consulta própria | Consultar informações próprias autorizadas. |
+| N2 | Consulta ampliada | Consultar informações institucionais explicitamente autorizadas. |
+| N3 | Operacional | Cadastrar, atualizar e analisar informações dentro de escopo autorizado. |
+| N4 | Gestão | Acessar painéis/relatórios gerenciais e executar operações de gestão autorizadas. |
+| N5 | Administração técnica | Administrar contas, configurações técnicas e implementar permissões aprovadas. |
+
+**Governança:** a equipe apresentará a proposta à DRI para discussão e definição conjunta futura. Não se afirma que a DRI já aprovou os níveis, a matriz ou o fluxo de concessão. Também estão pendentes as decisões sobre autonomia do docente em relação aos próprios dados e limites da atuação do administrador. A autorização funcional deve ser distinguida da execução técnica da alteração de acesso.
+
+### 3.1 Regras preliminares de autorização
+
+1. Aplicar o princípio do menor privilégio, sujeito à validação institucional.
+2. Distinguir permissões de consulta, inclusão, alteração, validação, exportação e administração.
+3. Registrar concessões, alterações e revogações de permissões.
+4. Não inferir permissões apenas pelo título do ator ou cargo.
+5. Permitir que uma pessoa possua mais de um perfil, se a política institucional aprovar.
+6. Submeter a matriz definitiva à discussão com a DRI e à avaliação técnica da TI.
+
+## 4. Critérios de aceitação revisados — proposta
+
+Os critérios abaixo complementam a seção de verificação. São condições verificáveis propostas; critérios dependentes de política institucional permanecem condicionais.
+
+| RF | Critério de aceitação proposto | Dependência/ressalva |
+|---|---|---|
+| RF-01 + RF-02 | Para docente com dados disponíveis, usuário autenticado e autorizado consulta informações curriculares, formação e titulação existentes; dados ausentes são indicados como indisponíveis, sem preenchimento fictício. | Permissões e campos a validar. |
+| RF-03 | Consulta apresenta publicações correspondentes aos filtros efetivamente disponibilizados; consulta sem resultados informa ausência de correspondências. | Catálogo final de filtros a validar. |
+| RF-04 | Classificação é apresentada somente quando houver critérios institucionais aprovados e dados suficientes; casos inconclusivos são identificados como pendentes. | Critérios institucionais pendentes. |
+| RF-05 | Não aplicável à aceitação da versão inicial. | Evolução futura. |
+| RF-06 | Consulta apresenta registros de colaboração disponíveis e identifica ausência de resultados ou dados incompletos. | Campos e fontes a validar. |
+| RF-07 | Usuário autorizado registra missão com os campos obrigatórios definidos, recebe indicação de validação e consegue consultar o registro. | Campos e responsáveis pendentes. |
+| RF-08/RF-09 | Não aplicável à aceitação da versão inicial. | Evolução futura. |
+| RF-10 | Indicador apresenta período, parâmetros e metodologia aplicável; ausência de dados é explicitada. | Indicadores e fórmulas sujeitos a homologação. |
+| RF-11 | Relatório corresponde aos filtros selecionados e, quando exportação estiver disponível, o arquivo contém os mesmos dados apresentados. | Formatos a definir. |
+| RF-12 | Configuração válida é validada e registrada; configuração inválida é rejeitada com indicação do problema. | Elementos permitidos e aprovadores a definir. |
+| RF-13 | Nova versão preserva a anterior e permite identificar versão, data, responsável e justificativa, quando esses dados forem fornecidos. | Política de publicação/aprovação a definir. |
+| RF-14 | Divergências que atendam aos critérios configurados são identificadas e registradas; usuário autorizado consegue consultar e registrar análise. | Critérios de divergência e tratamento a validar. |
+| RF-15 | Para dados processados, o sistema apresenta os metadados de origem e atualização disponíveis, sem inventar informações ausentes. | Campos de auditoria a detalhar. |
+| RF-16 | Quando integração autorizada estiver implementada, usuário autorizado consulta situação e histórico de execução; sem integração configurada, o sistema informa essa condição. | Condicional à autorização e viabilidade técnica. |
+| RF-17 | Operações administrativas são permitidas apenas a usuário autorizado; concessões, alterações e revogações são registradas e podem ser auditadas. | Matriz e fluxo de autorização pendentes. |
+
+## 5. Ajustes de rastreabilidade e UML
+
+A matriz da seção 2.1.1 deste adendo passa a ser a referência proposta para atualização do diagrama geral de casos de uso. O diagrama deverá:
+
+- representar os seis atores originais;
+- apresentar os 13 casos de uso do escopo inicial/condicional listados na matriz;
+- manter CDU-01 como consolidação de RF-01 e RF-02;
+- não representar RF-05, RF-08 e RF-09 como funcionalidades comprometidas da versão inicial;
+- indicar CDU-16 como condicional à autorização e implementação das integrações;
+- preservar os identificadores e associações para rastreabilidade.
+
+## 6. Pendências e decisões não validadas
+
+| ID | Pendência | Responsável/instância para discussão | Situação |
+|---|---|---|---|
+| P-01 | Critérios institucionais de internacionalização | DRI e área de pesquisa | Pendente |
+| P-02 | Campos e responsáveis pelo cadastro de missões | DRI e áreas envolvidas | Pendente |
+| P-03 | Indicadores oficiais, fórmulas e IND-08 | DRI | Pendente |
+| P-04 | Critérios para identificar e analisar divergências | DRI e responsáveis pelos dados | Pendente |
+| P-05 | Integrações externas autorizadas e viáveis | DRI e TI | Pendente |
+| P-06 | Níveis de acesso e matriz de permissões | DRI, em discussão futura com a equipe | Pendente de apresentação e deliberação |
+| P-07 | Autonomia do docente sobre consulta, edição e compartilhamento | DRI e áreas responsáveis | Pendente |
+| P-08 | Limites da administração técnica e concessão de acessos | DRI e TI | Pendente |
+| P-09 | Mecanismo de autenticação | TI | Pendente |
+
+## 7. Situação do SRS 0.3
+
+O SRS 0.3 é uma versão de trabalho consolidada pelo grupo. Não constitui aprovação institucional. As propostas de níveis de acesso, matriz ator × CDU, critérios de aceitação e associações UML deverão ser validadas antes da linha de base 1.0.
