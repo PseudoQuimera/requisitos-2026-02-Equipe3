@@ -20,7 +20,7 @@
 | Representante responsável pela aprovação | A confirmar |
 | Documento de origem | Visão da Demanda (VD) — GPCID |
 | Referenciais | IEEE 830-1998; ISO/IEC/IEEE 29148:2011; ISO/IEC 12207 |
-| Versão | 1.3 — proposta de revisão |
+| Versão | 1.4 — consolidação de decisões e proposta de controle de acesso |
 | Documento relacionado | SRS — versão 0.2 |
 | Data de referência | 25/11/2026 |
 | Situação | Rascunho para revisão e validação; não aprovado institucionalmente |
@@ -35,6 +35,7 @@
 | 08/11/2026 | 1.1 | Ampliação e consolidação preliminar das funcionalidades. | Equipe do projeto |
 | 09/11/2026 | 1.2 | Atualização da identificação institucional e dos responsáveis. | Grupo 3 |
 | 25/11/2026 | 1.3 | Revisão de escopo para explicitar a produção científica nacional e internacional, distinguir capacidades atuais de evoluções futuras e registrar decisões ainda pendentes de validação. | Grupo 3 — proposta de revisão |
+| 25/11/2026 | 1.4 | Consolidação das decisões de M01 a M07, explicitação da proposta preliminar de níveis de acesso e registro de que a matriz de permissões será discutida futuramente com a DRI. | Grupo 3 — proposta de revisão |
 
 ## 1. Objetivo
 
@@ -350,3 +351,82 @@ Esta versão organiza a proposta de solução e incorpora decisões de direciona
 | A aprovar | Direção da DRI | A preencher | Pendente | Registrar decisão formal, responsável, data e ressalvas. |
 
 **Nota:** a elaboração desta versão não representa aprovação institucional da demanda, nem confirmação de que todas as funcionalidades, regras ou integrações serão implementadas.
+
+
+---
+
+# ADENDO DE CONSOLIDAÇÃO — VERSÃO 1.4
+
+> Este adendo complementa a VD 1.3. Em caso de divergência sobre escopo, prioridades e controle de acesso, prevalecem as disposições deste adendo. Não substitui nem altera os arquivos originais do projeto.
+
+## A. Decisões de escopo consolidadas
+
+| Módulo | Requisito(s) | Decisão registrada pelo grupo | Tratamento na demanda |
+|---|---|---|---|
+| M01 — Docentes e Currículos | RF-01 e RF-02 | Unificar, preservando rastreabilidade | Uma capacidade consolidada de consulta curricular, formação e titulação. |
+| M02 — Produção Científica | RF-03 e RF-04 | Complementares | Consulta de produções recentes incluída; classificação internacional depende de critérios institucionais. |
+| M02 — Produção Científica | RF-05 | Evolução futura | Não compõe o escopo inicial; manter rastreabilidade. |
+| M03 — Colaboração e Internacionalização | RF-06 e RF-07 | Complementares | Consultas de colaboração e registro/consulta de missões; campos e responsáveis ainda pendentes. |
+| M04 — Oportunidades Científicas | RF-08 e RF-09 | Evolução futura | Fora do escopo inicial; preservar os requisitos no histórico. |
+| M05 — Indicadores e Relatórios | RF-10 e RF-11 | Complementares | Consulta de indicadores e geração de relatórios; painel específico da DRI. |
+| M05 — Indicadores e Relatórios | RF-12 | Ajustar | Configuração de indicadores dentro dos elementos permitidos e regras aprovadas. |
+| M05 — Indicadores e Relatórios | RF-13 | Complementar | Versionamento de indicadores e preservação das versões anteriores. |
+| M05 — Indicadores e Relatórios | IND-08 | Reavaliar | Não tratar como indicador homologado. |
+| M06 — Qualidade e Integrações | RF-14, RF-15 e RF-16 | Complementar | Identificar e registrar divergências; permitir análise autorizada; integrações condicionais. |
+| M06 — Qualidade e Integrações | Histórico de alterações | Incorporar | Integrar conceitualmente ao histórico, preservando a identidade do RNF-06. |
+| M07 — Identidade e Controle de Acesso | RF-17 | Reformular | Administração de usuários, perfis e permissões com matriz preliminar sujeita à validação. |
+
+## B. Atores e públicos envolvidos
+
+Os seis atores identificados no SRS original permanecem como perfis preliminares de interação:
+
+| ID | Ator | Papel preliminar |
+|---|---|---|
+| AT-01 | Docente | Consultar informações próprias e, se aprovado, manter determinados dados próprios. |
+| AT-02 | Gestor de internacionalização | Acompanhar informações, indicadores e atividades de internacionalização. |
+| AT-03 | Analista de internacionalização | Consultar, organizar e analisar informações de internacionalização, conforme autorização. |
+| AT-04 | Responsável pela pesquisa científica | Acompanhar produção e informações científicas. |
+| AT-05 | Administrador do sistema | Executar atividades técnicas e administrativas de usuários e configurações. |
+| AT-06 | Gestor acadêmico | Consultar informações consolidadas conforme autorização. |
+
+A denominação dos atores não determina, por si só, o nível de acesso. Uma pessoa poderá acumular responsabilidades, caso isso seja permitido e validado institucionalmente.
+
+## C. Proposta preliminar de níveis de acesso
+
+Propõe-se estudar um modelo de controle de acesso baseado em perfis (RBAC). Os níveis abaixo são uma estrutura inicial para discussão, não uma decisão institucional:
+
+| Nível proposto | Nome de trabalho | Capacidades indicativas |
+|---|---|---|
+| N1 | Consulta própria | Consultar informações próprias autorizadas. |
+| N2 | Consulta ampliada | Consultar conjuntos de informações institucionais autorizados. |
+| N3 | Operacional | Registrar, atualizar e analisar informações dentro de área autorizada. |
+| N4 | Gestão | Consultar painéis e relatórios gerenciais e exercer operações de gestão autorizadas. |
+| N5 | Administração técnica | Administrar contas, configurações técnicas e implementação de permissões aprovadas. |
+
+**Governança ainda não definida:** a equipe apresentará a proposta à DRI e discutirá conjuntamente os critérios de concessão, alteração e revogação dos níveis. Não se afirma que a DRI já tenha aprovado uma matriz ou que detenha formalmente, neste momento, uma competência operacional específica no sistema.
+
+Também permanece em aberto se o docente poderá autorizar compartilhamento de informações próprias ou apenas consultar/atualizar seus dados, e qual será a autonomia do administrador para conceder acessos. A administração técnica não deve ser confundida automaticamente com autorização funcional para consultar ou alterar dados da DRI.
+
+## D. Diretrizes preliminares para controle de acesso
+
+1. As permissões deverão ser associadas a perfis e operações, e não inferidas apenas pelo nome do cargo.
+2. O sistema deverá permitir distinguir consulta, inclusão, alteração, validação, exportação e administração.
+3. A concessão e a revogação de permissões deverão ser rastreáveis.
+4. O princípio do menor privilégio deverá orientar a proposta, sujeito à validação institucional.
+5. A matriz definitiva será definida após apresentação e discussão com a DRI e consulta às áreas técnicas pertinentes.
+6. A autenticação e a integração com mecanismos institucionais dependem de avaliação da TI.
+
+## E. Pendências institucionais atualizadas
+
+- Validar com a DRI os níveis de acesso e a autoridade responsável por solicitar, aprovar e efetivar concessões.
+- Definir se docentes poderão editar dados próprios e/ou autorizar compartilhamento.
+- Definir os limites da administração técnica e sua separação das permissões funcionais.
+- Definir campos obrigatórios e responsáveis pelo cadastro de missões.
+- Validar critérios de internacionalização das produções.
+- Homologar indicadores, fórmulas e a composição do painel específico da DRI; reavaliar IND-08.
+- Definir critérios de identificação e análise de divergências.
+- Confirmar integrações externas autorizadas e tecnicamente viáveis.
+
+## F. Situação da VD
+
+A versão 1.4 é uma proposta consolidada pelo grupo para revisão. Não representa aprovação institucional da DRI, da TI ou de outras áreas. As pendências acima deverão ser apresentadas e validadas antes da linha de base institucional.
