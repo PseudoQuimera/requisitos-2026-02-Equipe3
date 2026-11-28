@@ -1,0 +1,4 @@
+/* ajustes do protótipo */
+.dtec-layout .fxt-heading-content{background:linear-gradient(160deg,#044cf4 0%,#0a2fb5 100%)}
+.dtec-layout .fxt-heading-content:after{display:none}
+#login-error{color:#c0262d;font-size:14px;min-height:20px;margin-top:12px}

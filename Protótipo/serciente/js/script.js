@@ -224,103 +224,16 @@ const CR = [
     ['gestor.acad', 'aca123', 6]
 ];
 
-function showLogin() {
-    document.body.classList.add('out');
-
-    $('#lg').innerHTML = `
-        <div class="lgw">
-            <div class="lp">
-                <span>
-                    Para aprender<br>
-                    é preciso<br>
-                    <em>curiosidade</em>
-                </span>
-                <small>
-                    SerCiente · protótipo com dados de exemplo
-                </small>
-            </div>
-
-            <div class="lr">
-                <h2>Entrar</h2>
-
-                <p class="sub">
-                    Use seu login e senha para acessar o sistema.
-                </p>
-
-                <label>
-                    Login
-                    <input id="lu" autocomplete="off"
-                        onkeydown="if(event.key=='Enter')login()">
-                </label>
-
-                <label>
-                    Senha
-                    <input id="lp" type="password"
-                        autocomplete="off"
-                        onkeydown="if(event.key=='Enter')login()">
-                </label>
-
-                <div class="err" id="le" role="alert"></div>
-
-                <div>
-                    <button onclick="login()">Entrar</button>
-                </div>
-
-                <div class="box" style="margin-top:22px">
-                    <b>Acessos de teste</b>
-
-                    <p class="sub" style="margin:2px 0 8px">
-                        Credenciais fictícias. A autenticação institucional
-                        ainda está pendente (P-09).
-                    </p>
-
-                    ${tb(
-                        ['Perfil', 'Login', 'Senha', ''],
-                        CR.map((c, i) => [
-                            A[c[2]],
-                            c[0],
-                            c[1],
-                            `<button class="g" onclick="fillL(${i})">
-                                Carregar
-                            </button>`
-                        ])
-                    )}
-                </div>
-            </div>
-        </div>
-    `;
-}
-
-function fillL(i) {
-    $('#lu').value = CR[i][0];
-    $('#lp').value = CR[i][1];
-    $('#le').textContent = '';
-    $('#lp').focus();
-}
-
-function login() {
-    const u = $('#lu').value.trim();
-    const p = $('#lp').value;
-
-    const c = CR.find(x => x[0] == u && x[1] == p);
-
-    if (!c) {
-        $('#le').textContent =
-            'Login ou senha incorretos. Confira os dados ou carregue um acesso de teste.';
-        return;
-    }
-
-    cur = c[2];
-    fl = {};
-
-    toast('Bem-vindo(a), ' + A[cur].slice(6));
-
-    go();
+// O login é feito na tela do AVA; o perfil chega por #perfil=N
+function perfilDaUrl() {
+    const m = location.hash.match(/perfil=(\d+)/);
+    return m && A[+m[1]] ? +m[1] : 1;
 }
 
 function logout() {
-    cur = 0;
-    showLogin();
+    if (window.parent !== window) {
+        window.parent.postMessage({ type: 'sc-logout' }, '*');
+    }
 }
 
 const $ = s => document.querySelector(s);
@@ -379,7 +292,7 @@ const hd = (t, s) =>
     `<h2>${t}</h2><p class="sub">${s}</p>`;
 
 function go() {
-    if (!cur) return showLogin();
+    if (!cur) cur = perfilDaUrl();
 
     document.body.classList.remove('out');
 
@@ -1260,4 +1173,5 @@ function uc(i, k, v) {
 }
 
 // Inicialização do sistema
+if (window.parent === window) $('#out').style.display = 'none';
 go();

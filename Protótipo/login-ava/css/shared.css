@@ -1,0 +1,820 @@
+.unifor-theme {
+  --theme-brand: #004af7;
+  --theme-brand-hover: #003ed1;
+  --theme-text: #243041;
+  --theme-muted: #5b6472;
+  --theme-border: #dce3ed;
+  --theme-error: #a30000;
+  --theme-success: #166534;
+  --theme-radius: 8px;
+  color: var(--theme-text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.unifor-theme [hidden] {
+  display: none !important;
+}
+
+.unifor-theme :is(.title, .title-2, .page-title) {
+  margin: 0 0 8px;
+  color: var(--theme-text);
+  font-family: inherit;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.unifor-theme :is(.description, .page-subtitle, .instruction) {
+  margin: 0 0 24px;
+  color: var(--theme-muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.unifor-theme .page-title-container {
+  align-items: center;
+  text-align: center;
+}
+
+.unifor-theme .dtec-layout .fxt-form-content .fxt-inner-wrap {
+  padding: 32px;
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-radius);
+}
+
+.unifor-theme .login-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.unifor-theme .login-remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.unifor-theme .login-remember label {
+  margin: 0;
+}
+
+.unifor-theme .form-group,
+.auth-page .pf-v5-c-form__group {
+  margin: 0 0 20px;
+  min-width: 0;
+}
+
+.auth-page .pf-v5-c-form {
+  gap: 20px;
+}
+
+.auth-page .pf-v5-c-form .pf-v5-c-form__group {
+  margin-bottom: 0;
+}
+
+.auth-page .pf-v5-c-form > :is(.form-group, .checkbox-container, .password-feedback) {
+  margin: 0;
+}
+
+.auth-page .pf-v5-c-form > :is(.button-container, #kc-form-buttons) {
+  margin-top: 4px;
+}
+
+.auth-page .pf-v5-c-form__group:not(.pf-m-action) {
+  display: grid;
+  gap: 8px;
+}
+
+.unifor-theme :is(.form-label, .pf-v5-c-form__label, .pf-v5-c-form__label-text) {
+  color: var(--theme-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.unifor-theme .form-label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.unifor-theme .pf-v5-c-form__label-required {
+  margin-left: 4px;
+  color: var(--theme-error);
+}
+
+.unifor-theme :where(
+  input:not([type="checkbox"], [type="radio"], [type="hidden"], [type="submit"], [type="button"], [type="reset"], .device-card-input),
+  textarea,
+  select
+),
+.unifor-theme .pf-v5-c-form-control > :where(input, select, textarea) {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  height: auto;
+  padding: 10px 16px;
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-radius);
+  background: #fff;
+  color: var(--theme-text);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  box-shadow: none;
+}
+
+.unifor-theme .input-container {
+  position: relative;
+}
+
+.unifor-theme .input-container input {
+  padding-right: 52px;
+}
+
+.unifor-theme .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border: 0;
+  border-radius: var(--theme-radius);
+  background: transparent;
+  color: var(--theme-brand);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.auth-page :is(span, div).pf-v5-c-form-control {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.auth-page .pf-v5-c-form-control::before,
+.auth-page .pf-v5-c-form-control::after,
+.auth-page .pf-v5-c-button::before,
+.auth-page .pf-v5-c-button::after {
+  display: none;
+}
+
+.auth-page .pf-v5-c-form-control__utilities {
+  display: none;
+}
+
+.auth-page .pf-v5-c-input-group {
+  display: flex;
+  gap: 8px;
+}
+
+.auth-page .pf-v5-c-input-group__item.pf-m-fill {
+  flex: 1;
+  min-width: 0;
+}
+
+.unifor-theme :is(input, select, textarea):is(:disabled, [readonly]) {
+  background: #f1f5f9;
+  color: var(--theme-muted);
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.unifor-theme :is(input, select, textarea)[aria-invalid="true"] {
+  border-color: var(--theme-error);
+}
+
+.unifor-theme :is(input, select, textarea):focus-visible {
+  outline: 2px solid var(--theme-brand);
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+.unifor-theme :is(input, select, textarea)[aria-invalid="true"]:focus-visible {
+  outline-color: var(--theme-error);
+}
+
+.unifor-theme :is(button, a, input[type="checkbox"], input[type="radio"], input[type="submit"], input[type="button"], input[type="reset"]):focus-visible {
+  outline: 2px solid var(--theme-brand);
+  outline-offset: 3px;
+}
+
+.unifor-theme :is(.error, .kc-feedback-text.pf-m-error) {
+  display: block;
+  margin-top: 6px;
+  color: var(--theme-error);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.unifor-theme :is(.hint-text, .required-fields, .profile-required-fields, [id^="form-help-text-"]) {
+  margin: 6px 0 0;
+  color: var(--theme-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.unifor-theme .required-fields {
+  margin: 0 0 20px;
+}
+
+.unifor-theme :is(.button-container, .pf-v5-c-form__actions, #kc-form-buttons) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.unifor-theme .button-container-stacked {
+  flex-direction: column;
+}
+
+.unifor-theme :is(.btn, .dtec-btn, .pf-v5-c-button) {
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 48px;
+  height: auto;
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid transparent;
+  border-radius: var(--theme-radius);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  cursor: pointer;
+}
+
+.unifor-theme :is(.btn-update, .fxt-btn-fill, .pf-v5-c-button.pf-m-primary) {
+  background: var(--theme-brand);
+  color: #fff;
+}
+
+.unifor-theme :is(.btn-update, .fxt-btn-fill, .pf-v5-c-button.pf-m-primary):hover:not(:disabled) {
+  background: var(--theme-brand-hover);
+  color: #fff;
+}
+
+.unifor-theme :is(.btn-cancel, .pf-v5-c-button.pf-m-secondary, .pf-v5-c-button.pf-m-link) {
+  border-color: var(--theme-brand);
+  background: #fff;
+  color: var(--theme-brand);
+}
+
+.auth-page .pf-v5-c-button:not(.pf-m-primary, .pf-m-danger, .pf-m-control, .pf-m-plain) {
+  border-color: var(--theme-brand);
+  background: #fff;
+  color: var(--theme-brand);
+}
+
+.unifor-theme :is(.btn-cancel, .pf-v5-c-button.pf-m-secondary, .pf-v5-c-button.pf-m-link):hover {
+  background: #edf3ff;
+  color: var(--theme-brand-hover);
+}
+
+.unifor-theme :is(.btn-delete, .pf-v5-c-button.pf-m-danger) {
+  border-color: var(--theme-error);
+  background: #fff;
+  color: var(--theme-error);
+}
+
+.unifor-theme :is(.btn-delete, .pf-v5-c-button.pf-m-danger):hover {
+  background: #fef2f2;
+}
+
+.unifor-theme :is(.btn, .dtec-btn, .pf-v5-c-button):is(:disabled, .pf-m-disabled, [aria-disabled="true"]) {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.auth-page .pf-v5-c-button.pf-m-control {
+  flex: none;
+  width: 48px;
+  border-color: var(--theme-border);
+  color: var(--theme-brand);
+}
+
+.unifor-theme .alert {
+  margin: 0 0 24px;
+  padding: 12px 16px;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--theme-radius);
+  background: #eff6ff;
+  color: #1e3a8a;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.unifor-theme .alert-error {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: var(--theme-error);
+}
+
+.unifor-theme .alert-warning {
+  border-color: #fed7aa;
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.unifor-theme .alert-success {
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+  color: var(--theme-success);
+}
+
+.unifor-theme .checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 24px 0;
+  padding: 12px;
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-radius);
+}
+
+.unifor-theme :is(input[type="checkbox"], input[type="radio"]):not(.device-card-input) {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0;
+  accent-color: var(--theme-brand);
+}
+
+.unifor-theme .checkbox-label {
+  margin: 0;
+  color: var(--theme-text);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.unifor-theme .status-header {
+  margin-bottom: 24px;
+}
+
+.unifor-theme .status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 0 20px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: var(--theme-brand);
+}
+
+.unifor-theme .status-icon-error {
+  background: #fef2f2;
+  color: var(--theme-error);
+}
+
+.unifor-theme .status-icon-warning {
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.unifor-theme .status-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.unifor-theme .status-header-centered,
+.unifor-theme .status-header-centered :is(.title, .title-2, .description) {
+  text-align: center;
+}
+
+.unifor-theme .status-header-centered .status-icon {
+  margin-inline: auto;
+}
+
+.unifor-theme .status-header-centered .description ul {
+  padding-inline-start: 0;
+  list-style-position: inside;
+}
+
+.unifor-theme .auth-info {
+  margin-top: 24px;
+  color: var(--theme-muted);
+  font-size: 14px;
+}
+
+.unifor-theme .auth-info:empty {
+  display: none;
+}
+
+.unifor-theme .device-badge {
+  display: block;
+  margin: 0 0 24px;
+  padding: 12px 16px;
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-radius);
+  background: #f8fafc;
+  color: var(--theme-text);
+  font-weight: 600;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.unifor-theme .otp-code {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  font-size: 24px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.25em;
+  text-align: center;
+}
+
+.unifor-theme .device-card-list {
+  display: grid;
+  gap: 12px;
+}
+
+.unifor-theme .device-card-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-radius);
+  background: #fff;
+  color: var(--theme-text);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.unifor-theme .device-card-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.unifor-theme .device-card-input:focus-visible + .device-card-label {
+  outline: 2px solid var(--theme-brand);
+  outline-offset: 3px;
+}
+
+.unifor-theme .device-card-input:checked + .device-card-label {
+  border-color: var(--theme-brand);
+  background: #edf3ff;
+}
+
+.unifor-theme .device-card-icon {
+  display: flex;
+  flex-shrink: 0;
+  color: var(--theme-brand);
+}
+
+.unifor-theme .security-banner {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--theme-radius);
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+.unifor-theme .totp-exit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  justify-content: flex-start;
+  margin-top: 16px;
+}
+
+.unifor-theme .totp-exit-hint {
+  margin: 0;
+  color: var(--theme-muted);
+  font-size: 13px;
+}
+
+.unifor-theme .totp-exit .btn {
+  flex: none;
+  width: auto;
+  min-height: 44px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.unifor-theme .security-banner svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.unifor-theme .security-banner p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.unifor-theme .wizard-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.unifor-theme .step-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-radius);
+  background: #f8fafc;
+}
+
+.unifor-theme .step-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.unifor-theme .step-number {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--theme-brand);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.unifor-theme .step-title {
+  margin: 0;
+  color: var(--theme-text);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.unifor-theme .step-content {
+  color: var(--theme-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.unifor-theme .step-content p {
+  margin: 0 0 12px;
+}
+
+.unifor-theme .qr-box {
+  display: grid;
+  place-items: center;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  border: 1px dashed var(--theme-border);
+  border-radius: var(--theme-radius);
+  background: #fff;
+}
+
+.unifor-theme .qr-box img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.unifor-theme .totp-policy {
+  margin-top: 12px;
+  padding-left: 20px;
+  font-size: 12px;
+}
+
+.unifor-theme .totp-advanced summary {
+  display: list-item;
+  min-height: 44px;
+  padding: 10px 0;
+  color: var(--theme-brand);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.unifor-theme .totp-advanced summary:focus-visible {
+  outline: 2px solid var(--theme-brand);
+  outline-offset: 2px;
+}
+
+.unifor-theme #kc-totp-secret-key {
+  overflow-wrap: anywhere;
+}
+
+.unifor-theme .totp-setup-options {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.unifor-theme .totp-method-hint {
+  color: var(--theme-text);
+  font-weight: 600;
+}
+
+.unifor-theme .totp-method-hint[hidden] { display: none !important; }
+
+.unifor-theme .totp-setup-option {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--theme-border);
+  border-radius: var(--theme-radius);
+  background: #fff;
+  color: var(--theme-text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.unifor-theme .totp-setup-option[aria-current="true"] {
+  border-color: var(--theme-brand);
+  background: #edf3ff;
+  color: var(--theme-brand);
+}
+
+.unifor-theme .totp-method-panel[hidden] { display: none !important; }
+
+.unifor-theme .totp-method-panel:focus-visible {
+  outline: 2px solid var(--theme-brand);
+  outline-offset: 4px;
+}
+
+.unifor-theme .totp-setup-option:focus-visible,
+.unifor-theme .totp-copy-key:focus-visible {
+  outline: 2px solid var(--theme-brand);
+  outline-offset: 2px;
+}
+
+.unifor-theme .totp-secret {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.unifor-theme .totp-secret-value {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 4px 0;
+  color: var(--theme-text);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.unifor-theme .totp-copy-key {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--theme-radius);
+  background: transparent;
+  color: var(--theme-brand);
+  font: inherit;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.unifor-theme .totp-copy-key:hover { background: #edf3ff; }
+
+.unifor-theme .totp-copy-status:empty { display: none; }
+.unifor-theme .totp-secret-hint { font-size: 12px; }
+
+.unifor-theme .store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.unifor-theme .store-badge {
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border-radius: var(--theme-radius);
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+}
+
+.unifor-theme .store-badge .store-icon {
+  flex: none;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.unifor-theme .store-badge .store-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.unifor-theme .store-badge .small-text {
+  font-size: 10px;
+}
+
+.unifor-theme .store-badge .big-text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.unifor-theme .password-feedback {
+  min-height: 20px;
+  margin-bottom: 16px;
+  color: var(--theme-muted);
+  font-size: 14px;
+}
+
+.unifor-theme .password-feedback:empty {
+  display: none;
+}
+
+.unifor-theme .password-feedback[data-state="error"] {
+  color: var(--theme-error);
+}
+
+.unifor-theme .password-feedback[data-state="success"] {
+  color: var(--theme-success);
+}
+
+@media (min-width: 1024px) {
+  .unifor-theme .wizard-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .unifor-theme .totp-exit { align-items: stretch; }
+  .unifor-theme .totp-exit .btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .unifor-theme .store-badge {
+    gap: 6px;
+    padding-inline: 9px;
+  }
+
+  .unifor-theme .store-badge .store-icon {
+    font-size: 20px;
+  }
+
+  .unifor-theme .store-badge .small-text {
+    font-size: 12px;
+  }
+
+  .unifor-theme .store-badge .big-text {
+    font-size: 14px;
+  }
+
+  .unifor-theme :is(.title, .title-2, .page-title) {
+    font-size: 24px;
+  }
+
+  .unifor-theme :is(.button-container, .pf-v5-c-form__actions, #kc-form-buttons) {
+    flex-direction: column;
+  }
+
+  .unifor-theme :is(.btn, .dtec-btn, .pf-v5-c-button) {
+    width: 100%;
+    flex: auto;
+  }
+
+  .unifor-theme .step-card {
+    padding: 16px;
+  }
+
+  .unifor-theme .dtec-layout .fxt-form-content .fxt-inner-wrap {
+    padding: 24px 20px;
+  }
+}
