@@ -1,0 +1,537 @@
+
+/* =========================================================
+   SerCiente — Folha de estilos
+   Universidade de Fortaleza | DRI
+   Versão: 1.0
+   Data: 28/11/2026
+   ========================================================= */
+
+
+/* =========================================================
+   1. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   ========================================================= */
+
+:root {
+    --bg: #E4F2FE;
+    --sf: #FFFFFF;
+    --tx: #132190;
+    --mu: #4a58a8;
+    --bd: #b9d4fb;
+
+    --ac: #004AF7;
+    --ac2: #E4F2FE;
+
+    --wn: #132190;
+    --wb: #cfe3ff;
+
+    --ok: #0f7a4a;
+    --er: #c0262d;
+
+    --hd: #004AF7;
+    --hd2: #132190;
+    --y: #87B7FE;
+
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+:root[data-theme="off"] {
+    --bg: #0f1521;
+    --sf: #182133;
+    --tx: #e8edf6;
+    --mu: #98a3b8;
+    --bd: #2c3850;
+
+    --ac: #7aa8f0;
+    --ac2: #1f2d49;
+
+    --wn: #f0c36a;
+    --wb: #3a2d12;
+
+    --ok: #6fd096;
+    --er: #f0868a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: light;
+}
+
+body {
+    margin: 0;
+    font: 15px/1.55 "Satoshi", "DM Sans", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--tx);
+}
+
+
+/* =========================================================
+   2. CABEÇALHO
+   ========================================================= */
+
+header {
+    background: var(--hd);
+    color: #fff;
+    border-bottom: 0;
+    padding: 16px 24px;
+
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header b {
+    font-size: 20px;
+    font-weight: 700;
+    display: block;
+    line-height: 1.1;
+}
+
+header small {
+    display: block;
+    font-size: 12px;
+    color: #E4F2FE;
+}
+
+header label {
+    color: #E4F2FE;
+    font-size: 13px;
+}
+
+header select {
+    color: #132190;
+    background: #E4F2FE;
+    border-color: #E4F2FE;
+}
+
+header::after {
+    content: "";
+    width: 92px;
+    height: 32px;
+    margin-left: 4px;
+
+    background:
+        radial-gradient(circle at 16px 16px, #87B7FE 15px, #0000 16px),
+        radial-gradient(circle at 46px 16px, #E4F2FE 15px, #0000 16px),
+        radial-gradient(circle at 76px 16px, #87B7FE 15px, #0000 16px);
+}
+
+.wm {
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 1.05;
+}
+
+.sep {
+    width: 1px;
+    height: 36px;
+    background: #87B7FE;
+}
+
+
+/* =========================================================
+   3. CAMPOS E BOTÕES
+   ========================================================= */
+
+select,
+input,
+textarea,
+button {
+    font: inherit;
+    color: var(--tx);
+    background: var(--sf);
+    border: 1px solid var(--bd);
+    border-radius: 10px;
+    padding: 8px 12px;
+}
+
+button {
+    cursor: pointer;
+    background: var(--hd);
+    color: #fff;
+    border-color: var(--hd);
+    border-radius: 999px;
+    font-weight: 700;
+    padding: 8px 18px;
+}
+
+button.g {
+    background: var(--sf);
+    color: var(--tx);
+    border-color: var(--bd);
+}
+
+:focus-visible {
+    outline: 2px solid var(--ac);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   4. AVISOS
+   ========================================================= */
+
+.aviso {
+    background: var(--wb);
+    color: var(--wn);
+    padding: 8px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--bd);
+}
+
+
+/* =========================================================
+   5. ESTRUTURA PRINCIPAL
+   ========================================================= */
+
+.lay {
+    display: flex;
+    min-height: calc(100vh - 100px);
+}
+
+nav {
+    width: 270px;
+    flex: none;
+
+    background: var(--sf);
+    border-right: 1px solid var(--bd);
+    padding: 16px 12px;
+}
+
+nav button {
+    display: block;
+    width: 100%;
+    text-align: left;
+
+    background: none;
+    color: var(--tx);
+    border: 0;
+    border-radius: 12px;
+
+    padding: 10px 14px;
+    margin-bottom: 2px;
+    font-weight: 500;
+}
+
+nav button.on {
+    background: var(--hd);
+    color: #fff;
+    font-weight: 700;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    min-width: 0;
+    max-width: 980px;
+}
+
+
+/* =========================================================
+   6. TÍTULOS E TEXTOS
+   ========================================================= */
+
+h2 {
+    margin: 0 0 4px;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -.5px;
+    color: var(--ac);
+}
+
+.sub {
+    color: var(--mu);
+    margin: 0 0 16px;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   7. CARDS E CONTAINERS
+   ========================================================= */
+
+.box {
+    background: var(--sf);
+    border: 1px solid var(--bd);
+    border-radius: 18px;
+
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: end;
+    margin-bottom: 12px;
+}
+
+.row label {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 12px;
+    color: var(--mu);
+    gap: 3px;
+}
+
+
+/* =========================================================
+   8. TABELAS
+   ========================================================= */
+
+.tw {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 7px 9px;
+    border-bottom: 1px solid var(--bd);
+    vertical-align: top;
+}
+
+th {
+    color: var(--mu);
+    font-weight: 500;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   9. ETIQUETAS E STATUS
+   ========================================================= */
+
+.tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+
+    font-weight: 700;
+    font-size: 12px;
+
+    background: var(--ac2);
+    color: var(--ac);
+}
+
+.tag.w {
+    background: var(--wb);
+    color: var(--wn);
+}
+
+.tag.o {
+    background: var(--ac2);
+    color: var(--ok);
+}
+
+.tag.e {
+    color: var(--er);
+}
+
+
+/* =========================================================
+   10. ESTADOS VAZIOS
+   ========================================================= */
+
+.empty {
+    color: var(--mu);
+    padding: 14px;
+    text-align: center;
+}
+
+
+/* =========================================================
+   11. INDICADORES E GRÁFICOS
+   ========================================================= */
+
+.bar {
+    height: 10px;
+    background: var(--c, var(--ac));
+    border-radius: 5px;
+}
+
+.kp {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+}
+
+.kp .box {
+    margin: 0;
+    border-top: 6px solid var(--c, var(--ac));
+}
+
+.kp strong {
+    font-size: 26px;
+    display: block;
+}
+
+
+/* =========================================================
+   12. LOGIN
+   ========================================================= */
+
+body.out .lay,
+body.out .aviso,
+body.out #who,
+body.out #out {
+    display: none;
+}
+
+body:not(.out) #lg {
+    display: none;
+}
+
+#who {
+    font-size: 14px;
+}
+
+.lgw {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 100px);
+
+    --bg: #E4F2FE;
+    --sf: #fff;
+    --tx: #132190;
+    --mu: #4a58a8;
+    --bd: #b9d4fb;
+    --ac: #004AF7;
+    --ac2: #E4F2FE;
+    --wn: #132190;
+    --wb: #cfe3ff;
+    --er: #c0262d;
+
+    background: var(--bg);
+    color: var(--tx);
+}
+
+.lp {
+    background: var(--hd);
+    color: #E4F2FE;
+
+    padding: 56px 48px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 44px;
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.lp em {
+    font-weight: 700;
+}
+
+.lp small {
+    font-size: 14px;
+    margin-top: 24px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.lr {
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 560px;
+}
+
+.lr label {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 13px;
+    color: var(--mu);
+    gap: 3px;
+    margin-bottom: 10px;
+}
+
+.err {
+    color: var(--er);
+    min-height: 22px;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   13. NOTIFICAÇÕES
+   ========================================================= */
+
+#toast {
+    position: fixed;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: var(--tx);
+    color: var(--bg);
+
+    padding: 9px 16px;
+    border-radius: 8px;
+
+    display: none;
+    z-index: 9;
+}
+
+
+/* =========================================================
+   14. RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    /* Login */
+
+    .lgw {
+        grid-template-columns: 1fr;
+    }
+
+    .lp {
+        padding: 28px;
+        font-size: 30px;
+    }
+
+    .lr {
+        padding: 24px;
+    }
+
+    /* Navegação */
+
+    .lay {
+        flex-direction: column;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+
+        border-right: 0;
+        border-bottom: 1px solid var(--bd);
+    }
+
+    nav button {
+        white-space: nowrap;
+        width: auto;
+        margin-right: 4px;
+    }
+}
