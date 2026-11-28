@@ -1,12 +1,12 @@
 # ESPECIFICAÇÃO DE REQUISITOS DE SOFTWARE (SRS)
 
-# Sistema de Gestão da Produção Científica e Internacionalização Docente (GPCID)
+# Sistema de Gestão da Produção Científica e Internacionalização Docente (SerCiente)
 
 **Universidade de Fortaleza (Unifor)**
 
 | Campo | Informação |
 | --- | --- |
-| Nome do sistema | Sistema de Gestão da Produção Científica e Internacionalização Docente (GPCID) |
+| Nome do sistema | Sistema de Gestão da Produção Científica e Internacionalização Docente (SerCiente) |
 | Instituição | Universidade de Fortaleza (Unifor) |
 | Tipo de sistema | Novo sistema |
 | Área solicitante | Diretoria de Relações Internacionais (DRI) da Unifor |
@@ -16,7 +16,7 @@
 | Responsável pela elaboração | Grupo 3 |
 | Responsável pela aprovação formal | Direção da DRI |
 | Nome do responsável pela aprovação | A confirmar |
-| Documento de origem | Visão da Demanda (VD) — GPCID, versão 1.4 — proposta de consolidação |
+| Documento de origem | Visão da Demanda (VD) — SerCiente, versão 1.4 — proposta de consolidação |
 | Referencial de especificação | IEEE 830-1998 e ISO/IEC/IEEE 29148:2011 |
 | Processo de ciclo de vida | ISO/IEC 12207 |
 | Versão do SRS | 0.3 |
@@ -31,7 +31,7 @@
 
 | Data | Versão | Descrição | Autor |
 | --- | --- | --- | --- |
-| 08/11/2026 | 0.1 | Elaboração inicial da especificação de requisitos com base na VD-GPCID 1.1. Estruturação dos requisitos funcionais, não funcionais, interfaces, restrições, rastreabilidade e verificação. | Grupo 3 |
+| 08/11/2026 | 0.1 | Elaboração inicial da especificação de requisitos com base na VD-SerCiente 1.1. Estruturação dos requisitos funcionais, não funcionais, interfaces, restrições, rastreabilidade e verificação. | Grupo 3 |
 | 08/11/2026 | 0.2 | Atualização da identificação institucional, definição da DRI como área solicitante, inclusão do interlocutor de negócio, atualização dos contatos e correção da responsabilidade pela aprovação formal. Revisão da governança, do gerenciamento de mudanças e da consistência geral do documento. | Grupo 3 |
 | 25/11/2026 | 0.3 | Consolidação das decisões M01–M07; atualização da rastreabilidade RF/CDU; proposta preliminar de atores, níveis de acesso e critérios de aceitação; registro explícito das pendências institucionais. | Grupo 3 |
 
@@ -48,7 +48,7 @@ Toda alteração deverá ser registrada no histórico de versões, identificando
 
 ## Governança do documento
 
-A Diretoria de Relações Internacionais (DRI) da Universidade de Fortaleza é a área solicitante e responsável pela validação institucional das necessidades relacionadas ao GPCID.
+A Diretoria de Relações Internacionais (DRI) da Universidade de Fortaleza é a área solicitante e responsável pela validação institucional das necessidades relacionadas ao SerCiente.
 
 O Prof. Marcelo Ponte, Supervisor de Apoio Docente, constitui o interlocutor de negócio indicado para o acompanhamento e esclarecimento das necessidades da área solicitante.
 
@@ -96,7 +96,7 @@ A aprovação formal da especificação compete à Direção da DRI, cujo repres
 
 ## 1.1 Propósito
 
-Este documento especifica os requisitos de software do Sistema de Gestão da Produção Científica e Internacionalização Docente (GPCID), proposto para a Universidade de Fortaleza (Unifor), tendo como área solicitante a Diretoria de Relações Internacionais (DRI).
+Este documento especifica os requisitos de software do Sistema de Gestão da Produção Científica e Internacionalização Docente (SerCiente), proposto para a Universidade de Fortaleza (Unifor), tendo como área solicitante a Diretoria de Relações Internacionais (DRI).
 
 O objetivo desta especificação é estabelecer uma descrição organizada das funcionalidades, interfaces, restrições, requisitos de dados e atributos de qualidade esperados para a solução.
 
@@ -111,13 +111,13 @@ O documento deverá servir como referência para:
 -   Acompanhamento da evolução dos requisitos.
 -   Verificação da conformidade do software com as necessidades institucionais aprovadas.
 
-A elaboração desta versão é conduzida pelo Grupo 3, considerando a Visão da Demanda (VD) do GPCID, versão 1.1, e as informações institucionais apresentadas na identificação deste documento.
+A elaboração desta versão é conduzida pelo Grupo 3, considerando a Visão da Demanda (VD) do SerCiente, versão 1.1, e as informações institucionais apresentadas na identificação deste documento.
 
 Os requisitos aqui apresentados possuem caráter preliminar e deverão ser discutidos e validados com os representantes da DRI e demais áreas institucionais envolvidas.
 
 ## 1.2 Escopo
 
-O GPCID será uma nova solução de software destinada a organizar, consultar, acompanhar e analisar informações relacionadas à formação acadêmica, à produção científica e à internacionalização dos docentes da Universidade de Fortaleza.
+O SerCiente será uma nova solução de software destinada a organizar, consultar, acompanhar e analisar informações relacionadas à formação acadêmica, à produção científica e à internacionalização dos docentes da Universidade de Fortaleza.
 
 A iniciativa tem como área solicitante a Diretoria de Relações Internacionais (DRI), considerando sua necessidade de dispor de informações estruturadas para apoiar o acompanhamento e a análise das atividades acadêmicas e científicas de caráter internacional.
 
@@ -136,13 +136,13 @@ O sistema deverá contemplar, conforme validação institucional:
 11.  Administração de usuários e permissões.
 12.  Monitoramento das possíveis integrações externas.
 
-O GPCID não terá como objetivo substituir a Plataforma Lattes, as bases oficiais de publicações científicas ou os sistemas acadêmicos institucionais.
+O SerCiente não terá como objetivo substituir a Plataforma Lattes, as bases oficiais de publicações científicas ou os sistemas acadêmicos institucionais.
 
 A obtenção automática de informações dependerá da disponibilidade de mecanismos autorizados de integração, da viabilidade técnica e da aprovação institucional.
 
 ### 1.2.1 Objetivos do sistema
 
-São objetivos preliminares do GPCID:
+São objetivos preliminares do SerCiente:
 
 -   Centralizar a consulta de informações acadêmicas e científicas dos docentes.
 -   Apoiar a DRI na análise da produção científica institucional sob a perspectiva da internacionalização.
@@ -171,7 +171,7 @@ Qualquer ampliação desses limites deverá ser submetida à análise de impacto
 
 | Termo | Definição |
 | --- | --- |
-| GPCID | Sistema de Gestão da Produção Científica e Internacionalização Docente. |
+| SerCiente | Sistema de Gestão da Produção Científica e Internacionalização Docente. |
 | SRS | Software Requirements Specification — Especificação de Requisitos de Software. |
 | VD | Visão da Demanda. |
 | DRI | Diretoria de Relações Internacionais da Unifor. |
@@ -184,7 +184,7 @@ Qualquer ampliação desses limites deverá ser submetida à análise de impacto
 | Colaboração científica | Atuação conjunta entre pesquisadores ou instituições. |
 | Indicador | Medida utilizada para representar determinada característica ou resultado. |
 | Rastreabilidade | Capacidade de identificar a origem e o histórico de uma informação ou requisito. |
-| Fonte externa | Sistema ou serviço externo que disponibiliza informações ao GPCID. |
+| Fonte externa | Sistema ou serviço externo que disponibiliza informações ao SerCiente. |
 | Deduplicação | Identificação e tratamento de registros que representam a mesma informação. |
 | LGPD | Lei Geral de Proteção de Dados Pessoais. |
 | CDU | Caso de Uso. |
@@ -207,7 +207,7 @@ Qualquer ampliação desses limites deverá ser submetida à análise de impacto
 | REF-01 | IEEE Std 830-1998 — IEEE Recommended Practice for Software Requirements Specifications. |
 | REF-02 | ISO/IEC 12207 — Software Life Cycle Processes. |
 | REF-03 | ISO/IEC/IEEE 29148:2011 — Systems and Software Engineering: Life Cycle Processes — Requirements Engineering. |
-| REF-04 | Visão da Demanda — Gestão da Produção Científica e Internacionalização Docente (GPCID), versão 1.1, 08/11/2026. |
+| REF-04 | Visão da Demanda — Gestão da Produção Científica e Internacionalização Docente (SerCiente), versão 1.1, 08/11/2026. |
 | REF-05 | Documento de propostas de projetos de sistemas — Internacionalização e ENADE, semestre 2026.2, Eixo I, proposta 2. |
 | REF-06 | Lei nº 13.709/2018 — Lei Geral de Proteção de Dados Pessoais (LGPD). |
 
@@ -235,7 +235,7 @@ A seção 8 registra a situação do documento, as pendências para aprovação 
 
 ## 2.1 Perspectiva do produto
 
-O GPCID é proposto como um novo sistema de apoio à gestão da produção científica e internacionalização docente da Universidade de Fortaleza.
+O SerCiente é proposto como um novo sistema de apoio à gestão da produção científica e internacionalização docente da Universidade de Fortaleza.
 
 A solução deverá operar como um ambiente integrado de consulta e acompanhamento de informações acadêmicas e científicas, atendendo às necessidades de informação da DRI e dos demais usuários institucionais autorizados.
 
@@ -255,7 +255,7 @@ mermaid
 
 ```mermaid
 flowchart LR
-    D[Docentes] --> G[GPCID]
+    D[Docentes] --> G[SerCiente]
     GA[Gestores acadêmicos] --> G
     P[Responsáveis pela pesquisa] --> G
     I[Responsáveis pela internacionalização / DRI] --> G
@@ -351,7 +351,7 @@ Tecnologias, sistemas operacionais, navegadores homologados e infraestrutura per
 
 ## 2.5 Restrições de projeto
 
-As restrições de projeto estabelecem condições que deverão ser observadas durante a concepção, o desenvolvimento e a implantação do GPCID.
+As restrições de projeto estabelecem condições que deverão ser observadas durante a concepção, o desenvolvimento e a implantação do SerCiente.
 
 As restrições detalhadas e seus respectivos identificadores estão especificados na seção 3.5 deste documento.
 
@@ -1283,15 +1283,15 @@ A utilização desses indicadores dependerá da disponibilidade dos dados e da a
 
 | Artefato | Identificador proposto | Situação |
 | --- | --- | --- |
-| Diagrama geral de casos de uso | DCU-GPCID | A elaborar |
+| Diagrama geral de casos de uso | DCU-SerCiente | A elaborar |
 | Casos de uso detalhados | CDU-01 a CDU-17 | A elaborar |
-| Modelo conceitual de dados | MCD-GPCID | A elaborar |
-| Modelo de processos | MP-GPCID | A elaborar |
-| Protótipos de interface | PT-GPCID | A elaborar |
-| Catálogo de regras de negócio | RN-GPCID | Preliminar |
-| Catálogo de indicadores | IND-GPCID | A validar |
-| Especificação das integrações | INT-GPCID | A elaborar |
-| Plano de testes | PTST-GPCID | A elaborar |
+| Modelo conceitual de dados | MCD-SerCiente | A elaborar |
+| Modelo de processos | MP-SerCiente | A elaborar |
+| Protótipos de interface | PT-SerCiente | A elaborar |
+| Catálogo de regras de negócio | RN-SerCiente | Preliminar |
+| Catálogo de indicadores | IND-SerCiente | A validar |
+| Especificação das integrações | INT-SerCiente | A elaborar |
+| Plano de testes | PTST-SerCiente | A elaborar |
 
 ## APÊNDICE D — Governança e gerenciamento de mudanças
 
@@ -1359,9 +1359,9 @@ As alterações que impliquem ampliação significativa do escopo deverão ser a
 
 **Versão 0.3 — Rascunho consolidado para revisão e validação.**
 
-Esta versão apresenta a especificação de requisitos de software do Sistema de Gestão da Produção Científica e Internacionalização Docente (GPCID), proposto para a Universidade de Fortaleza (Unifor), tendo como área solicitante a Diretoria de Relações Internacionais (DRI).
+Esta versão apresenta a especificação de requisitos de software do Sistema de Gestão da Produção Científica e Internacionalização Docente (SerCiente), proposto para a Universidade de Fortaleza (Unifor), tendo como área solicitante a Diretoria de Relações Internacionais (DRI).
 
-O documento foi elaborado pelo Grupo 3, com base na Visão da Demanda (VD) — GPCID, versão 1.4, e nas informações institucionais registradas na identificação deste documento.
+O documento foi elaborado pelo Grupo 3, com base na Visão da Demanda (VD) — SerCiente, versão 1.4, e nas informações institucionais registradas na identificação deste documento.
 
 A interlocução de negócio está atribuída ao Prof. Marcelo Ponte, Supervisor de Apoio Docente, por meio dos contatos institucionais informados.
 
@@ -1416,7 +1416,7 @@ O Prof. Marcelo Ponte atua como interlocutor de negócio e contato indicado para
 
 **FIM DO DOCUMENTO**
 
-**SRS-GPCID — Versão 0.2**
+**SRS-SerCiente — Versão 0.2**
 
 **Data: 08/11/2026**
 

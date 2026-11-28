@@ -10,7 +10,7 @@ actor "Responsável pela pesquisa científica" as AT04
 actor "Administrador do sistema" as AT05
 actor "Gestor acadêmico" as AT06
 
-rectangle "GPCID — Sistema de Gestão da Produção Científica e Internacionalização Docente" {
+rectangle "SerCiente — Sistema de Gestão da Produção Científica e Internacionalização Docente" {
   usecase "CDU-01\nConsultar informações\ncurriculares, formação e titulação" as CDU01
   usecase "CDU-03\nConsultar publicações científicas" as CDU03
   usecase "CDU-04\nClassificar internacionalização\ndas produções" as CDU04

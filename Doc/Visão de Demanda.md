@@ -1,4 +1,4 @@
-# Visão da Demanda (VD) — Gestão da Produção Científica e Internacionalização Docente (GPCID)
+# Visão da Demanda (VD) — Gestão da Produção Científica e Internacionalização Docente (SerCiente)
 
 **Sistema de Gestão da Produção Científica e Internacionalização Docente — Universidade de Fortaleza (Unifor)**
 
@@ -8,7 +8,7 @@
 
 | Campo | Informação |
 |---|---|
-| Nome da demanda | Sistema de Gestão da Produção Científica e Internacionalização Docente (GPCID) |
+| Nome da demanda | Sistema de Gestão da Produção Científica e Internacionalização Docente (SerCiente) |
 | Instituição | Universidade de Fortaleza (Unifor) |
 | Tipo | Novo sistema |
 | Área solicitante | Diretoria de Relações Internacionais (DRI) |
@@ -18,7 +18,7 @@
 | Responsável pela elaboração | Grupo 3 |
 | Responsável pela aprovação formal | Direção da DRI |
 | Representante responsável pela aprovação | A confirmar |
-| Documento de origem | Visão da Demanda (VD) — GPCID |
+| Documento de origem | Visão da Demanda (VD) — SerCiente |
 | Referenciais | IEEE 830-1998; ISO/IEC/IEEE 29148:2011; ISO/IEC 12207 |
 | Versão | 1.4 — consolidação de decisões e proposta de controle de acesso |
 | Documento relacionado | SRS — versão 0.2 |
@@ -41,7 +41,7 @@
 
 Desenvolver uma solução de apoio à gestão da produção científica e à internacionalização docente da Universidade de Fortaleza (Unifor), capaz de centralizar, organizar, consultar e acompanhar informações acadêmicas e científicas dos professores.
 
-O GPCID deverá contemplar informações curriculares, formação e titulação, publicações e demais produções científicas, colaborações acadêmicas e atividades de internacionalização. O acompanhamento da produção científica deverá abranger produções nacionais e internacionais, com destaque para a dimensão internacional nos indicadores de interesse da DRI.
+O SerCiente deverá contemplar informações curriculares, formação e titulação, publicações e demais produções científicas, colaborações acadêmicas e atividades de internacionalização. O acompanhamento da produção científica deverá abranger produções nacionais e internacionais, com destaque para a dimensão internacional nos indicadores de interesse da DRI.
 
 A solução deverá apoiar os docentes na consulta de informações relacionadas à própria trajetória acadêmica e científica e os gestores institucionais no acompanhamento da produção, das colaborações e das atividades internacionais, por meio de consultas, indicadores e relatórios.
 
@@ -224,13 +224,13 @@ A lista acima é uma visão de capacidades e não substitui os requisitos funcio
 
 ## 8. Visão geral da solução
 
-O GPCID é concebido como uma plataforma de consulta e acompanhamento, com informações provenientes de fontes externas e de registros mantidos no próprio sistema.
+O SerCiente é concebido como uma plataforma de consulta e acompanhamento, com informações provenientes de fontes externas e de registros mantidos no próprio sistema.
 
 ### 8.1. Alimentação das informações
 
 **Automática:** o sistema poderá consultar ou importar informações de fontes externas autorizadas, como a Plataforma Lattes/CNPq, bases de publicações e sistemas institucionais. A integração depende da disponibilidade de interfaces, autorização de acesso e avaliação técnica. Não se afirma, nesta etapa, que essas integrações estejam disponíveis ou garantidas.
 
-**Manual:** usuários autorizados poderão cadastrar, complementar ou corrigir informações no GPCID, de acordo com regras de acesso e responsabilidade que ainda deverão ser definidas. A manutenção manual deverá coexistir com a automática quando necessário, sem criar conflitos de origem ou atualização.
+**Manual:** usuários autorizados poderão cadastrar, complementar ou corrigir informações no SerCiente, de acordo com regras de acesso e responsabilidade que ainda deverão ser definidas. A manutenção manual deverá coexistir com a automática quando necessário, sem criar conflitos de origem ou atualização.
 
 ### 8.2. Qualidade, divergências e histórico
 
@@ -303,8 +303,8 @@ O módulo de oportunidades científicas, presente no SRS original, deverá ser a
 | Documento | Responsabilidade | Situação |
 |---|---|---|
 | Propostas de Projetos — Internacionalização e ENADE | Contexto e descrição inicial da oportunidade de projeto. | Referência institucional disponível. |
-| Visão da Demanda (VD) — GPCID | Contexto, objetivos, escopo, partes interessadas e necessidades. | Versão 1.3 — proposta de revisão. |
-| SRS — GPCID | Especificação dos requisitos funcionais, não funcionais, interfaces e restrições. | Versão 0.2 — requer comparação e atualização controlada. |
+| Visão da Demanda (VD) — SerCiente | Contexto, objetivos, escopo, partes interessadas e necessidades. | Versão 1.3 — proposta de revisão. |
+| SRS — SerCiente | Especificação dos requisitos funcionais, não funcionais, interfaces e restrições. | Versão 0.2 — requer comparação e atualização controlada. |
 | Regras de negócio | Critérios de classificação, acompanhamento e gestão das informações. | A elaborar/consolidar. |
 | Casos de uso | Fluxos, atores, precondições, exceções e critérios de aceitação. | A revisar após consolidação dos requisitos. |
 | Catálogo de indicadores | Definições, medidas, fontes, regras de cálculo e periodicidade. | A validar. |
