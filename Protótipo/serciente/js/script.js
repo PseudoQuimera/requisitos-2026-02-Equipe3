@@ -1172,6 +1172,22 @@ function uc(i, k, v) {
     go();
 }
 
+function setNav(open) {
+    document.body.classList.toggle('nav-open', open);
+    $('#hb').setAttribute('aria-expanded', String(open));
+}
+
+function toggleNav() {
+    setNav(!document.body.classList.contains('nav-open'));
+}
+
+$('#nv').addEventListener('click', e => {
+    if (e.target.closest('button') && matchMedia('(max-width: 760px)').matches) setNav(false);
+});
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') setNav(false);
+});
+
 // Inicialização do sistema
-if (window.parent === window) $('#out').style.display = 'none';
 go();
